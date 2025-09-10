@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@base {
+
+  body {
+    @apply bg-primary;
+  }
+
+  /* h1 {
+    @apply text-white;
+  }
+
+  .primary {
+    @apply text-primary;
+  }
+
+  .secondary {
+    @apply text-secondary;
+  } */
+}
