@@ -75,3 +75,89 @@ export const trustedLogosData = {
     },
   ],
 };
+
+// export python experts data
+export const pythonExpertsData = {
+  title: "Our Top Talent, Available for Hire",
+  subtitle: "180+ Python projects done. Get the best Tech support",
+  experts: [
+    {
+      name: "Mehul",
+      role: "Lead Python Architect",
+      image: `${cdnImage}landing/images/python-ppc/neel.png`,
+      experience: "15+ Years",
+      availability: "Full-time",
+      projects: "10+ Projects",
+      description:
+        "Mehul is a certified expert in AI-driven data analysis and scalable cloud solutions, with proven delivery across FinTech, Data Science, and Gaming domains.",
+      expertIn: ["Dash", "Pandas", "NumPy", "TensorFlow"],
+      alsoSkilledIn: ["Django", "Flask", "AI/ML", "DevOps"],
+      workedWith: [
+        {
+          name: "Company1",
+          logo: `${cdnImage}main-boot-5/images/python-ppc/bangkok-bank.png`,
+        },
+        {
+          name: "Company2",
+          logo: `${cdnImage}main-boot-5/images/python-ppc/wizkids.png`,
+        },
+        {
+          name: "Company3",
+          logo: `${cdnImage}main-boot-5/images/python-ppc/verizon.png`,
+        },
+      ],
+    },
+    {
+      name: "Uttam",
+      role: "Senior Python Architect",
+      image: `${cdnImage}landing/images/python-ppc/uttam.png`,
+      experience: "12+ Years",
+      availability: "Full-time",
+      projects: "9+ Projects",
+      description:
+        "Uttam specializes in Python automation, OCR, and text analysis for mobile and enterprise platforms, with solid backend and database expertise.",
+      expertIn: ["Flask", "Openpyxl", "Django"],
+      alsoSkilledIn: ["Selenium", "Robot Framework", "pytest", "AI"],
+      workedWith: [
+        {
+          name: "Company4",
+          logo: `${cdnImage}main-boot-5/images/python-ppc/renault.png`,
+        },
+        {
+          name: "Company5",
+          logo: `${cdnImage}main-boot-5/images/python-ppc/infosys.png`,
+        },
+        {
+          name: "Company6",
+          logo: `${cdnImage}main-boot-5/images/python-ppc/3m.png`,
+        },
+      ],
+    },
+    {
+      name: "Neel",
+      role: "Senior Python Developer",
+      image: `${cdnImage}landing/images/python-ppc/hire-dev-4.png`,
+      experience: "8+ Years",
+      availability: "Full-time",
+      projects: "6+ Projects",
+      description:
+        "Neel delivers AI-ready Python services using FastAPI, Flask, and Scrapy. He builds intelligent data pipelines and workflows for cloud-native apps.",
+      expertIn: ["FastAPI", "Pandas", "Scikit-learn", "Keras"],
+      alsoSkilledIn: ["AppSync", "Amazon AI Services", "Django", "GCP"],
+      workedWith: [
+        {
+          name: "Company7",
+          logo: `${cdnImage}main-boot-5/images/python-ppc/disney.png`,
+        },
+        {
+          name: "Company8",
+          logo: `${cdnImage}main-boot-5/images/python-ppc/national.png`,
+        },
+        {
+          name: "Company9",
+          logo: `${cdnImage}main-boot-5/images/python-ppc/kpmg.png`,
+        },
+      ],
+    },
+  ],
+};
