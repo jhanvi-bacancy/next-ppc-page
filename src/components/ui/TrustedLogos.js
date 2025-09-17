@@ -8,8 +8,8 @@ export function TrustedLogos({ data, className }) {
   const { logos } = data;
 
   return (
-    <section className={cn("w-[85%] mx-auto", className)}>
-      <div className="container mx-auto px-4">
+    <section className={cn("", className)}>
+      <div className="container w-[85%] mx-auto px-4">
         <div className="text-center mb-6 w-5/6 mx-auto">
           <HeadingH2>
             Winning The Trust Of{" "}

@@ -7,7 +7,7 @@ export default function PythonPage() {
     <div>
       <BannerWithList data={pythonBannerData} className="py-lg" />
       {/* Add other page content here */}
-      <TrustedLogos data={trustedLogosData} className="py-lg" />
+      <TrustedLogos data={trustedLogosData} className="py-lg bg-gray-light" />
     </div>
   );
 }
