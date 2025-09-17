@@ -22,87 +22,79 @@ export function BannerWithList({ data }) {
     const cdnImage = process.env.NEXT_PUBLIC_IMG_URL;
 
     return (
-        <section className="relative min-h-screen flex items-center py-16 px-4 overflow-hidden">
+        <section className="bg-dark mt-97 py-98 flex items-center relative min-h-banner-height">
             {/* Background Image */}
-            <figure className="absolute inset-0 w-full h-full">
-                <Image
-                    src={`${cdnImage}${backgroundImage}`}
-                    alt="Banner background"
-                    fill
-                    className="object-cover"
-                    priority
-                />
-            </figure>
+            <Image 
+                src={`${cdnImage}${backgroundImage}`}
+                alt="Banner background"
+                width={1900}
+                height={900}
+                className="absolute inset-0 object-cover z-1 h-full w-full"
+                priority
+            />
 
             {/* Content */}
-            <div className="container mx-auto relative z-10">
-                <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-                    {/* Left Content */}
-                    <div className="flex-1 lg:max-w-2xl">
-                        <div className="space-y-6">
-                            {badge && (
-                                <div className="text-lg font-bold text-orange-500">
-                                    <span className="border-b-2 border-orange-500 pb-2">
-                                        {badge}
-                                    </span>
-                                </div>
-                            )}
-
-                            <HeadingH1
-                                color="white"
-                                className="font-bold leading-tight"
-                            >
-                                {title.text} <span className="text-orange-500">{title.highlight}</span> {title.suffix}
-                            </HeadingH1>
-
-                            <ParagraphElement
-                                color="white"
-                                className="text-xl leading-relaxed max-w-3xl"
-                            >
-                                {description}
-                            </ParagraphElement>
-
-                            {ctaButton && (
-                                <Link
-                                    href={ctaButton.href}
-                                    target={ctaButton.target || "_self"}
-                                    className="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-semibold py-4 px-8 rounded-lg transition-colors duration-200 uppercase tracking-wide"
-                                >
-                                    {ctaButton.icon && (
-                                        <Image
-                                            src={`${cdnImage}${ctaButton.icon}`}
-                                            alt="icon"
-                                            width={20}
-                                            height={20}
-                                            className="mr-2"
-                                        />
-                                    )}
-                                    {ctaButton.text}
-                                </Link>
-                            )}
+            <div className="grid gap-6 grid-cols-1 lg:grid-cols-5 relative z-10 container white items-center">
+                {/* Left Content */}
+                <div className="lg:col-span-3">
+                    {badge && (
+                        <div className="mb-5">
+                            <span className="border-b-2 border-orange-500 pb-2">
+                                {badge}
+                            </span>
                         </div>
-                    </div>
+                    )}
 
-                    {/* Right Content - Stats List */}
-                    <div className="w-full lg:w-auto lg:max-w-md">
-                        <div className="space-y-6">
-                            {statsList.map((stat, index) => (
-                                <div key={index} className="flex items-center space-x-4 p-4 bg-gray-800 bg-opacity-50 rounded-lg backdrop-blur-sm">
-                                    <div className="flex-shrink-0">
-                                        <Image
-                                            src={`${cdnImage}${stat.icon}`}
-                                            alt={stat.text}
-                                            width={40}
-                                            height={40}
-                                            className="w-10 h-10"
-                                        />
-                                    </div>
-                                    <div className="text-lg font-semibold text-white">
-                                        {stat.text}
-                                    </div>
-                                </div>
-                            ))}
+                    <HeadingH1 className="text-h2  font-bold">
+                        {title.text} <span className="text-orange-500">{title.highlight}</span> {title.suffix}
+                    </HeadingH1>
+
+                    <ParagraphElement color="white" className="text-base">
+                        {description}
+                    </ParagraphElement>
+
+                    {ctaButton && (
+                        <div className="flex gap-6 flex-wrap">
+                            <Link
+                                href={ctaButton.href}
+                                target={ctaButton.target || "_self"}
+                                className="w-full sm:w-auto px-4 py-2 hover:bg-primary uppercase text-center inline-flex items-center justify-center transition-all ease-in delay-75 bg-primary white hover:bg-primary-hover"
+                            >
+                                {ctaButton.icon && (
+                                    <Image
+                                        src={`${cdnImage}${ctaButton.icon}`}
+                                        alt="icon"
+                                        width={20}
+                                        height={20}
+                                        className="mr-2"
+                                    />
+                                )}
+                                {ctaButton.text}
+                            </Link>
                         </div>
+                    )}
+
+                   
+                </div>
+
+                {/* Right Content - Image */}
+                <div className="lg:col-span-2 lg:block hidden">
+                     {/* Stats Grid */}
+                     <div className="">
+                        {statsList.map((stat, index) => (
+                            <div key={index} className="flex items-center space-x-4 p-4 bg-gray-800 bg-opacity-50 rounded-lg backdrop-blur-sm mb-4">
+                                <div className=" mr-2">
+                                    <Image
+                                        src={`${cdnImage}${stat.icon}`}
+                                        alt={stat.text}
+                                        width={40}
+                                        height={40}
+                                        className="w-10 h-10"
+                                    />
+                                </div>
+                                <p className="text-base w-3/4">{stat.text}</p>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
