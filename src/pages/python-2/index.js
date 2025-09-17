@@ -1,13 +1,13 @@
 import React from "react";
-import { BannerWithList } from "../../components/ui/banner";
-import { pythonBannerData } from "./data";
-
+import { BannerWithList, TrustedLogos } from "../../components/ui";
+import { pythonBannerData, trustedLogosData } from "./data";
 
 export default function PythonPage() {
-    return (
-        <div>
-            <BannerWithList data={pythonBannerData} />
-            {/* Add other page content here */}
-        </div>
-    );
+  return (
+    <div>
+      <BannerWithList data={pythonBannerData} />
+      {/* Add other page content here */}
+      <TrustedLogos data={trustedLogosData} />
+    </div>
+  );
 }

@@ -1,0 +1,45 @@
+import React from "react";
+import { HeadingH2, HeadingH3 } from "./typography";
+import Image from "next/image";
+
+// Responsive grid of trusted company logos shown under the banner
+export function TrustedLogos({ data }) {
+  const { logos } = data;
+
+  return (
+    <section className="w-[85%] mx-auto py-lg">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-6 w-5/6 mx-auto">
+          <HeadingH2>
+            Winning The Trust Of{" "}
+            <span className="text-primary">100+ NASDAQ & NYSE</span> Listed
+            Companies And Fast-Growing Startups
+          </HeadingH2>
+          <HeadingH3
+            color="primary"
+            className="text-sm sm:text-base text-primary mt-2"
+          >
+            Join Us to Build Your Idea into Reality
+          </HeadingH3>
+        </div>
+
+        <div className="w-5/6 mx-auto rounded-2xl border-2 border-gray-200/70 p-sm sm:p-6">
+          <ul className="flex flex-wrap justify-center items-center gap-8">
+            {logos.map((logo, index) => (
+              <li key={index} className="flex items-center justify-center">
+                {/* As requested, use # for src attribute */}
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="!h-svg-icon !w-svg-icon sm:h-10 md:h-12 object-contain opacity-90 hover:opacity-100 transition-opacity"
+                  width={150}
+                  height={200}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+}
