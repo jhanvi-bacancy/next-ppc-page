@@ -1,13 +1,14 @@
 import React from "react";
 import { HeadingH2, HeadingH3 } from "./typography";
 import Image from "next/image";
+import { cn } from "../../lib/utils";
 
 // Responsive grid of trusted company logos shown under the banner
-export function TrustedLogos({ data }) {
+export function TrustedLogos({ data, className }) {
   const { logos } = data;
 
   return (
-    <section className="w-[85%] mx-auto py-lg">
+    <section className={cn("w-[85%] mx-auto", className)}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-6 w-5/6 mx-auto">
           <HeadingH2>

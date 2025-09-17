@@ -10,9 +10,10 @@ import {
   HeadingH6,
   ParagraphElement,
 } from "./typography";
+import { cn } from "../../lib/utils";
 
 // Banner with list component
-export function BannerWithList({ data }) {
+export function BannerWithList({ data, className }) {
   const { backgroundImage, badge, title, description, ctaButton, statsList } =
     data;
 
@@ -20,7 +21,7 @@ export function BannerWithList({ data }) {
   const cdnImage = process.env.NEXT_PUBLIC_IMG_URL;
 
   return (
-    <section className="bg-dark mt-97 py-lg flex items-center relative min-h-banner-height">
+    <section className={cn("bg-dark mt-97 py-lg flex items-center relative min-h-banner-height", className)}>
       {/* Background Image */}
       <Image
         src={`${cdnImage}${backgroundImage}`}

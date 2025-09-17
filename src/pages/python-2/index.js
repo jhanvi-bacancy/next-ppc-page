@@ -5,9 +5,9 @@ import { pythonBannerData, trustedLogosData } from "./data";
 export default function PythonPage() {
   return (
     <div>
-      <BannerWithList data={pythonBannerData} />
+      <BannerWithList data={pythonBannerData} className="py-lg" />
       {/* Add other page content here */}
-      <TrustedLogos data={trustedLogosData} />
+      <TrustedLogos data={trustedLogosData} className="py-lg" />
     </div>
   );
 }
