@@ -25,7 +25,12 @@ export function PricingSection({ className, data }) {
           {data.plans.map((plan, index) => (
             <div
               key={index}
-              className={cn("", index === 1 ? "lg:mt-0" : "lg:mt-6")}
+              className={cn(
+                "",
+                index === 1
+                  ? "lg:mt-0 shadow-[0px_0.625vw_1.25vw_#00000029] rounded-xl"
+                  : "lg:mt-6"
+              )}
             >
               <PricingCard
                 highlighted={plan.highlighted}
