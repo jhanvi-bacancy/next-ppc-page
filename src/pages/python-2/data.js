@@ -115,7 +115,7 @@ export const pythonExpertsData = {
       availability: "Full-time",
       projects: "9+ Projects",
       description:
-        "Uttam specializes in Python automation, OCR, and text analysis for mobile and enterprise platforms, with solid backend and database expertise.",
+        "Uttam specializes in Python automation, OCR, and text analysis for mobile and enterprise platforms, with solid backend and database expertise. ",
       expertIn: ["Flask", "Openpyxl", "Django"],
       alsoSkilledIn: ["Selenium", "Robot Framework", "pytest", "AI"],
       workedWith: [
@@ -136,7 +136,7 @@ export const pythonExpertsData = {
     {
       name: "Neel",
       role: "Senior Python Developer",
-      image: `${cdnImage}landing/images/python-ppc/hire-dev-4.png`,
+      image: `${cdnImage}landing/images/profile-client/hire-dev-4.png`,
       experience: "8+ Years",
       availability: "Full-time",
       projects: "6+ Projects",
@@ -156,6 +156,58 @@ export const pythonExpertsData = {
         {
           name: "Company9",
           logo: `${cdnImage}main-boot-5/images/python-ppc/kpmg.png`,
+        },
+      ],
+    },
+    {
+      name: "Krupa",
+      role: "Senior Python Developer",
+      image: `${cdnImage}landing/images/python-ppc/krupa.png`,
+      experience: "8+ Years",
+      availability: "Full-time",
+      projects: "6+ Projects",
+      description:
+        "Krupa focuses on ORM, data integration, and server-side logic, with a growing track record in ML projects across eCommerce and healthcare.",
+      expertIn: ["Neo4j", "TensorFlow", "Dash Framework"],
+      alsoSkilledIn: ["Postgres", "MySQL", "SQL", "Azure"],
+      workedWith: [
+        {
+          name: "Company10",
+          logo: `${cdnImage}main-boot-5/images/python-ppc/game-changer.png`,
+        },
+        {
+          name: "Company11",
+          logo: `${cdnImage}main-boot-5/images/python-ppc/acr.png`,
+        },
+        {
+          name: "Company12",
+          logo: `${cdnImage}main-boot-5/images/python-ppc/sami-aid.png`,
+        },
+      ],
+    },
+    {
+      name: "Viral",
+      role: "Senior Python Developer",
+      image: `${cdnImage}landing/images/python-ppc/viral.png`,
+      experience: "7+ Years",
+      availability: "Full-time",
+      projects: "4+ Projects",
+      description:
+        "Viral builds cloud-based backend systems for finance and telecom, integrating REST APIs, DevOps practices, and AI-enhanced architecture.",
+      expertIn: ["Django", "Seaborn", "XGBoost", "Scikitlearn"],
+      alsoSkilledIn: ["SQL Server", "Kubernetes", "Flask"],
+      workedWith: [
+        {
+          name: "Company13",
+          logo: `${cdnImage}main-boot-5/images/python-ppc/kpmg.png`,
+        },
+        {
+          name: "Company14",
+          logo: `${cdnImage}main-boot-5/images/python-ppc/bangkok-bank.png`,
+        },
+        {
+          name: "Company15",
+          logo: `${cdnImage}main-boot-5/images/python-ppc/franklin.png`,
         },
       ],
     },

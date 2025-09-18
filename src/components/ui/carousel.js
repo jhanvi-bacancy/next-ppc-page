@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { HeadingH2, HeadingH4 } from "./typography";
 import { cn } from "../../lib/utils";
@@ -6,8 +6,174 @@ import { cn } from "../../lib/utils";
 const cdnImage = process.env.NEXT_PUBLIC_IMG_URL;
 
 export function ExpertCarousel({ title, subtitle, experts, className }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const carouselRef = useRef(null);
+  const containerRef = useRef(null);
+
+  const cardsPerPage = 3;
+  const maxIndex = experts.length - cardsPerPage; // Maximum scroll position (for single card scrolling)
+  const totalPages = Math.ceil(experts.length / cardsPerPage);
+
+  // Handle mouse drag functionality
+  const handleMouseDown = (e) => {
+    if (!containerRef.current) return;
+    setIsDragging(true);
+    setStartX(e.pageX);
+
+    // Get current scroll position from transform
+    const gridContainer = containerRef.current.querySelector("div");
+    if (gridContainer) {
+      const transform = gridContainer.style.transform || "translateX(0%)";
+      const currentPosition =
+        parseFloat(transform.replace(/[^0-9.-]/g, "")) || 0;
+      setScrollLeft(currentPosition);
+    }
+
+    containerRef.current.style.cursor = "grabbing";
+    containerRef.current.style.userSelect = "none";
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+    if (containerRef.current) {
+      containerRef.current.style.cursor = "grab";
+      containerRef.current.style.userSelect = "auto";
+    }
+  };
+
+  const snapToNearestCard = () => {
+    if (!containerRef.current) return;
+
+    const gridContainer = containerRef.current.querySelector("div");
+    if (gridContainer) {
+      const transform = gridContainer.style.transform || "translateX(0%)";
+      const currentPosition =
+        parseFloat(transform.replace(/[^0-9.-]/g, "")) || 0;
+
+      // Find nearest page (set of 3 cards)
+      const nearestPage = Math.round(currentPosition / 100);
+      const newIndex = nearestPage * 3;
+      const clampedIndex = Math.min(maxIndex, newIndex);
+
+      // Update both index and transform
+      setCurrentIndex(clampedIndex);
+      const newPosition = nearestPage * 100;
+      gridContainer.style.transform = `translateX(-${newPosition}%)`;
+      setScrollLeft(newPosition);
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+    if (containerRef.current) {
+      containerRef.current.style.cursor = "grab";
+      containerRef.current.style.userSelect = "auto";
+      snapToNearestCard();
+    }
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging || !containerRef.current) return;
+    e.preventDefault();
+
+    const currentX = e.pageX;
+    const diff = startX - currentX;
+    const containerWidth = containerRef.current.offsetWidth;
+
+    // Calculate scroll position as a percentage of container width
+    const scrollPercentage = (diff / containerWidth) * 100;
+    const newPosition = scrollLeft + scrollPercentage;
+
+    // Update transform directly for smooth scrolling
+    const gridContainer = containerRef.current.querySelector("div");
+    if (gridContainer) {
+      const clampedPosition = Math.max(
+        0,
+        Math.min(maxIndex * 33.333, newPosition)
+      );
+      gridContainer.style.transform = `translateX(-${clampedPosition}%)`;
+    }
+  };
+
+  // Touch support for mobile
+  const handleTouchStart = (e) => {
+    if (!containerRef.current) return;
+    setIsDragging(true);
+    setStartX(e.touches[0].pageX);
+
+    // Get current scroll position from transform
+    const gridContainer = containerRef.current.querySelector("div");
+    if (gridContainer) {
+      const transform = gridContainer.style.transform || "translateX(0%)";
+      const currentPosition =
+        parseFloat(transform.replace(/[^0-9.-]/g, "")) || 0;
+      setScrollLeft(currentPosition);
+    }
+  };
+
+  const handleTouchMove = (e) => {
+    if (!isDragging || !containerRef.current) return;
+
+    const currentX = e.touches[0].pageX;
+    const diff = startX - currentX;
+    const containerWidth = containerRef.current.offsetWidth;
+
+    // Calculate scroll position as a percentage of container width
+    const scrollPercentage = (diff / containerWidth) * 100;
+    const newPosition = scrollLeft + scrollPercentage;
+
+    // Update transform directly for smooth scrolling
+    const gridContainer = containerRef.current.querySelector("div");
+    if (gridContainer) {
+      const clampedPosition = Math.max(
+        0,
+        Math.min(maxIndex * 33.333, newPosition)
+      );
+      gridContainer.style.transform = `translateX(-${clampedPosition}%)`;
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+    snapToNearestCard();
+  };
+
+  // Handle pagination click - jump to page (3 cards at a time)
+  const handlePageClick = (pageIndex) => {
+    const newIndex = pageIndex * 3; // Move by sets of 3
+    const position = pageIndex * 100; // Each page is 100% width
+
+    // Update both index and transform
+    setCurrentIndex(newIndex);
+
+    const gridContainer = containerRef.current?.querySelector("div");
+    if (gridContainer) {
+      gridContainer.style.transform = `translateX(-${position}%)`;
+      setScrollLeft(position);
+    }
+  };
+
+  // Get current page experts (3 consecutive cards from currentIndex)
+  const getCurrentPageExperts = () => {
+    const startIndex = currentIndex;
+    const endIndex = startIndex + cardsPerPage;
+    return experts.slice(startIndex, endIndex);
+  };
+
   return (
     <section className={cn("", className)}>
+      <style jsx>{`
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
       <div className="container mx-auto px-4">
         {/* Heading Section */}
         <div className="text-center mb-12">
@@ -15,110 +181,181 @@ export function ExpertCarousel({ title, subtitle, experts, className }) {
           <HeadingH4 className="">{subtitle}</HeadingH4>
         </div>
 
-        {/* Experts Grid/Carousel */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {experts.map((expert, index) => (
+        {/* Carousel Container */}
+        <div className="relative">
+          <div className="overflow-hidden">
             <div
-              key={index}
-              className="bg-white rounded-lg p-6 shadow-sm border border-gray-100"
+              ref={containerRef}
+              className="cursor-grab select-none overflow-hidden"
+              onMouseDown={handleMouseDown}
+              onMouseLeave={handleMouseLeave}
+              onMouseUp={handleMouseUp}
+              onMouseMove={handleMouseMove}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
             >
-              {/* Expert Header */}
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-16 h-16 rounded-full overflow-hidden relative">
-                  <Image
-                    src={expert.image}
-                    alt={expert.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold">{expert.name}</h3>
-                  <p className="text-gray-600">{expert.role}</p>
-                </div>
-              </div>
-
-              {/* Stats Grid */}
-              <div className="grid grid-cols-3 gap-4 mb-4">
-                <div>
-                  <p className="font-bold">{expert.experience}</p>
-                  <p className="text-sm text-gray-600">Experience</p>
-                </div>
-                <div>
-                  <p className="font-bold">{expert.availability}</p>
-                  <p className="text-sm text-gray-600">Availability</p>
-                </div>
-                <div>
-                  <p className="font-bold">{expert.projects}</p>
-                  <p className="text-sm text-gray-600">Completed</p>
-                </div>
-              </div>
-
-              {/* Description */}
-              <p className="text-gray-600 mb-6">{expert.description}</p>
-
-              {/* Expert Skills */}
-              <div className="mb-4">
-                <div className="flex items-center gap-2 mb-3">
-                  <Image
-                    src={`${cdnImage}main-boot-5/images/laravel-ppc/ic_star.png`}
-                    alt="star"
-                    height={16}
-                    width={16}
-                  />
-                  <span className="font-medium">Expert in</span>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {expert.expertIn.map((skill, idx) => (
-                    <span
-                      key={idx}
-                      className="px-3 py-1 bg-orange-50 text-orange-700 rounded-md text-sm"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Additional Skills */}
-              <div className="mb-4">
-                <p className="font-medium mb-3">Also Skilled in</p>
-                <div className="flex flex-wrap gap-2">
-                  {expert.alsoSkilledIn.map((skill, idx) => (
-                    <span
-                      key={idx}
-                      className="px-3 py-1 bg-gray-100 text-gray-700 rounded-md text-sm"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Worked With */}
-              <div className="mb-6">
-                <p className="font-medium mb-3">Worked With</p>
-                <div className="flex gap-4">
-                  {expert.workedWith.map((company, idx) => (
-                    <div key={idx} className="relative h-8 w-20">
-                      <Image
-                        src={company.logo}
-                        alt={company.name}
-                        fill
-                        className="object-contain"
-                      />
+              {/* Show all cards in a row */}
+              <div className="flex gap-6 transition-transform duration-[1500ms] ease-out">
+                {experts.map((expert, index) => (
+                  <div
+                    key={index}
+                    className="bg-gray-light rounded-lg p-6 shadow-sm border border-gray-200 flex-shrink-0"
+                    style={{ width: "calc((100% - 48px) / 3)" }} // Width for 3 cards with gaps
+                  >
+                    {/* Expert Header */}
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-16 h-16 rounded-full overflow-hidden relative flex-shrink-0">
+                        <Image
+                          src={expert.image}
+                          alt={expert.name}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="min-w-0">
+                        <h3 className="text-xl font-semibold text-gray-900 truncate">
+                          {expert.name}
+                        </h3>
+                        <p className="text-gray-600 text-sm truncate">
+                          {expert.role}
+                        </p>
+                      </div>
                     </div>
-                  ))}
-                </div>
-              </div>
 
-              {/* Hire Button */}
-              <button className="w-full bg-orange-500 text-white py-3 rounded-md hover:bg-orange-600 transition-colors">
-                HIRE {expert.name.toUpperCase()}
-              </button>
+                    {/* Stats Grid */}
+                    <div className="grid grid-cols-3 gap-2 mb-4">
+                      <div className="text-center">
+                        <p className="font-bold text-gray-900 text-sm !mb-0.5">
+                          {expert.experience}
+                        </p>
+                        <p className="text-xs text-gray-600 mb-0.5">
+                          Experience
+                        </p>
+                      </div>
+                      <div className="text-center">
+                        <p className="font-bold text-gray-900 text-sm !mb-0.5">
+                          {expert.availability}
+                        </p>
+                        <p className="text-xs text-gray-600 mb-0.5">
+                          Availability
+                        </p>
+                      </div>
+                      <div className="text-center">
+                        <p className="font-bold text-gray-900 text-sm !mb-0.5">
+                          {expert.projects}
+                        </p>
+                        <p className="text-xs text-gray-600 mb-0.5">
+                          Completed
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-gray-600 text-sm mb-4 leading-relaxed line-clamp-3">
+                      {expert.description}
+                    </p>
+
+                    {/* Expert Skills */}
+                    <div className="mb-4">
+                      <div className="flex items-center gap-2 mb-3">
+                        <Image
+                          src={`${cdnImage}main-boot-5/images/laravel-ppc/ic_star.png`}
+                          alt="star"
+                          height={16}
+                          width={16}
+                        />
+                        <span className="font-medium text-sm text-gray-900">
+                          Expert in
+                        </span>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {expert.expertIn.map((skill, idx) => (
+                          <span
+                            key={idx}
+                            className="px-3 py-1 bg-orange-50 text-orange-700 rounded-md text-xs font-medium border border-orange-200"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Additional Skills */}
+                    <div className="mb-4">
+                      <p className="font-medium mb-3 text-sm text-gray-900">
+                        Also Skilled in
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {expert.alsoSkilledIn.map((skill, idx) => (
+                          <span
+                            key={idx}
+                            className="px-3 py-1 bg-gray-100 text-gray-700 rounded-md text-xs"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Worked With */}
+                    <div className="mb-6">
+                      <p className="font-medium mb-3 text-sm text-gray-900">
+                        Worked With
+                      </p>
+                      <div className="flex gap-3 items-center">
+                        {expert.workedWith.map((company, idx) => (
+                          <div
+                            key={idx}
+                            className="relative h-9 w-9 flex-shrink-0"
+                          >
+                            <Image
+                              src={company.logo}
+                              alt={company.name}
+                              fill
+                              className="object-contain"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Hire Button */}
+                    <button className="w-full bg-primary text-white py-3 rounded-md hover:bg-orange-600 transition-colors font-normal text-md">
+                      HIRE {expert.name.toUpperCase()}
+                    </button>
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
+          </div>
         </div>
+
+        {/* Pagination Dots */}
+        {experts.length > 3 && (
+          <div className="flex justify-center items-center mt-8 gap-2">
+            {Array.from(
+              { length: Math.ceil(experts.length / 3) },
+              (_, index) => {
+                const isActivePage = Math.floor(currentIndex / 3) === index;
+
+                return (
+                  <button
+                    key={index}
+                    onClick={() => handlePageClick(index)}
+                    className={cn(
+                      "w-6 h-1 rounded-full transition-all duration-1000",
+                      isActivePage
+                        ? "bg-orange-500"
+                        : "bg-gray-300 hover:bg-gray-400"
+                    )}
+                    aria-label={`Go to page ${index + 1}`}
+                  />
+                );
+              }
+            )}
+          </div>
+        )}
       </div>
     </section>
   );
