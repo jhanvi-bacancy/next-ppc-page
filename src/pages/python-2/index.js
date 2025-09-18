@@ -3,8 +3,14 @@ import {
   BannerWithList,
   TrustedLogos,
   ExpertCarousel,
+  ServicesGrid,
 } from "../../components/ui";
-import { pythonBannerData, trustedLogosData, pythonExpertsData } from "./data";
+import {
+  pythonBannerData,
+  trustedLogosData,
+  pythonExpertsData,
+  pythonServicesGridData,
+} from "./data";
 
 export default function PythonPage() {
   return (
@@ -20,6 +26,12 @@ export default function PythonPage() {
         subtitle={pythonExpertsData.subtitle}
         experts={pythonExpertsData.experts}
         className="py-lg bg-white"
+      />
+
+      {/* Services Grid */}
+      <ServicesGrid
+        className="py-lg bg-gray-light"
+        data={pythonServicesGridData}
       />
     </div>
   );

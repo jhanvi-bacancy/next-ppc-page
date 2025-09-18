@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
 
   images: {
-    domains: ["assets.bacancytechnology.com"], // 👈 allow external images
+    domains: ["assets.bacancytechnology.com", "www.bacancytechnology.com"],
   },
 };
 

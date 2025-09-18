@@ -61,7 +61,7 @@ export function BannerWithList({ data, className }) {
               <Link
                 href={ctaButton.href}
                 target={ctaButton.target || "_self"}
-                className="w-full sm:w-auto px-4 py-2 hover:bg-primary uppercase text-center inline-flex items-center justify-center transition-all ease-in delay-75 bg-primary white hover:bg-primary-hover"
+                className="w-full sm:w-auto px-4 py-2 uppercase text-center inline-flex items-center justify-center transition-all ease-in delay-75 bg-primary white hover:bg-primary-hover"
               >
                 {ctaButton.icon && (
                   <Image

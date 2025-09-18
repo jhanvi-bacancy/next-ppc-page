@@ -104,7 +104,7 @@ export function ExpertCarousel({ title, subtitle, experts, className }) {
         <Slider {...sliderSettings}>
           {experts.map((expert, index) => (
             <div key={index} className="px-3">
-              <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-100">
+              <div className="bg-gray-light rounded-lg p-6 shadow-sm border border-gray-100">
                 {/* Expert Header */}
                 <div className="flex items-center gap-4 mb-9">
                   <div className="w-97 h-97 rounded-full overflow-hidden relative flex-shrink-0">

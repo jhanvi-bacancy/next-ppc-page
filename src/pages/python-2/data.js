@@ -213,3 +213,65 @@ export const pythonExpertsData = {
     },
   ],
 };
+
+// export python services grid data
+export const pythonServicesGridData = {
+  title: "Our Full Cycle Python Development Services",
+  services: [
+    {
+      icon: `${cdnImage}landing/images/tech-img/python-experties-1.svg`,
+      title: "Python AI and ML Services",
+      alt: "Python AI and ML",
+    },
+    {
+      icon: `${cdnImage}landing/images/services-icon/app-development.svg`,
+      title: "Python Mobile App Development",
+      alt: "Python Mobile Development",
+    },
+    {
+      icon: `${cdnImage}landing/images/services-icon/front-end.svg`,
+      title: "Custom Python App Development",
+      alt: "Custom Python Development",
+    },
+    {
+      icon: `${cdnImage}landing/images/services-icon/application-development.svg`,
+      title: "Python Web Application Development",
+      alt: "Python Web Development",
+    },
+    {
+      icon: `${cdnImage}landing/images/services-icon/consulting-2.svg`,
+      title: "Enterprise App Development",
+      alt: "Enterprise Development",
+    },
+    {
+      icon: `${cdnImage}landing/images/services-icon/migration.svg`,
+      title: "Python Migration and Upgradation",
+      alt: "Python Migration",
+    },
+    {
+      icon: `${cdnImage}landing/images/services-icon/maintance-support.svg`,
+      title: "Python Support & Maintenance",
+      alt: "Python Support",
+    },
+    {
+      icon: `${cdnImage}landing/images/tech-img/python-experties-6.svg`,
+      title: "Python Framework Development",
+      alt: "Python Framework",
+    },
+  ],
+  additionalServices: [
+    "Python Testing & QA Services",
+    "Python Integration Services",
+    "Back-end Development",
+    "Data Migration",
+    "API Development",
+    "Python CMS Development",
+    "Cloud-Based Development",
+  ],
+  ctaButton: {
+    text: "Schedule a Discovery Call",
+    href: "https://calendly.com/americas-3/30min?_gl=1*11z2jzn*_gcl_au*MjYzMjE4MzIzLjE3NTcwNjUyNjk.*_ga*MTMwNjQxMjg5NS4xNzQ4ODQyMDM5*_ga_5ZSTFLNPDY*czE3NTgxODgwMjAkbzIxJGcxJHQxNzU4MTg5NzIyJGo2MCRsMCRoMTIwODY4MzY2Nw..",
+    target: "_blank",
+    icon: "landing/images/icons/calendar.svg",
+  },
+};
