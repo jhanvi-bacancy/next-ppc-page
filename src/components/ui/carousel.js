@@ -5,10 +5,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {
   HeadingH2,
-  HeadingH3,
   HeadingH4,
   HeadingH6,
-  HeadingH5,
   ParagraphElement,
 } from "./typography";
 import { cn } from "../../lib/utils";

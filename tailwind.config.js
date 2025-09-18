@@ -44,6 +44,7 @@ module.exports = {
         transparent: "transparent",
         alert: "#b9d1f5",
         dangerbg: "#efaeb4",
+        "primary-light": "#FFDCBE",
       },
       backgroundImage: {
         arrowdownOrange: `url('https://assets.bacancytechnology.com/main-boot-5/images/tailwind/images/down-arrow-orange.svg')`,

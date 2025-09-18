@@ -275,3 +275,61 @@ export const pythonServicesGridData = {
     icon: "landing/images/icons/calendar.svg",
   },
 };
+
+// export pricing section data
+export const pythonPricingData = {
+  title:
+    "Developer Hiring Made Simple: Hourly, Monthly or Fixed Cost Based on Your Needs",
+  subtitle:
+    "Simple & Transparent Pricing | Time-Zone Aligned | Code Security | Cut Costs By 40%",
+  plans: [
+    {
+      title: "Hourly",
+      price: "22",
+      currency: "USD",
+      features: [
+        "Usage-based billing",
+        "Dedicated Developer in Your Time-zone",
+        "Interview before Hiring",
+        "100% QA & DevOps",
+      ],
+      ctaButton: {
+        text: "Get Started on Hourly Basis",
+        href: "#form",
+        target: "_blank",
+      },
+    },
+    {
+      title: "Monthly",
+      price: "3200",
+      currency: "USD",
+      features: [
+        "160 Working Hours",
+        "15 Days Free Trial",
+        "Interview before Hiring",
+        "Dedicated PM Support",
+        "5+ Yrs Senior Python Developer",
+      ],
+      ctaButton: {
+        text: "Get Started on Monthly Basis",
+        href: "#form",
+        target: "_blank",
+      },
+      highlighted: true,
+    },
+    {
+      title: "Fixed Cost Solution",
+      features: [
+        "Get a Free Quote",
+        "Fully Signed NDA",
+        "Design, Develop, Maintain & Scale",
+        "100% QA & DevOps",
+      ],
+      ctaButton: {
+        text: "Get a Free Estimate",
+        href: "#form",
+        target: "_blank",
+      },
+    },
+  ],
+};

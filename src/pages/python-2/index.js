@@ -10,7 +10,9 @@ import {
   trustedLogosData,
   pythonExpertsData,
   pythonServicesGridData,
+  pythonPricingData,
 } from "./data";
+import { PricingSection } from "@/components/pricing";
 
 export default function PythonPage() {
   return (
@@ -33,6 +35,9 @@ export default function PythonPage() {
         className="py-lg bg-gray-light"
         data={pythonServicesGridData}
       />
+
+      {/* Pricing Section */}
+      <PricingSection data={pythonPricingData} className="py-lg bg-white" />
     </div>
   );
 }

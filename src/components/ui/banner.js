@@ -1,15 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { Button } from "./button";
-import {
-  HeadingH1,
-  HeadingH2,
-  HeadingH3,
-  HeadingH4,
-  HeadingH5,
-  HeadingH6,
-  ParagraphElement,
-} from "./typography";
+import { HeadingH1, ParagraphElement } from "./typography";
 import { cn } from "../../lib/utils";
 
 // Banner with list component
