@@ -41,24 +41,13 @@ export function ExpertCarousel({ title, subtitle, experts, className }) {
       },
     ],
     appendDots: (dots) => (
-      <div style={{ width: "100%" }}>
+      <div className="w-full">
         <ul className="flex justify-center items-center gap-2">{dots}</ul>
       </div>
     ),
     customPaging: (i) => (
       <button
-        style={{
-          width: "24px",
-          height: "4px",
-          padding: 0,
-          margin: 0,
-          border: "none",
-          borderRadius: "0px",
-          transition: "all 0.3s ease",
-          backgroundColor: "#dadada",
-          cursor: "pointer",
-        }}
-        className="!bg-[#dadada] hover:!bg-[#b8b8b8]"
+        className="w-6 h-1 p-0 m-0 border-0 rounded-none transition-all duration-300 ease-in-out cursor-pointer bg-[#D1D5DB] hover:bg-gray-400 [&.slick-active]:!bg-[#f58220]"
         aria-label={`Go to page ${i + 1}`}
       />
     ),
@@ -85,22 +74,23 @@ export function ExpertCarousel({ title, subtitle, experts, className }) {
           height: 4px;
           padding: 0;
         }
-        .slick-dots li {
-          margin: 0 4px;
+        .slick-dots {
+          @apply mt-16;
         }
-        .slick-dots li button {
-          background-color: #dadada !important;
+        .slick-dots li {
+          @apply mx-1;
           opacity: 1 !important;
         }
-        .slick-dots li button:before {
-          display: none !important;
-          content: none !important;
+        .slick-dots li button {
+          @apply opacity-100;
+          background-color: #d1d5db !important;
         }
-        .slick-dots li button:hover {
-          background-color: #b8b8b8 !important;
+        .slick-dots li button:before {
+          @apply hidden;
+          content: none;
         }
         .slick-dots li.slick-active button {
-          background-color: #f97316 !important;
+          background-color: #f58220 !important;
         }
       `}</style>
       <div className="container mx-auto px-20">
