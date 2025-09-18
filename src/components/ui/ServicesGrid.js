@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { HeadingH2, HeadingH6 } from "./typography";
+import { Button } from "./button";
 import { cn } from "../../lib/utils";
 
 export function ServicesGrid({ className, data }) {
@@ -57,13 +57,17 @@ export function ServicesGrid({ className, data }) {
 
               {data.ctaButton && (
                 <div className="flex gap-6 flex-wrap">
-                  <Link
+                  <Button
                     href={data.ctaButton.href}
                     target={data.ctaButton.target || "_self"}
-                    className="w-full sm:w-auto px-4 py-2 uppercase text-center inline-flex items-center justify-center transition-all ease-in delay-75 bg-primary white hover:bg-primary-hover"
+                    variant="filled"
+                    size="md"
+                    uppercase
+                    fullWidth
+                    className="sm:w-auto font-normal"
                   >
                     {data.ctaButton.text}
-                  </Link>
+                  </Button>
                 </div>
               )}
             </div>

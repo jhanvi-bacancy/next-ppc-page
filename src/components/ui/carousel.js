@@ -12,6 +12,7 @@ import {
   ParagraphElement,
 } from "./typography";
 import { cn } from "../../lib/utils";
+import { Button } from "./button";
 
 const cdnImage = process.env.NEXT_PUBLIC_IMG_URL;
 
@@ -224,9 +225,9 @@ export function ExpertCarousel({ title, subtitle, experts, className }) {
                 </div>
 
                 {/* Hire Button */}
-                <button className="w-full bg-primary text-white py-3 rounded-md hover:bg-orange-600 transition-colors font-normal text-sm">
+                <Button className="w-full bg-primary text-white py-3 rounded-md hover:bg-primary transition-colors font-normal text-sm">
                   HIRE {expert.name.toUpperCase()}
-                </button>
+                </Button>
               </div>
             </div>
           ))}

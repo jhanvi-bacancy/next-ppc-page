@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { Button } from "./button";
 import {
   HeadingH1,
   HeadingH2,
@@ -21,7 +21,12 @@ export function BannerWithList({ data, className }) {
   const cdnImage = process.env.NEXT_PUBLIC_IMG_URL;
 
   return (
-    <section className={cn("bg-dark mt-97 py-lg flex items-center relative min-h-banner-height", className)}>
+    <section
+      className={cn(
+        "bg-dark mt-97 py-lg flex items-center relative min-h-banner-height",
+        className
+      )}
+    >
       {/* Background Image */}
       <Image
         src={`${cdnImage}${backgroundImage}`}
@@ -58,10 +63,14 @@ export function BannerWithList({ data, className }) {
 
           {ctaButton && (
             <div className="flex gap-6 flex-wrap">
-              <Link
+              <Button
                 href={ctaButton.href}
                 target={ctaButton.target || "_self"}
-                className="w-full sm:w-auto px-4 py-2 uppercase text-center inline-flex items-center justify-center transition-all ease-in delay-75 bg-primary white hover:bg-primary-hover"
+                variant="filled"
+                size="md"
+                uppercase
+                fullWidth
+                className="sm:w-auto font-normal"
               >
                 {ctaButton.icon && (
                   <Image
@@ -73,7 +82,7 @@ export function BannerWithList({ data, className }) {
                   />
                 )}
                 {ctaButton.text}
-              </Link>
+              </Button>
             </div>
           )}
         </div>
