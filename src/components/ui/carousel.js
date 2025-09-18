@@ -1,6 +1,13 @@
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import { HeadingH2, HeadingH4 } from "./typography";
+import {
+  HeadingH2,
+  HeadingH3,
+  HeadingH4,
+  HeadingH6,
+  HeadingH5,
+  ParagraphElement,
+} from "./typography";
 import { cn } from "../../lib/utils";
 
 const cdnImage = process.env.NEXT_PUBLIC_IMG_URL;
@@ -32,14 +39,14 @@ export function ExpertCarousel({ title, subtitle, experts, className }) {
       setScrollLeft(currentPosition);
     }
 
-    containerRef.current.style.cursor = "grabbing";
+    containerRef.current.style.cursor = "default";
     containerRef.current.style.userSelect = "none";
   };
 
   const handleMouseLeave = () => {
     setIsDragging(false);
     if (containerRef.current) {
-      containerRef.current.style.cursor = "grab";
+      containerRef.current.style.cursor = "default";
       containerRef.current.style.userSelect = "auto";
     }
   };
@@ -69,7 +76,7 @@ export function ExpertCarousel({ title, subtitle, experts, className }) {
   const handleMouseUp = () => {
     setIsDragging(false);
     if (containerRef.current) {
-      containerRef.current.style.cursor = "grab";
+      containerRef.current.style.cursor = "default";
       containerRef.current.style.userSelect = "auto";
       snapToNearestCard();
     }
@@ -186,7 +193,7 @@ export function ExpertCarousel({ title, subtitle, experts, className }) {
           <div className="overflow-hidden">
             <div
               ref={containerRef}
-              className="cursor-grab select-none overflow-hidden"
+              className="cursor-default select-none overflow-hidden"
               onMouseDown={handleMouseDown}
               onMouseLeave={handleMouseLeave}
               onMouseUp={handleMouseUp}
@@ -204,8 +211,8 @@ export function ExpertCarousel({ title, subtitle, experts, className }) {
                     style={{ width: "calc((100% - 48px) / 3)" }} // Width for 3 cards with gaps
                   >
                     {/* Expert Header */}
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-16 h-16 rounded-full overflow-hidden relative flex-shrink-0">
+                    <div className="flex items-center gap-4 mb-9">
+                      <div className="w-97 h-97 rounded-full overflow-hidden relative flex-shrink-0">
                         <Image
                           src={expert.image}
                           alt={expert.name}
@@ -214,9 +221,9 @@ export function ExpertCarousel({ title, subtitle, experts, className }) {
                         />
                       </div>
                       <div className="min-w-0">
-                        <h3 className="text-xl font-semibold text-gray-900 truncate">
+                        <HeadingH6 className="truncate !mb-2">
                           {expert.name}
-                        </h3>
+                        </HeadingH6>
                         <p className="text-gray-600 text-sm truncate">
                           {expert.role}
                         </p>
@@ -224,90 +231,97 @@ export function ExpertCarousel({ title, subtitle, experts, className }) {
                     </div>
 
                     {/* Stats Grid */}
-                    <div className="grid grid-cols-3 gap-2 mb-4">
-                      <div className="text-center">
+                    <div className="grid grid-cols-3 gap-2 mb-9">
+                      <div className="text-left">
                         <p className="font-bold text-gray-900 text-sm !mb-0.5">
                           {expert.experience}
                         </p>
-                        <p className="text-xs text-gray-600 mb-0.5">
+                        <p className="text-sm text-gray-600 mb-0.5">
                           Experience
                         </p>
                       </div>
-                      <div className="text-center">
+                      <div className="text-left">
                         <p className="font-bold text-gray-900 text-sm !mb-0.5">
                           {expert.availability}
                         </p>
-                        <p className="text-xs text-gray-600 mb-0.5">
+                        <p className="text-sm text-gray-600 mb-0.5">
                           Availability
                         </p>
                       </div>
-                      <div className="text-center">
+                      <div className="text-left">
                         <p className="font-bold text-gray-900 text-sm !mb-0.5">
                           {expert.projects}
                         </p>
-                        <p className="text-xs text-gray-600 mb-0.5">
+                        <p className="text-sm text-gray-600 mb-0.5">
                           Completed
                         </p>
                       </div>
                     </div>
 
                     {/* Description */}
-                    <p className="text-gray-600 text-sm mb-4 leading-relaxed line-clamp-3">
+                    <p className="text-gray-600 text-sm !mb-9 leading-relaxed line-clamp-3">
                       {expert.description}
                     </p>
 
                     {/* Expert Skills */}
-                    <div className="mb-4">
-                      <div className="flex items-center gap-2 mb-3">
+                    <div className="mb-9">
+                      <span className="inline-flex items-center px-2 py-1 bg-dark text-white relative pr-3 text-sm">
                         <Image
                           src={`${cdnImage}main-boot-5/images/laravel-ppc/ic_star.png`}
                           alt="star"
-                          height={16}
+                          title="star"
                           width={16}
+                          height={16}
+                          className="mr-2 w-auto"
                         />
-                        <span className="font-medium text-sm text-gray-900">
-                          Expert in
-                        </span>
-                      </div>
-                      <div className="flex flex-wrap gap-2">
+                        <Image
+                          src={`${cdnImage}main-boot-5/images/laravel-ppc/holder.png`}
+                          alt="holder"
+                          width={8}
+                          height={24}
+                          className="absolute bottom-0 -right-2 top-0 w-auto"
+                        />
+                        Expert in
+                      </span>
+                      <ParagraphElement className="text-sm">
                         {expert.expertIn.map((skill, idx) => (
                           <span
                             key={idx}
-                            className="px-3 py-1 bg-orange-50 text-orange-700 rounded-md text-xs font-medium border border-orange-200"
+                            className="px-2 bg-orange-50 border border-orange-500 py-1 mr-2 mt-2 inline-block"
                           >
                             {skill}
                           </span>
                         ))}
-                      </div>
+                      </ParagraphElement>
                     </div>
 
                     {/* Additional Skills */}
-                    <div className="mb-4">
-                      <p className="font-medium mb-3 text-sm text-gray-900">
+                    <div className="mb-9">
+                      <span className="font-medium text-sm text-gray-900">
                         Also Skilled in
-                      </p>
-                      <div className="flex flex-wrap gap-2">
+                      </span>
+                      <ParagraphElement className="text-sm">
                         {expert.alsoSkilledIn.map((skill, idx) => (
                           <span
                             key={idx}
-                            className="px-3 py-1 bg-gray-100 text-gray-700 rounded-md text-xs"
+                            className="px-2 border py-1 mr-2 mt-2 inline-block"
                           >
                             {skill}
                           </span>
                         ))}
-                      </div>
+                      </ParagraphElement>
                     </div>
 
                     {/* Worked With */}
-                    <div className="mb-6">
-                      <p className="font-medium mb-3 text-sm text-gray-900">
+                    <div className="mb-9">
+                      <span className="font-medium text-sm text-gray-900">
                         Worked With
-                      </p>
-                      <div className="flex gap-3 items-center">
+                      </span>
+                      <ParagraphElement className="text-sm">
                         {expert.workedWith.map((company, idx) => (
-                          <div
+                          <span
                             key={idx}
-                            className="relative h-9 w-9 flex-shrink-0"
+                            className="relative h-9 w-9 flex-shrink-0 mr-2 mt-2 inline-block"
                           >
                             <Image
                               src={company.logo}
@@ -315,13 +329,13 @@ export function ExpertCarousel({ title, subtitle, experts, className }) {
                               fill
                               className="object-contain"
                             />
-                          </div>
+                          </span>
                         ))}
-                      </div>
+                      </ParagraphElement>
                     </div>
 
                     {/* Hire Button */}
-                    <button className="w-full bg-primary text-white py-3 rounded-md hover:bg-orange-600 transition-colors font-normal text-md">
+                    <button className="w-full bg-primary text-white py-3 rounded-md hover:bg-orange-600 transition-colors font-normal text-sm">
                       HIRE {expert.name.toUpperCase()}
                     </button>
                   </div>
