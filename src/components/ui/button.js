@@ -4,7 +4,7 @@ import { cva } from "class-variance-authority";
 import { cn } from "../../lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center transition-all duration-300 font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none",
+  "inline-flex items-center justify-center transition-all duration-300 font-semibold focus:outline-none disabled:opacity-50 disabled:pointer-events-none",
   {
     variants: {
       variant: {
@@ -24,8 +24,8 @@ const buttonVariants = cva(
       size: {
         sm: "text-sm px-3 py-1.5 rounded",
         md: "text-base px-4 py-2 rounded-md",
-        lg: "text-lg px-6 py-3 rounded-lg",
-        xl: "text-xl px-8 py-4 rounded-lg",
+        lg: "text-base px-6 py-3 rounded-lg",
+        xl: "text-lg px-8 py-4 rounded-lg",
       },
       fullWidth: {
         true: "w-full",

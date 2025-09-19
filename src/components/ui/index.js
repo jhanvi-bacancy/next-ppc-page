@@ -4,6 +4,7 @@ import { Typography } from "./typography";
 import { ExpertCarousel } from "./carousel";
 import { ServicesGrid } from "./ServicesGrid";
 import { Button } from "./button";
+import { Radio } from "./radio";
 
 export {
   BannerWithList,
@@ -12,4 +13,5 @@ export {
   ExpertCarousel,
   ServicesGrid,
   Button,
+  Radio,
 };

@@ -332,4 +332,21 @@ export const pythonPricingData = {
       },
     },
   ],
+  ctaButton: {
+    text: "Talk to Our Expert",
+    href: "#form",
+    target: "_blank",
+    icon: "landing/images/icons/calendar.svg",
+  },
+  options: {
+    title: "Let's Get Your Python Project Moving!",
+    subtitle: "Select what you need help with - we'll handle the rest.",
+    buttonText: "Submit My Requirements",
+    optionsList: [
+      { value: "outline", label: "Outline My Requirements" },
+      { value: "rfp", label: "Request For Proposal (RFP)" },
+      { value: "continue", label: "Continue My Existing Project" },
+      { value: "cv", label: "Request Developer CVs" },
+    ],
+  },
 };

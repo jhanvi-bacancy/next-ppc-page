@@ -56,9 +56,6 @@ export function ExpertCarousel({ title, subtitle, experts, className }) {
   return (
     <section className={cn("", className)}>
       <style jsx global>{`
-        .slick-slider {
-          margin-bottom: 80px;
-        }
         .slick-dots {
           position: static;
           margin-top: 16px;
