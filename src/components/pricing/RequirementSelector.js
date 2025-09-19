@@ -50,8 +50,7 @@ export function RequirementSelector({ className, onSubmit, options }) {
             type="submit"
             variant="filled"
             size="md"
-            disabled={!selectedOption}
-            className="px-8 w-full sm:w-auto"
+            className="px-8 w-full font-normal sm:w-auto"
           >
             {options.buttonText}
           </Button>

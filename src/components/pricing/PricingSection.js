@@ -33,7 +33,7 @@ export function PricingSection({ className, data }) {
             <div
               key={index}
               className={cn(
-                "px-0 md:px-3",
+                "px-0",
                 index === 1
                   ? "lg:mt-0 shadow-[0px_0.625vw_1.25vw_#00000029] rounded-xl"
                   : "lg:mt-6"

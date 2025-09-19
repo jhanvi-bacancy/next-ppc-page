@@ -4,6 +4,7 @@ import {
   TrustedLogos,
   ExpertCarousel,
   ServicesGrid,
+  ContactSection,
 } from "../../components/ui";
 import {
   pythonBannerData,
@@ -38,6 +39,8 @@ export default function PythonPage() {
 
       {/* Pricing Section */}
       <PricingSection data={pythonPricingData} className="py-lg bg-white" />
+
+      <ContactSection className="py-28" />
     </div>
   );
 }

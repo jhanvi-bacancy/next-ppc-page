@@ -5,6 +5,7 @@ import { ExpertCarousel } from "./carousel";
 import { ServicesGrid } from "./ServicesGrid";
 import { Button } from "./button";
 import { Radio } from "./radio";
+import { ContactSection } from "../contact";
 
 export {
   BannerWithList,
@@ -14,4 +15,5 @@ export {
   ServicesGrid,
   Button,
   Radio,
+  ContactSection,
 };
