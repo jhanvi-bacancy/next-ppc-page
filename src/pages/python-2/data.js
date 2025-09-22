@@ -277,6 +277,7 @@ export const pythonServicesGridData = {
 };
 
 // export pricing section data
+
 export const pythonPricingData = {
   title:
     "Developer Hiring Made Simple: Hourly, Monthly or Fixed Cost Based on Your Needs",
@@ -358,4 +359,129 @@ export const successBannerData = {
   description:
     "We accelerate the release of digital products and guarantee your success",
   tools: ["Slack", "Jira", "GitHub"],
+};
+
+// export technical expertise data
+export const technicalExpertiseData = {
+  title: "Technical Expertise of our Python Developer",
+  subtitle:
+    "Our Python Programmers use best-in-class tools, state-of-the-art technologies and modern approaches to scale up your business",
+  categories: [
+    {
+      title: "Frameworks",
+      items: [
+        "Django",
+        "Zope",
+        "Pyramid",
+        "Flask",
+        "Web2py",
+        "Tornado",
+        "Bottle",
+      ],
+    },
+    {
+      title: "Libraries",
+      items: [
+        "Fabric",
+        "Requests",
+        "Pika",
+        "Gdata",
+        "Urllib2",
+        "Pillow/PIL",
+        "wxPython",
+        "Scrapy",
+        "NetworkX",
+        "Pandas",
+      ],
+    },
+    {
+      title: "Tools & Utilities",
+      items: [
+        "Asyncio",
+        "NumPy",
+        "South",
+        "Beautiful Soap",
+        "Celery",
+        "Pycrypto",
+        "Factory Boy",
+        "Sqlalchemy",
+        "Gunicorn",
+        "PyQt",
+        "Virtualenv",
+        "Memcached",
+      ],
+    },
+    {
+      title: "Databases",
+      items: [
+        "MySQL",
+        "Oracle",
+        "SQLite",
+        "MS SQL",
+        "MongoDB",
+        "Postgress",
+        "Redis",
+      ],
+    },
+    {
+      title: "PM Tools",
+      items: ["Jira", "Trello", "Slack"],
+    },
+    {
+      title: "Testing",
+      items: ["Pytest"],
+    },
+    {
+      title: "ORMs",
+      items: ["SQLAlchemy"],
+    },
+    {
+      title: "General framework & Libraries",
+      items: ["Requests", "Pillow", "Scrapy"],
+    },
+    {
+      title: "Editors & IDEs",
+      items: [
+        "PyCharm Professional Edition",
+        "VS Code",
+        "PyCharm Community Edition",
+      ],
+    },
+    {
+      title: "CMS",
+      items: ["Wagtail"],
+    },
+    {
+      title: "Upgrade Services",
+      items: [
+        "3.5",
+        "3.6",
+        "3.7",
+        "3.8",
+        "3.9",
+        "3.10",
+        "3.11",
+        "3.12",
+        "3.13",
+      ],
+    },
+    {
+      title: "Deployment Process",
+      items: ["CI/CD"],
+    },
+    {
+      title: "AI Tools",
+      items: ["GitHub", "Co-Pilot", "ChatGPT", "Claude"],
+    },
+    {
+      title: "AI Automation",
+      items: ["n8n", "Make", "Zapier"],
+    },
+  ],
+  ctaButton: {
+    text: "Schedule a Developer Interview",
+    href: "https://calendly.com/americas-3/30min?_gl=1*1cfuvr1*_gcl_au*MjYzMjE4MzIzLjE3NTcwNjUyNjk.*_ga*MTMwNjQxMjg5NS4xNzQ4ODQyMDM5*_ga_5ZSTFLNPDY*czE3NTg1Mzk0MzIkbzMxJGcxJHQxNzU4NTQxMDA4JGo2MCRsMCRoMTYyMzQ1NTg4Mw..",
+    target: "_blank",
+    icon: "",
+  },
 };

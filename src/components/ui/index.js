@@ -9,6 +9,7 @@ import { ContactSection } from "../contact";
 import { Input } from "./Input";
 import { TextArea } from "./TextArea";
 import { SuccessBanner } from "./SuccessBanner";
+import { TechnicalExpertise } from "../TechnicalExpertise";
 
 export {
   BannerWithList,
@@ -22,4 +23,5 @@ export {
   Input,
   TextArea,
   SuccessBanner,
+  TechnicalExpertise,
 };
