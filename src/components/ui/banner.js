@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Button } from "./button";
+import { Button } from "./Button";
 import { HeadingH1, ParagraphElement } from "./typography";
 import { cn } from "../../lib/utils";
 

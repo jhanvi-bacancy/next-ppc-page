@@ -10,7 +10,7 @@ import {
   ParagraphElement,
 } from "./typography";
 import { cn } from "../../lib/utils";
-import { Button } from "./button";
+import { Button } from "./Button";
 
 const cdnImage = process.env.NEXT_PUBLIC_IMG_URL;
 

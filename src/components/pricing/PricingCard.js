@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "../ui/button";
+import { Button } from "../ui/Button";
 import { HeadingH2, HeadingH3, ParagraphElement } from "../ui/typography";
 import { cn } from "../../lib/utils";
 

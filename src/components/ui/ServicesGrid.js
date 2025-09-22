@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { HeadingH2, HeadingH6 } from "./typography";
-import { Button } from "./button";
+import { Button } from "./Button";
 import { cn } from "../../lib/utils";
 
 export function ServicesGrid({ className, data }) {

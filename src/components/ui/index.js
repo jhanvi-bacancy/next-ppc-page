@@ -3,9 +3,11 @@ import { TrustedLogos } from "./TrustedLogos";
 import { Typography } from "./typography";
 import { ExpertCarousel } from "./carousel";
 import { ServicesGrid } from "./ServicesGrid";
-import { Button } from "./button";
+import { Button } from "./Button";
 import { Radio } from "./radio";
 import { ContactSection } from "../contact";
+import { Input } from "./Input";
+import { TextArea } from "./TextArea";
 
 export {
   BannerWithList,
@@ -16,4 +18,6 @@ export {
   Button,
   Radio,
   ContactSection,
+  Input,
+  TextArea,
 };

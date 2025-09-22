@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { Input } from "./ui/Input";
-import { TextArea } from "./ui/TextArea";
-import { Button } from "../ui/button";
+import { Input, TextArea, Button } from "../ui";
 import { HeadingH2, ParagraphElement } from "../ui/typography";
 import Image from "next/image";
 
@@ -32,10 +30,6 @@ export function ContactForm() {
 
   const validateForm = () => {
     const newErrors = {};
-
-    if (!formData.name.trim()) {
-      newErrors.name = "Name is required";
-    }
 
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
