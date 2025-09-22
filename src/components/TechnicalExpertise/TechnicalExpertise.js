@@ -8,7 +8,7 @@ export const TechnicalExpertise = ({ data, className }) => {
   const { title, subtitle, categories } = data;
 
   return (
-    <section className={cn("py-8 sm:py-16 bg-gray-light", className)}>
+    <section className={cn("", className)}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-8 sm:mb-12">
           <HeadingH2 className="mb-4 text-lg sm:text-2xl">{title}</HeadingH2>
