@@ -350,3 +350,12 @@ export const pythonPricingData = {
     ],
   },
 };
+
+// export success banner data
+export const successBannerData = {
+  email: "solutions@bacancy.com",
+  title: "Your Success is Guaranteed !",
+  description:
+    "We accelerate the release of digital products and guarantee your success",
+  tools: ["Slack", "Jira", "GitHub"],
+};

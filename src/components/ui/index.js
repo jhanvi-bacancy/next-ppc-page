@@ -8,6 +8,7 @@ import { Radio } from "./radio";
 import { ContactSection } from "../contact";
 import { Input } from "./Input";
 import { TextArea } from "./TextArea";
+import { SuccessBanner } from "./SuccessBanner";
 
 export {
   BannerWithList,
@@ -20,4 +21,5 @@ export {
   ContactSection,
   Input,
   TextArea,
+  SuccessBanner,
 };

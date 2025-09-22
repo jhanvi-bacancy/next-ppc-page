@@ -5,6 +5,7 @@ import {
   ExpertCarousel,
   ServicesGrid,
   ContactSection,
+  SuccessBanner,
 } from "../../components/ui";
 import {
   pythonBannerData,
@@ -12,6 +13,7 @@ import {
   pythonExpertsData,
   pythonServicesGridData,
   pythonPricingData,
+  successBannerData,
 } from "./data";
 import { PricingSection } from "@/components/pricing";
 
@@ -40,7 +42,11 @@ export default function PythonPage() {
       {/* Pricing Section */}
       <PricingSection data={pythonPricingData} className="py-lg bg-white" />
 
-      <ContactSection className="py-28" />
+      {/* Contact Section */}
+      <ContactSection className="pt-10" />
+
+      {/* Success Banner */}
+      <SuccessBanner data={successBannerData} className="bg-gray-light py-lg" />
     </div>
   );
 }

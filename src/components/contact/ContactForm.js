@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Input, TextArea, Button } from "../ui";
-import { HeadingH2, ParagraphElement } from "../ui/typography";
+import { HeadingH2, HeadingH4, ParagraphElement } from "../ui/typography";
 import Image from "next/image";
 
 export function ContactForm() {
@@ -58,9 +58,9 @@ export function ContactForm() {
 
   return (
     <div className="w-full max-w-4xl mx-auto bg-white p-10 rounded-lg shadow-lg">
-      <HeadingH2 className="text-2xl font-semibold mb-6 text-center">
+      <HeadingH4 className="mb-6 text-center">
         Get Your 15 Days Risk Free Trial
-      </HeadingH2>
+      </HeadingH4>
 
       <form onSubmit={handleSubmit} className="space-y-8">
         <Input
