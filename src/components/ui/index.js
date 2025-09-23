@@ -10,6 +10,7 @@ import { Input } from "./Input";
 import { TextArea } from "./TextArea";
 import { SuccessBanner } from "./SuccessBanner";
 import { TechnicalExpertise } from "../TechnicalExpertise";
+import { StepsSection } from "../StepsSection";
 
 export {
   BannerWithList,
@@ -24,4 +25,5 @@ export {
   TextArea,
   SuccessBanner,
   TechnicalExpertise,
+  StepsSection,
 };

@@ -495,3 +495,55 @@ export const technicalExpertiseData = {
     icon: "",
   },
 };
+
+// export steps section data
+export const stepsSectionData = {
+  title: {
+    text: "Three steps to your",
+    highlight: "perfect Specialist",
+    suffix: "",
+  },
+  subtitle: "Get hand-picked talent in days—our 3-step process makes it simple",
+  backgroundImage: `${cdnImage}landing/images/common-img/step-section-bg.png`,
+  steps: [
+    {
+      stepNumber: 1,
+      title: "BOOK A MEETING",
+      description:
+        "Start with a quick 20-minute call where we learn about your goals, team structure, and what kind of talent you're looking for.",
+      contentImage: `${cdnImage}landing/images/common-img/book-meeting.png`,
+      stepIcon: `${cdnImage}landing/images/fullstack-ppc/mentoring.gif`,
+      dateButton: {
+        text: "TODAY, MONDAY, SEP 22",
+        href: "https://calendly.com/americas-3/30min?_gl=1*1omd485*_gcl_au*MjYzMjE4MzIzLjE3NTcwNjUyNjk.*_ga*MTMwNjQxMjg5NS4xNzQ4ODQyMDM5*_ga_5ZSTFLNPDY*czE3NTg2MDQ5NDQkbzMzJGcxJHQxNzU4NjA5MzcxJGo1MiRsMCRoMTUxMDYzNDE2Mw..",
+        target: "_blank",
+      },
+      isButton: true,
+    },
+    {
+      stepNumber: 2,
+      title: "REVIEW YOUR MATCHES",
+      description:
+        "Within 48 hours, you'll receive a tailored shortlist of vetted, ready-to-go specialists—complete with direct links to book interviews at your convenience.",
+      contentImage: `${cdnImage}landing/images/common-img/ai-step-2.png`,
+      stepIcon: `${cdnImage}landing/images/fullstack-ppc/teamwork.gif`,
+      dateButton: {
+        text: "TUESDAY, SEP 23",
+      },
+      isButton: false,
+    },
+    {
+      stepNumber: 3,
+      title: "START WORKING TOGETHER",
+      description:
+        "Your chosen candidates can be fully integrated in as little as 10 days. We take care of HR, contracts, and onboarding so you can stay focused on execution.",
+      contentImage: `${cdnImage}landing/images/common-img/start-working-together.png`,
+      stepIcon: `${cdnImage}landing/images/fullstack-ppc/handshake.gif`,
+      dateButton: {
+        text: "WEDNESDAY, SEP 24",
+      },
+      isButton: false,
+      bgColor: "bg-light-orange",
+    },
+  ],
+};
