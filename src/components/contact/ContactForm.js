@@ -3,7 +3,7 @@ import { Input, TextArea, Button } from "../ui";
 import { HeadingH2, HeadingH4, ParagraphElement } from "../ui/typography";
 import Image from "next/image";
 
-export function ContactForm() {
+export function ContactForm({ data }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -135,8 +135,11 @@ export function ContactForm() {
             variant="filled"
             size="md"
             className="font-normal px-8 w-full sm:w-auto"
+            href={data.href}
+            target={data.target}
+            uppercase
           >
-            START MY FREE TRIAL
+            {data.text}
           </Button>
         </div>
       </form>

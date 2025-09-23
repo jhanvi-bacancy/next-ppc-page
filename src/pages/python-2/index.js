@@ -16,6 +16,7 @@ import {
   pythonPricingData,
   successBannerData,
   technicalExpertiseData,
+  contactSectionData,
 } from "./data";
 import { PricingSection } from "@/components/pricing";
 
@@ -45,7 +46,7 @@ export default function PythonPage() {
       <PricingSection data={pythonPricingData} className="py-lg bg-white" />
 
       {/* Contact Section */}
-      <ContactSection className="pt-10" />
+      <ContactSection data={contactSectionData} className="pt-10" />
 
       {/* Success Banner */}
       <SuccessBanner data={successBannerData} className="bg-gray-light py-lg" />

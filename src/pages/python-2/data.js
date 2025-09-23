@@ -277,7 +277,6 @@ export const pythonServicesGridData = {
 };
 
 // export pricing section data
-
 export const pythonPricingData = {
   title:
     "Developer Hiring Made Simple: Hourly, Monthly or Fixed Cost Based on Your Needs",
@@ -349,6 +348,17 @@ export const pythonPricingData = {
       { value: "continue", label: "Continue My Existing Project" },
       { value: "cv", label: "Request Developer CVs" },
     ],
+  },
+};
+
+// export contact section data
+export const contactSectionData = {
+  backgroundImage: "landing/images/banner-ppc/Conversation-sec-min.jpg",
+  ctaButton: {
+    text: "Start my free trial",
+    href: "#form",
+    target: "_self",
+    icon: "",
   },
 };
 

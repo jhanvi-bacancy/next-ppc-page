@@ -11,8 +11,8 @@ export const TechnicalExpertise = ({ data, className }) => {
     <section className={cn("", className)}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-8 sm:mb-12">
-          <HeadingH2 className="mb-4 text-lg sm:text-2xl">{title}</HeadingH2>
-          <ParagraphElement className="max-w-4xl mx-auto text-sm sm:text-base">
+          <HeadingH2 className="mb-4">{title}</HeadingH2>
+          <ParagraphElement className="mx-auto text-sm sm:text-base">
             {subtitle}
           </ParagraphElement>
         </div>

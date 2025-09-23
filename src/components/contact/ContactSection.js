@@ -4,7 +4,11 @@ import { CalendlyScript } from "./CalendlyScript";
 import { cn } from "@/lib/utils";
 import { HeadingH2 } from "../ui/typography";
 
-export function ContactSection({ className }) {
+export function ContactSection({ data, className }) {
+  const { backgroundImage, ctaButton } = data;
+
+  const cdnImage = process.env.NEXT_PUBLIC_IMG_URL;
+
   return (
     <section className={cn("", className)} id="form">
       <div className="relative min-h-screen w-full py-24 pb-32">
@@ -12,8 +16,7 @@ export function ContactSection({ className }) {
         <div
           className="absolute inset-0 z-0"
           style={{
-            backgroundImage:
-              "url('https://assets.bacancytechnology.com/landing/images/banner-ppc/Conversation-sec-min.jpg')",
+            backgroundImage: `url('${cdnImage}${backgroundImage}')`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -30,7 +33,7 @@ export function ContactSection({ className }) {
               <HeadingH2 className="text-center font-bold !text-white mb-8">
                 Start a Conversation
               </HeadingH2>
-              <ContactForm />
+              <ContactForm data={ctaButton} />
             </div>
 
             {/* Center - OR divider (visible only on desktop) */}
