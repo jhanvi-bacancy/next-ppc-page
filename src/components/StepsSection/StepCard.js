@@ -32,7 +32,7 @@ export const StepCard = ({
       </div>
 
       {/* Main Card Container */}
-      <div className="bg-white rounded-xl shadow-md w-full min-h-[450px] flex flex-col items-center pb-8">
+      <div className="bg-white rounded-xl shadow-md w-full flex flex-col items-center pb-8">
         {/* Title */}
         <HeadingH3 className="uppercase text-dark px-8 pt-8 text-center">
           {title}
@@ -49,7 +49,7 @@ export const StepCard = ({
             <Image
               src={contentImage}
               alt={`${title} content`}
-              className="w-full h-auto min-h-[250px] max-h-[250px] object-contain"
+              className="w-full h-auto min-h-[180px] sm:min-h-[200px] md:min-h-[220px] lg:min-h-[250px] object-cover"
               width={400}
               height={250}
               priority
