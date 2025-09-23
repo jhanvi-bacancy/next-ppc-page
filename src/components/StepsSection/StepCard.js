@@ -49,7 +49,7 @@ export const StepCard = ({
             <Image
               src={contentImage}
               alt={`${title} content`}
-              className="w-full h-auto min-h-[180px] sm:min-h-[200px] md:min-h-[220px] lg:min-h-[250px] object-cover"
+              className="w-full h-auto min-h-[180px] sm:min-h-[200px] md:min-h-[220px] lg:h-[250px] object-cover"
               width={400}
               height={250}
               priority

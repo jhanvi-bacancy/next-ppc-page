@@ -11,6 +11,7 @@ import { TextArea } from "./TextArea";
 import { SuccessBanner } from "./SuccessBanner";
 import { TechnicalExpertise } from "../TechnicalExpertise";
 import { StepsSection } from "../StepsSection";
+import { AITalentSection } from "../AITalentSection";
 
 export {
   BannerWithList,
@@ -26,4 +27,5 @@ export {
   SuccessBanner,
   TechnicalExpertise,
   StepsSection,
+  AITalentSection,
 };

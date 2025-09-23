@@ -547,3 +547,28 @@ export const stepsSectionData = {
     },
   ],
 };
+
+// export AI Talent section data
+export const aiTalentSectionData = {
+  title: "Get Your Work Done Faster with",
+  highlight: "AI-Enhanced Talent",
+  description: [
+    "Our developers leverage powerful AI tools to automate tasks, enhance productivity, and optimize workflows.",
+    "Get 3X faster Product delivery than ordinary development process.",
+    "Launch your First Module/Product in 15 Days!",
+  ],
+  tools: [
+    {
+      name: "GitHub Copilot",
+      icon: `${cdnImage}landing/images/icons/copilot.svg`,
+    },
+    { name: "Cursor AI", icon: `${cdnImage}landing/images/icons/cursor.svg` },
+  ],
+  headingIcon: `${cdnImage}landing/images/icons/heading-icon.svg`,
+  bacancyLogo: `${cdnImage}landing/images/icons/bacancy-icon.svg`,
+  ctaButton: {
+    text: "Talk to Our Expert",
+    href: "#form",
+    target: "_blank",
+  },
+};
