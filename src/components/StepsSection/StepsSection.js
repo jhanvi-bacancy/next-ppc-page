@@ -3,10 +3,10 @@ import { cn } from "@/lib/utils";
 import { HeadingH2, ParagraphElement } from "@/components/ui/typography";
 import { StepCard } from "./StepCard";
 import { Button } from "@/components/ui";
-import Slider from "react-slick";
 import { ArrowIcon } from "@/icons";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Carousel from "../Carousel";
 
 export const StepsSection = ({ data, className }) => {
   const { title, subtitle, steps, backgroundImage } = data;
@@ -18,7 +18,7 @@ export const StepsSection = ({ data, className }) => {
         onClick={onClick}
         variant="light"
         className={cn(
-          "!absolute !p-0 top-1/2 -translate-y-1/2 !w-8 !h-8 !rounded-full shadow-md z-10 md:hidden",
+          "!absolute !p-0 top-1/2 -translate-y-1/2 !rounded-full shadow-md z-10 md:hidden",
           direction === "next" ? "-right-5" : "-left-5",
           isDisabled && "!opacity-50 !cursor-not-allowed"
         )}
@@ -26,7 +26,7 @@ export const StepsSection = ({ data, className }) => {
       >
         <ArrowIcon
           direction={direction === "prev" ? "left" : "right"}
-          className="text-primary"
+          className="text-white bg-primary rounded-full"
           size="sm"
         />
       </Button>
@@ -102,7 +102,7 @@ export const StepsSection = ({ data, className }) => {
               }
             `}</style>
 
-            <Slider {...sliderSettings}>
+            <Carousel carouselSettings={sliderSettings}>
               {steps.map((step, index) => (
                 <div key={index} className="px-2">
                   <StepCard
@@ -117,7 +117,7 @@ export const StepsSection = ({ data, className }) => {
                   />
                 </div>
               ))}
-            </Slider>
+            </Carousel>
           </div>
 
           {/* Desktop View */}

@@ -22,6 +22,7 @@ import {
   contactSectionData,
   stepsSectionData,
   aiTalentSectionData,
+  successStoriesData,
 } from "./data";
 import { PricingSection } from "@/components/pricing";
 
@@ -72,7 +73,10 @@ export default function PythonPage() {
       />
 
       {/* Success Stories Section */}
-      <SuccessStoriesSection className="py-lg bg-gray-light" />
+      <SuccessStoriesSection
+        data={successStoriesData}
+        className="py-lg bg-gray-light"
+      />
     </div>
   );
 }

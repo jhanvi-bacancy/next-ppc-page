@@ -11,11 +11,11 @@ const SuccessStory = ({
   image,
 }) => {
   return (
-    <div className="bg-white p-8 rounded-lg shadow-sm">
-      <div className="flex flex-col lg:flex-col gap-8">
+    <div className="bg-white p-8 rounded-lg shadow-sm h-full">
+      <div className="flex flex-col h-full">
         {/* Image */}
-        <div>
-          <div className="relative h-[400px] w-full">
+        <div className="mb-6">
+          <div className="relative aspect-[4/3] w-full">
             <Image
               src={image}
               alt={title}
@@ -34,24 +34,24 @@ const SuccessStory = ({
           </span>
 
           {/* Title */}
-          <HeadingH3 className="!mb-0">{title}</HeadingH3>
+          <HeadingH3 className="!mb-2">{title}</HeadingH3>
 
           {/* Description */}
-          <ParagraphElement className="mb-8 !text-secondary text-sm leading-relaxed">
+          <ParagraphElement className="!text-secondary text-sm leading-relaxed mb-3">
             {description}
           </ParagraphElement>
 
           {/* Client Requirement Section */}
-          <div className="mb-8">
-            <HeadingH4 className="!mb-0">Client Requirement</HeadingH4>
+          <div className="mb-4">
+            <HeadingH4 className="!mb-2">Client Requirement</HeadingH4>
             <ParagraphElement className="!text-secondary text-sm leading-relaxed">
               {clientRequirement}
             </ParagraphElement>
           </div>
 
           {/* Result Section */}
-          <div>
-            <HeadingH4 className="!mb-0">Result</HeadingH4>
+          <div className="mt-auto">
+            <HeadingH4 className="!mb-2">Result</HeadingH4>
             <ParagraphElement className="!text-secondary text-sm leading-relaxed">
               {result}
             </ParagraphElement>
