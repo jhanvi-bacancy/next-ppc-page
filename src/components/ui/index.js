@@ -12,6 +12,7 @@ import { SuccessBanner } from "./SuccessBanner";
 import { TechnicalExpertise } from "../TechnicalExpertise";
 import { StepsSection } from "../StepsSection";
 import { AITalentSection } from "../AITalentSection";
+import { SuccessStoriesSection } from "../SuccessStories";
 
 export {
   BannerWithList,
@@ -28,4 +29,5 @@ export {
   TechnicalExpertise,
   StepsSection,
   AITalentSection,
+  SuccessStoriesSection,
 };

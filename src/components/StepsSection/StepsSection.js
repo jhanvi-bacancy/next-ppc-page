@@ -11,7 +11,7 @@ import "slick-carousel/slick/slick-theme.css";
 export const StepsSection = ({ data, className }) => {
   const { title, subtitle, steps, backgroundImage } = data;
 
-  const CustomArrow = ({ className, style, onClick, direction }) => {
+  const CustomArrow = ({ className, onClick, direction }) => {
     const isDisabled = className?.includes("slick-disabled");
     return (
       <Button
