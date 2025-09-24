@@ -1,4 +1,5 @@
 const cdnImage = process.env.NEXT_PUBLIC_IMG_URL;
+import { formatDateWithDay } from "../../lib/helper";
 
 // Data for the Python Development page
 export const pythonBannerData = {
@@ -514,7 +515,7 @@ export const stepsSectionData = {
       contentImage: `${cdnImage}landing/images/common-img/book-meeting.png`,
       stepIcon: `${cdnImage}landing/images/fullstack-ppc/mentoring.gif`,
       dateButton: {
-        text: "TODAY, MONDAY, SEP 22",
+        text: `TODAY, ${formatDateWithDay()}`,
         href: "https://calendly.com/americas-3/30min?_gl=1*1omd485*_gcl_au*MjYzMjE4MzIzLjE3NTcwNjUyNjk.*_ga*MTMwNjQxMjg5NS4xNzQ4ODQyMDM5*_ga_5ZSTFLNPDY*czE3NTg2MDQ5NDQkbzMzJGcxJHQxNzU4NjA5MzcxJGo1MiRsMCRoMTUxMDYzNDE2Mw..",
         target: "_blank",
       },
@@ -528,7 +529,7 @@ export const stepsSectionData = {
       contentImage: `${cdnImage}landing/images/common-img/ai-step-2.png`,
       stepIcon: `${cdnImage}landing/images/fullstack-ppc/teamwork.gif`,
       dateButton: {
-        text: "TUESDAY, SEP 23",
+        text: formatDateWithDay(undefined, 1),
       },
       isButton: false,
     },
@@ -540,7 +541,7 @@ export const stepsSectionData = {
       contentImage: `${cdnImage}landing/images/common-img/start-working-together.png`,
       stepIcon: `${cdnImage}landing/images/fullstack-ppc/handshake.gif`,
       dateButton: {
-        text: "WEDNESDAY, SEP 24",
+        text: formatDateWithDay(undefined, 2),
       },
       isButton: false,
       bgColor: "bg-light-orange",
@@ -588,8 +589,7 @@ export const successStoriesData = {
         "A website in a way that makes the customer's buying journey become easy and seamless and enables category-wise product classification.",
       result:
         "A website was built with a proper classification of a wide range of Electronics beacons including Marine beacons, Outdoor Beacons and Aviation Beacons.",
-      image:
-        "https://assets.bacancytechnology.com/landing/images/case-study/cs-4.jpg",
+      image: `${cdnImage}landing/images/case-study/cs-4.jpg`,
     },
     {
       category: "E-COMMERCE",
@@ -600,8 +600,7 @@ export const successStoriesData = {
         "Redesigning the B2C website with the aim of flawless availability of the channel's information for the user as previously the user was not able to buy monthly subscriptions and the application received insufficient subscribers even after ranking on top.",
       result:
         "A unified subscription solution was built that helped their end-users to buy the subscription easily.",
-      image:
-        "https://assets.bacancytechnology.com/landing/images/case-study/cs-1.jpg",
+      image: `${cdnImage}landing/images/case-study/cs-1.jpg`,
     },
     {
       category: "BIKE AND CYCLING PORTAL",
@@ -612,8 +611,7 @@ export const successStoriesData = {
         "A portal that connects the users to mountain biking locals whenever they are out to travel.",
       result:
         "The portal is built with services that enable the user to connect with the biking local. Moreover, the biking local can search for any region and create and customize his/her profile.",
-      image:
-        "https://assets.bacancytechnology.com/landing/images/case-study/cs-2.jpg",
+      image: `${cdnImage}landing/images/case-study/cs-2.jpg`,
     },
     {
       category: "BIKE AND CYCLING PORTAL",
@@ -624,8 +622,52 @@ export const successStoriesData = {
         "Difficulty in changing the app labels & configurations at any time. In addition, there was trouble in recommending the products to users based on their interests.",
       result:
         "ContenStack and Kibo were used and therefore app labels and configuration was possible at any time. Now, the users get recommendations as per their interests and previous searches.",
-      image:
-        "https://assets.bacancytechnology.com/landing/images/case-study/cs-3.jpg",
+      image: `${cdnImage}landing/images/case-study/cs-3.jpg`,
+    },
+  ],
+};
+
+// export customer reviews data
+export const customerReviewsData = {
+  title: { text: "What Our Customers Say", highlight: "Customers" },
+  description:
+    "Don't just take our word for it. Hear what our valued clients have to say about their experiences with us.",
+  rating: `${cdnImage}landing/images/web-ppc/clutchreview-icon.svg`,
+  reviews: [
+    {
+      highlight: "Flexibility",
+      review: "Flexibility to work based on demand is impressive",
+      name: "Bryan Boulton",
+      designation: "IT Lead, Birchmount Network",
+      companyLogo: `${cdnImage}landing/images/web-ppc/birchmount-network-logo.svg`,
+    },
+    {
+      highlight: "Timely delivery",
+      review: "Timely delivery with a remarkable feedback approach.",
+      name: "Dylan de Szabo",
+      designation: "Director, D-BIT APAC",
+      companyLogo: `${cdnImage}landing/images/web-ppc/d-bit-logo.svg`,
+    },
+    {
+      highlight: "Customer-centric",
+      review: "Customer-centric approach paired with effective communication.",
+      name: "Philip Gomez",
+      designation: "Co-Owner, Patty's Cakes and Desserts",
+      companyLogo: `${cdnImage}landing/images/web-ppc/patty-cake-logo.svg`,
+    },
+    {
+      highlight: "affordable prices",
+      review: "Exceptional results at affordable prices",
+      name: "Yash Daftary",
+      designation: "CEO, Fanbasis",
+      companyLogo: `${cdnImage}landing/images/web-ppc/fanbasis-logo.svg`,
+    },
+    {
+      highlight: "Collabrative",
+      review: "Collabrative environment and highly responsive team",
+      name: "Vennila Rajes",
+      designation: "Director of Operations, Help Desk Technology",
+      companyLogo: `${cdnImage}landing/images/web-ppc/helpdesk-logo.svg`,
     },
   ],
 };

@@ -13,6 +13,7 @@ import { TechnicalExpertise } from "../TechnicalExpertise";
 import { StepsSection } from "../StepsSection";
 import { AITalentSection } from "../AITalentSection";
 import { SuccessStoriesSection } from "../SuccessStories";
+import { CustomerReviews } from "../CustomerReviews";
 
 export {
   BannerWithList,
@@ -30,4 +31,5 @@ export {
   StepsSection,
   AITalentSection,
   SuccessStoriesSection,
+  CustomerReviews,
 };

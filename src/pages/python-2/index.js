@@ -10,6 +10,7 @@ import {
   StepsSection,
   AITalentSection,
   SuccessStoriesSection,
+  CustomerReviews,
 } from "../../components/ui";
 import {
   pythonBannerData,
@@ -23,6 +24,7 @@ import {
   stepsSectionData,
   aiTalentSectionData,
   successStoriesData,
+  customerReviewsData,
 } from "./data";
 import { PricingSection } from "@/components/pricing";
 
@@ -75,7 +77,13 @@ export default function PythonPage() {
       {/* Success Stories Section */}
       <SuccessStoriesSection
         data={successStoriesData}
-        className="py-lg bg-gray-light"
+        className="bg-gray-light py-lg"
+      />
+
+      {/* Customer Reviews Section */}
+      <CustomerReviews
+        data={customerReviewsData}
+        className="bg-light-orange py-lg"
       />
     </div>
   );
