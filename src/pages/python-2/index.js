@@ -11,6 +11,7 @@ import {
   AITalentSection,
   SuccessStoriesSection,
   CustomerReviews,
+  DevelopmentStrength,
 } from "../../components/ui";
 import {
   pythonBannerData,
@@ -25,6 +26,7 @@ import {
   aiTalentSectionData,
   successStoriesData,
   customerReviewsData,
+  developmentStrengthData,
 } from "./data";
 import { PricingSection } from "@/components/pricing";
 
@@ -33,6 +35,7 @@ export default function PythonPage() {
     <div className="min-h-screen bg-white">
       {/* Banner */}
       <BannerWithList data={pythonBannerData} className="py-lg" />
+
       {/* Trusted Logos */}
       <TrustedLogos data={trustedLogosData} className="py-lg bg-gray-light" />
 
@@ -85,6 +88,9 @@ export default function PythonPage() {
         data={customerReviewsData}
         className="bg-light-orange py-lg"
       />
+
+      {/* Development Strength */}
+      <DevelopmentStrength data={developmentStrengthData} className="py-lg" />
     </div>
   );
 }

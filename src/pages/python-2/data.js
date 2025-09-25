@@ -671,3 +671,52 @@ export const customerReviewsData = {
     },
   ],
 };
+
+// export development strength data
+export const developmentStrengthData = {
+  title: "13+ Years and Counting...",
+  backgroundImage: `${cdnImage}landing/images/aus-img/dot-bg.png`,
+  sideImage: `${cdnImage}landing/images/common-img/side-img-5.jpg`,
+  description:
+    "By establishing an Python development center, we offer our tailored engagement models that cater to the unique needs by providing B2B and B2C Dedicated development support.",
+  strengths: [
+    {
+      number: "1050+",
+      title: "Agile Developers",
+    },
+    {
+      number: "80+",
+      title: "Python Developers",
+    },
+    {
+      number: "05",
+      title: "Agile Coaches",
+    },
+    {
+      number: "14",
+      title: "Certified Scrum Masters",
+    },
+  ],
+  features: [
+    {
+      icon: `${cdnImage}landing/images/common-img/counting-ico-1.png`,
+      title: "Work at Your Time Zone",
+    },
+    {
+      icon: `${cdnImage}landing/images/common-img/counting-ico-3.png`,
+      title: "Easy Communication",
+    },
+    {
+      icon: `${cdnImage}landing/images/common-img/counting-ico-4.png`,
+      title: "Hire in 48 Hours",
+    },
+    {
+      icon: `${cdnImage}landing/images/common-img/counting-ico-2.png`,
+      title: "In Business Since 2011",
+    },
+    {
+      icon: `${cdnImage}landing/images/common-img/counting-ico-5.png`,
+      title: "5/5 Pro User Rating",
+    },
+  ],
+};
