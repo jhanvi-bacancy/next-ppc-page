@@ -13,6 +13,7 @@ import {
   CustomerReviews,
   DevelopmentStrength,
   Footer,
+  ContactBanner,
 } from "../../components/ui";
 import {
   pythonBannerData,
@@ -29,6 +30,7 @@ import {
   customerReviewsData,
   developmentStrengthData,
   footerData,
+  contactBannerData,
 } from "./data";
 import { PricingSection } from "@/components/pricing";
 
@@ -93,6 +95,9 @@ export default function PythonPage() {
 
       {/* Development Strength */}
       <DevelopmentStrength data={developmentStrengthData} className="py-lg" />
+
+      {/* Contact Banner */}
+      <ContactBanner data={contactBannerData} className="py-lg bg-gray-light" />
 
       {/* Footer */}
       <Footer data={footerData} className="py-lg" />

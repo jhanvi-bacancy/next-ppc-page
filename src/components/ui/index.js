@@ -16,6 +16,7 @@ import { SuccessStoriesSection } from "../SuccessStories";
 import { CustomerReviews } from "../CustomerReviews";
 import { DevelopmentStrength } from "../DevelopmentStrength";
 import { Footer } from "../Footer";
+import { ContactBanner } from "../ContactBanner";
 
 export {
   BannerWithList,
@@ -36,4 +37,5 @@ export {
   CustomerReviews,
   DevelopmentStrength,
   Footer,
+  ContactBanner,
 };
