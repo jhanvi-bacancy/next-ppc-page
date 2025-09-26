@@ -15,6 +15,7 @@ import { AITalentSection } from "../AITalentSection";
 import { SuccessStoriesSection } from "../SuccessStories";
 import { CustomerReviews } from "../CustomerReviews";
 import { DevelopmentStrength } from "../DevelopmentStrength";
+import { Footer } from "../Footer";
 
 export {
   BannerWithList,
@@ -34,4 +35,5 @@ export {
   SuccessStoriesSection,
   CustomerReviews,
   DevelopmentStrength,
+  Footer,
 };

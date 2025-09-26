@@ -720,3 +720,77 @@ export const developmentStrengthData = {
     },
   ],
 };
+
+// export footer data
+export const footerData = {
+  backgroundImage: `${cdnImage}landing/images/footer-bg.png`,
+  getInTouchImage: `${cdnImage}landing/images/footer-ppc/gptw-1.svg`,
+  bookCallImage: `${cdnImage}landing/images/footer-ppc/call.svg`,
+  isoImage: `${cdnImage}landing/images/iso-2013.svg`,
+  starImage: `${cdnImage}landing/images/footer-ppc/star.svg`,
+  addresses: [
+    {
+      country: "India (HQ)",
+      flag: `${cdnImage}landing/images/footer-ppc/india.svg`,
+      title: "Corporate House",
+      address: "15-1A, Times Corporate Park,Thaltej, Ahmedabad, Gujarat 380059",
+    },
+    {
+      country: "USA",
+      flag: `${cdnImage}landing/images/footer-ppc/usa.svg`,
+      address: "33 South ave, Suit 600 Iselin, NJ 08830",
+    },
+    {
+      country: "Canada",
+      flag: `${cdnImage}landing/images/footer-ppc/canada.svg`,
+      address: "71 Dawes Road, Brampton, On L6X 5N9, Toronto",
+    },
+    {
+      country: "Australia",
+      flag: `${cdnImage}landing/images/footer-ppc/australia.svg`,
+      address: "351A Hempstead Rd, Northfield SA 5085",
+    },
+    {
+      country: "UAE",
+      flag: `${cdnImage}landing/images/footer-ppc/uae.svg`,
+      address: "1408 Clover Bay, Business Bay, Dubai, UAE, PO Box 62049",
+    },
+    {
+      country: "Sweden",
+      flag: `${cdnImage}landing/images/footer-ppc/sweden.svg`,
+      address: "Junkergatan 4, 126 53 Hagersten",
+    },
+  ],
+  ratings: [
+    {
+      platform: "Google",
+      rating: "4.6",
+      image: `${cdnImage}landing/images/dev-ppc/google.svg`,
+    },
+    {
+      platform: "Glassdoor",
+      rating: "4.5",
+      image: `${cdnImage}landing/images/footer-ppc/glassdoor.svg`,
+    },
+    {
+      platform: "Clutch",
+      rating: "4.7",
+      image: `${cdnImage}landing/images/footer-ppc/clutch.svg`,
+    },
+    {
+      platform: "GoodFirms",
+      rating: "4.8",
+      image: `${cdnImage}landing/images/dev-ppc/good-firm.svg`,
+    },
+  ],
+  privacyButton: {
+    btnText: "Privacy Policy",
+    href: "https://www.bacancytechnology.com/landing/privacy-policy",
+    target: "_blank",
+  },
+  faqsButton: {
+    btnText: "FAQs",
+    href: "https://www.bacancytechnology.com/landing/faqs",
+    target: "_blank",
+  },
+};
