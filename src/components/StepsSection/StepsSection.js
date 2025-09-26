@@ -4,8 +4,6 @@ import { HeadingH2, ParagraphElement } from "@/components/ui/typography";
 import { StepCard } from "./StepCard";
 import { Button } from "@/components/ui";
 import { ArrowIcon } from "@/icons";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Carousel from "../Carousel";
 
 export const StepsSection = ({ data, className }) => {
