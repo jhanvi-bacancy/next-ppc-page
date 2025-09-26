@@ -42,7 +42,7 @@ export const ContactBanner = ({ data = {}, className }) => {
   };
 
   return (
-    <section className={cn("", className)}>
+    <section className={cn("", className)} id="contact-form-id">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-0">
           {/* Left side - Form */}

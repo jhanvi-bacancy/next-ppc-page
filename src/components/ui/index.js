@@ -17,6 +17,7 @@ import { CustomerReviews } from "../CustomerReviews";
 import { DevelopmentStrength } from "../DevelopmentStrength";
 import { Footer } from "../Footer";
 import { ContactBanner } from "../ContactBanner";
+import FAQ from "../FAQ";
 
 export {
   BannerWithList,
@@ -38,4 +39,5 @@ export {
   DevelopmentStrength,
   Footer,
   ContactBanner,
+  FAQ,
 };
