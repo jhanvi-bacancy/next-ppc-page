@@ -15,7 +15,9 @@ export function TextArea({
     <div className="w-full">
       <div className="relative">
         {icon && (
-          <div className="absolute left-3 top-4 text-gray-500">{icon}</div>
+          <div className="absolute left-3 top-[16.67%] text-gray-500">
+            {icon}
+          </div>
         )}
         <textarea
           value={value}
@@ -23,7 +25,7 @@ export function TextArea({
           placeholder={placeholder}
           rows={rows}
           className={cn(
-            "w-full px-4 py-3 rounded-md border border-gray-300",
+            "w-full p-4 rounded-md border border-gray-300",
             "placeholder:text-gray-500 placeholder:text-sm text-sm",
             "focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary",
             "transition-all duration-200 resize-none",

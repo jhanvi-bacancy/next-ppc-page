@@ -25,7 +25,7 @@ export function Input({
           onChange={onChange}
           placeholder={placeholder}
           className={cn(
-            "w-full px-4 py-3 rounded-md border border-gray-300",
+            "w-full p-4 rounded-md border border-gray-300",
             "placeholder:text-gray-500 placeholder:text-sm text-sm",
             "focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary",
             "transition-all duration-200",

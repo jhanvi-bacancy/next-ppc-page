@@ -41,6 +41,7 @@ const ContactForm = ({ data }) => {
               height={16}
             />
           }
+          className="bg-gray-light"
         />
 
         <Input
@@ -62,6 +63,7 @@ const ContactForm = ({ data }) => {
               height={16}
             />
           }
+          className="bg-gray-light"
         />
 
         <Input
@@ -83,6 +85,7 @@ const ContactForm = ({ data }) => {
               height={16}
             />
           }
+          className="bg-gray-light"
         />
 
         <TextArea
@@ -97,6 +100,7 @@ const ContactForm = ({ data }) => {
               height={16}
             />
           }
+          className="bg-gray-light"
         />
 
         <div className="flex justify-center">
