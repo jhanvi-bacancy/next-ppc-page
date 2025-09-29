@@ -357,9 +357,6 @@ export const contactSectionData = {
   backgroundImage: "landing/images/banner-ppc/Conversation-sec-min.jpg",
   ctaButton: {
     text: "Start my free trial",
-    href: "#form",
-    target: "_self",
-    icon: "",
   },
 };
 

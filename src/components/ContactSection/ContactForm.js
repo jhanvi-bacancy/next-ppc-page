@@ -1,58 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import { Input, TextArea, Button, HeadingH4, ParagraphElement } from "../ui";
 import Image from "next/image";
+import { useForm } from "react-hook-form";
 
 const ContactForm = ({ data }) => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    requirements: "",
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      requirements: "",
+    },
   });
 
-  const [errors, setErrors] = useState({});
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-    // Clear error when user starts typing
-    if (errors[name]) {
-      setErrors((prev) => ({
-        ...prev,
-        [name]: "",
-      }));
-    }
-  };
-
-  const validateForm = () => {
-    const newErrors = {};
-
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (
-      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)
-    ) {
-      newErrors.email = "Invalid email address";
-    }
-
-    if (!formData.phone.trim()) {
-      newErrors.phone = "Phone number is required";
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (validateForm()) {
-      // Handle form submission
-      console.log("Form submitted:", formData);
-    }
+  const onSubmit = (formData) => {
+    // Handle form submission
+    console.log("Form submitted:", formData);
   };
 
   return (
@@ -61,13 +28,11 @@ const ContactForm = ({ data }) => {
         Get Your 15 Days Risk Free Trial
       </HeadingH4>
 
-      <form onSubmit={handleSubmit} className="space-y-8">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
         <Input
-          name="name"
+          {...register("name")}
           placeholder="Your Name"
-          value={formData.name}
-          onChange={handleChange}
-          error={errors.name}
+          error={errors.name?.message}
           icon={
             <Image
               src="https://www.bacancytechnology.com/landing/images/person.png"
@@ -80,11 +45,15 @@ const ContactForm = ({ data }) => {
 
         <Input
           type="email"
-          name="email"
+          {...register("email", {
+            required: "Email is required",
+            pattern: {
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              message: "Invalid email address",
+            },
+          })}
           placeholder="Your Business Email ID"
-          value={formData.email}
-          onChange={handleChange}
-          error={errors.email}
+          error={errors.email?.message}
           icon={
             <Image
               src="https://www.bacancytechnology.com/landing/images/email.png"
@@ -97,11 +66,15 @@ const ContactForm = ({ data }) => {
 
         <Input
           type="tel"
-          name="phone"
+          {...register("phone", {
+            required: "Phone number is required",
+            pattern: {
+              value: /^[0-9+\-() ]+$/,
+              message: "Invalid phone number",
+            },
+          })}
           placeholder="Phone Number"
-          value={formData.phone}
-          onChange={handleChange}
-          error={errors.phone}
+          error={errors.phone?.message}
           icon={
             <Image
               src="https://www.bacancytechnology.com/landing/images/phone-call.png"
@@ -113,11 +86,9 @@ const ContactForm = ({ data }) => {
         />
 
         <TextArea
-          name="requirements"
+          {...register("requirements")}
           placeholder="Describe Your Requirements"
-          value={formData.requirements}
-          onChange={handleChange}
-          error={errors.requirements}
+          error={errors.requirements?.message}
           icon={
             <Image
               src="https://www.bacancytechnology.com/landing/images/message.png"
@@ -134,8 +105,6 @@ const ContactForm = ({ data }) => {
             variant="filled"
             size="md"
             className="font-normal px-8 w-full sm:w-auto"
-            href={data.href}
-            target={data.target}
             uppercase
           >
             {data.text}
