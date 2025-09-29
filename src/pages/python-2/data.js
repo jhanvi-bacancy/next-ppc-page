@@ -821,3 +821,72 @@ export const contactBannerData = {
   },
   starImage: `${cdnImage}main-boot-5/images/star-white.png`,
 };
+
+// export FAQ data
+export const faqData = [
+  {
+    question: "Is 15 days risk-free trial period completely free?",
+    answer:
+      "Yes, absolutely! Our 15-day risk-free trial allows you to assess the code quality, communication, timely delivery, and Agile development process. 9 out of 10 people who opt for our free-trial turn into our loyal customers. Experience our exceptional service without any commitment and decide if it meets your expectations. Enjoy peace of mind as you experience our exceptional services risk-free for 15 days!",
+  },
+  {
+    question: "What are the different engagement models you have?",
+    answer:
+      "We have two different types of engagement models:- Time & Material: You can hire dedicated developers on a monthly basis (160 hours per month). This is the most suitable model where the developer will work with you as your augmented team member. Here you can also hire a developer on a part time basis (80 hours per month). Fixed price: You can share your requirements with our team. Our team will evaluate your requirements and then get back to you with the detailed estimation of your project along with time and cost as well as the roadmap of the project.",
+  },
+  {
+    question: "What would be the Working Hours of the Developer?",
+    answer:
+      "Developers will be working on US-time zone with an overlapping availability of 6 EST hours, so you will have full time-zone coverage.",
+  },
+  {
+    question: "Do I work directly with the developer?",
+    answer: "Yes, You would be working directly with the Developer.",
+  },
+  {
+    question:
+      "How do you ensure a smooth project transition from my existing vendor to Bacancy?",
+    answer:
+      "We understand the pain of a burnt bruise; hence, without any glitch, using Agile methodologies, we instill your trust in us through clear communication, daily stand-up, and retrospective meetings in the scrum. Our skilled developers assure you to take over your mid-way left project and ease out the developmental and management troubles. We ensure you deliver your project on time, smoothly, and successfully using smart project management tools.",
+  },
+  {
+    question:
+      "If I want to be involved in the development process, is it okay?",
+    answer:
+      'Absolutely yes. The Bacancy is incepted based on Agile principles. With this Agile software development iterative approach, the "client – product owner" is always involved in the software development process. The development process is not one-size-fits for all. With that consideration, from the ideation to deployment on each stage and on a daily basis, you will have an update from the team about project progress through Sprint. We let you have one to one interaction with the developer. Our daily scrum includes adaptive planning, continuous improvement, implementation, and rapid response to the changes.',
+  },
+  {
+    question: "What is your payment method after the engagement?",
+    answer:
+      "We are a registered entity in the United States with the name Bacancy Technology LLC, so you can choose to pay us in a Bank of America account via ACH or wire transfer. We can also help you save tax with help of a W9 form, here is our TIN number 83-4332237. Regardless of your physical location, we accept wire transfer from all across the globe.",
+  },
+  {
+    question:
+      "What is your resource backup strategy? If my existing resource is unavailable due to some emergency or plans to move with the organization?",
+    answer:
+      "Don't worry at all. We are a team of 1050+ Bacancyers, and we always make sure to take care of mandatory provisions to help you experience hassle-free development with minimal complexities.",
+  },
+  {
+    question:
+      'Will you assign a dedicated "Project Manager – Scrum Master" as a point of contact?',
+    answer:
+      "Yes. Dedicated project manager – Scrum master will be assigned throughout our engagement. With whom you can get in touch for any sort of assistance, query, or resolution.",
+  },
+  {
+    question: "What project management tools do you use?",
+    answer:
+      "We use industry-standard project management tools like Jira, Trello, Pivotal Tracker, Asana, and Slack. Where you will be able to track developers' productivity and monitor the daily progress of your project, you can create the task, assign the work, and monitor the development progress.",
+  },
+  {
+    question:
+      "Do you ensure the security and confidentiality of our intellectual property?",
+    answer:
+      "Rest assured, you will have 100% ownership of your Python project. It includes NDA, copyright, source code, intellectual property rights, etc.",
+  },
+  {
+    question:
+      "What if I am not satisfied with the hired developer's work and would like to exit?",
+    answer:
+      "Be assured. That will never happen. Client satisfaction is our highest priority. Either Party to this agreement may terminate the contract, with or without cause, by providing at least 14 days (2) weeks written notice to the other Party. Upon termination of this agreement, Bacancy shall deliver a termination invoice for work completed to date, which shall be paid by the client (in 3 business days). The Termination invoice shall specify all unpaid work and the remaining work done until the termination date. On termination, all work completed to time shall be delivered to the client in a usable electronic format.",
+  },
+];
