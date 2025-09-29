@@ -1,7 +1,7 @@
 import React from "react";
-import { HeadingH5 } from "../ui/typography";
+import { HeadingH5 } from "../ui";
 
-export const ExpertiseCard = ({ title, items }) => {
+const ExpertiseCard = ({ title, items }) => {
   return (
     <div className="flex flex-col sm:flex-row bg-gray-light rounded-lg overflow-hidden shadow-sm">
       {/* Orange Header */}
@@ -32,3 +32,5 @@ export const ExpertiseCard = ({ title, items }) => {
     </div>
   );
 };
+
+export default ExpertiseCard;

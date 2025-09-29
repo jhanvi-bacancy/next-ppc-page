@@ -1,12 +1,12 @@
 import React from "react";
-import { HeadingH2, ParagraphElement } from "../ui/typography";
+import Image from "next/image";
 import ReviewCard from "./ReviewCard";
 import ReviewCarousel from "./ReviewCarousel";
-import { cn } from "@/lib/utils";
-import Image from "next/image";
-import { renderHighlightedText } from "@/lib/helper";
+import { HeadingH2, ParagraphElement } from "../ui";
+import { cn } from "../../lib/utils";
+import { renderHighlightedText } from "../../lib/helper";
 
-export const CustomerReviews = ({ data, className }) => {
+const CustomerReviews = ({ data, className }) => {
   const { title, description, reviews, rating } = data;
 
   return (

@@ -1,1 +1,3 @@
-export { TechnicalExpertise } from "./TechnicalExpertise";
+import TechnicalExpertise from "./TechnicalExpertise";
+
+export default TechnicalExpertise;

@@ -12,7 +12,7 @@ const ReviewCarousel = ({ children }) => {
     speed: 500,
     dots: true,
     arrows: false,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 3000,
     responsive: [
       {

@@ -1,10 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import { cn } from "@/lib/utils";
-import { Button } from "../ui";
-import { ParagraphElement, HeadingH5 } from "../ui/typography";
+import { Button, ParagraphElement, HeadingH5 } from "../ui";
+import { cn } from "../../lib/utils";
 
-export const Footer = ({ data, className }) => {
+const Footer = ({ data, className }) => {
   const {
     backgroundImage,
     addresses,
@@ -182,3 +181,5 @@ export const Footer = ({ data, className }) => {
     </footer>
   );
 };
+
+export default Footer;

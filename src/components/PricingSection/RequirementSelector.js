@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { HeadingH2, ParagraphElement } from "../ui/typography";
-import { Radio, Button } from "../ui";
+import { HeadingH2, ParagraphElement, Radio, Button } from "../ui";
 import { cn } from "../../lib/utils";
 
-export function RequirementSelector({ className, onSubmit, options }) {
+const RequirementSelector = ({ className, onSubmit, options }) => {
   const [selectedOption, setSelectedOption] = useState("");
 
   const handleSubmit = (e) => {
@@ -58,4 +57,6 @@ export function RequirementSelector({ className, onSubmit, options }) {
       </form>
     </div>
   );
-}
+};
+
+export default RequirementSelector;

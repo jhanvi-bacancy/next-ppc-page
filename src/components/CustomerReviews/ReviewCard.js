@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { HeadingH3, HeadingH4, ParagraphElement } from "../ui/typography";
+import { HeadingH3, HeadingH4, ParagraphElement } from "../ui";
 import { renderHighlightedText } from "@/lib/helper";
 
 const ReviewCard = ({ review, highlight, name, designation, companyLogo }) => {

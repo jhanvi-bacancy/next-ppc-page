@@ -1,10 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import { Button } from "../ui";
-import { HeadingH2, ParagraphElement } from "../ui/typography";
-import { cn } from "@/lib/utils";
+import { HeadingH2, ParagraphElement, Button } from "../ui";
+import { cn } from "../../lib/utils";
 
-export const AITalentSection = ({ data, className }) => {
+const AITalentSection = ({ data, className }) => {
   const {
     title,
     highlight,
@@ -47,7 +46,6 @@ export const AITalentSection = ({ data, className }) => {
 
             <div>
               <Button
-                variant="filled"
                 size="md"
                 className="px-12 font-normal"
                 href="#form"
@@ -113,3 +111,5 @@ export const AITalentSection = ({ data, className }) => {
     </section>
   );
 };
+
+export default AITalentSection;

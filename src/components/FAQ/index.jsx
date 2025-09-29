@@ -1,14 +1,14 @@
 "use client";
 
 import React from "react";
+import { HeadingH2, HeadingH5 } from "../ui";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
-import { HeadingH2, HeadingH5 } from "../ui/typography";
-import { cn } from "@/lib/utils";
+} from "../ui/accordion";
+import { cn } from "../../lib/utils";
 
 const FAQ = ({ data, className }) => {
   return (

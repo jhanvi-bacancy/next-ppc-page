@@ -1,9 +1,8 @@
 import React from "react";
-import { Button } from "../ui/Button";
-import { HeadingH2, HeadingH3, ParagraphElement } from "../ui/typography";
+import { Button, HeadingH3, ParagraphElement } from "../ui";
 import { cn } from "../../lib/utils";
 
-export function PricingCard({
+const PricingCard = ({
   title,
   price,
   currency = "USD",
@@ -11,7 +10,7 @@ export function PricingCard({
   ctaButton,
   highlighted = false,
   className,
-}) {
+}) => {
   return (
     <div
       className={cn(
@@ -67,4 +66,6 @@ export function PricingCard({
       </Button>
     </div>
   );
-}
+};
+
+export default PricingCard;

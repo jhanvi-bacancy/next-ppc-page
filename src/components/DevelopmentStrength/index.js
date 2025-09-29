@@ -2,15 +2,10 @@ import React from "react";
 import Image from "next/image";
 import StrengthCard from "./StrengthCard";
 import FeatureCard from "./FeatureCard";
-import {
-  HeadingH2,
-  HeadingH3,
-  HeadingH5,
-  ParagraphElement,
-} from "../ui/typography";
-import { cn } from "@/lib/utils";
+import { HeadingH2, HeadingH5 } from "../ui";
+import { cn } from "../../lib/utils";
 
-export const DevelopmentStrength = ({ data, className }) => {
+const DevelopmentStrength = ({ data, className }) => {
   const {
     title,
     backgroundImage,
@@ -86,3 +81,5 @@ export const DevelopmentStrength = ({ data, className }) => {
     </section>
   );
 };
+
+export default DevelopmentStrength;

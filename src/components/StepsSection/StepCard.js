@@ -1,10 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { HeadingH3, ParagraphElement } from "@/components/ui/typography";
-import { Button } from "../ui";
+import { HeadingH3, ParagraphElement, Button } from "../ui";
 
-export const StepCard = ({
+const StepCard = ({
   stepNumber,
   title,
   description,
@@ -88,3 +87,5 @@ export const StepCard = ({
     </div>
   );
 };
+
+export default StepCard;

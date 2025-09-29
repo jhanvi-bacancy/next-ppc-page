@@ -1,10 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import { HeadingH2, HeadingH6 } from "./typography";
-import { Button } from "./Button";
+import { HeadingH2, HeadingH6, Button } from "../ui";
 import { cn } from "../../lib/utils";
 
-export function ServicesGrid({ className, data }) {
+const ServicesGrid = ({ className, data }) => {
   return (
     <section className={cn("", className)}>
       <div className="container mx-auto px-4 md:px-8">
@@ -76,4 +75,6 @@ export function ServicesGrid({ className, data }) {
       </div>
     </section>
   );
-}
+};
+
+export default ServicesGrid;

@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { Input, TextArea, Button } from "../ui";
-import { HeadingH2, HeadingH4, ParagraphElement } from "../ui/typography";
+import { Input, TextArea, Button, HeadingH4, ParagraphElement } from "../ui";
 import Image from "next/image";
 
-export function ContactForm({ data }) {
+const ContactForm = ({ data }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -154,4 +153,6 @@ export function ContactForm({ data }) {
       </ParagraphElement>
     </div>
   );
-}
+};
+
+export default ContactForm;
