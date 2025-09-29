@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { HeadingH2, HeadingH5 } from "../ui";
 import {
@@ -34,7 +32,7 @@ const FAQ = ({ data, className }) => {
                     window.location.href = "#contact-form-id";
                   }}
                 >
-                  Let's talk
+                  Let&apos;s talk
                 </span>
                 <span className="text-gray-light text-h5">&rarr;</span>
               </div>
