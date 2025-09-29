@@ -15,7 +15,8 @@ import {
   Footer,
   ContactBanner,
   FAQ,
-} from "../../components/ui";
+  PricingSection,
+} from "../../components";
 import {
   pythonBannerData,
   trustedLogosData,
@@ -34,7 +35,6 @@ import {
   contactBannerData,
   faqData,
 } from "./data";
-import { PricingSection } from "@/components/pricing";
 
 export default function PythonPage() {
   return (

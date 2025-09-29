@@ -1,8 +1,8 @@
 import React from "react";
 import { cn } from "../../lib/utils";
-import { HeadingH2, HeadingH3, ParagraphElement } from "./typography";
+import { HeadingH2, HeadingH3, ParagraphElement } from "../ui";
 
-export const SuccessBanner = ({ data, className }) => {
+const SuccessBanner = ({ data, className }) => {
   const { email, title, description, tools } = data;
 
   return (
@@ -45,3 +45,5 @@ export const SuccessBanner = ({ data, className }) => {
     </section>
   );
 };
+
+export default SuccessBanner;

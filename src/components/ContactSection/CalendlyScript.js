@@ -1,7 +1,7 @@
 import React from "react";
 import Script from "next/script";
 
-export function CalendlyScript() {
+const CalendlyScript = () => {
   return (
     <>
       <Script
@@ -24,4 +24,6 @@ export function CalendlyScript() {
       </Script>
     </>
   );
-}
+};
+
+export default CalendlyScript;

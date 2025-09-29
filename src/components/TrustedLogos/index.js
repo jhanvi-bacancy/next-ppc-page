@@ -1,10 +1,10 @@
 import React from "react";
-import { HeadingH2, HeadingH3 } from "./typography";
+import { HeadingH2, HeadingH3 } from "../ui";
 import Image from "next/image";
 import { cn } from "../../lib/utils";
 
 // Responsive grid of trusted company logos shown under the banner
-export function TrustedLogos({ data, className }) {
+const TrustedLogos = ({ data, className }) => {
   const { logos } = data;
 
   return (
@@ -43,4 +43,6 @@ export function TrustedLogos({ data, className }) {
       </div>
     </section>
   );
-}
+};
+
+export default TrustedLogos;

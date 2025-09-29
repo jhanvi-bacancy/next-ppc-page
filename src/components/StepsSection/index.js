@@ -1,2 +1,3 @@
-export { StepCard } from "./StepCard";
-export { StepsSection } from "./StepsSection";
+import StepsSection from "./StepsSection";
+
+export default StepsSection;

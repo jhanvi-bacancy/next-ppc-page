@@ -1,12 +1,10 @@
 import React from "react";
-import Carousel from "../Carousel";
+import { Carousel, Button, HeadingH2, ParagraphElement } from "../ui";
 import SuccessStory from "./SuccessStory";
-import { HeadingH2, ParagraphElement } from "../ui/typography";
-import { Button } from "../ui";
 import { cn } from "../../lib/utils";
-import { ArrowIcon } from "@/icons";
+import { ArrowIcon } from "../../icons";
 
-export const SuccessStoriesSection = ({ data, className }) => {
+const SuccessStoriesSection = ({ data, className }) => {
   const { title, description, successStories } = data;
 
   const CustomArrow = ({ className, style, onClick, direction }) => {
@@ -113,3 +111,5 @@ export const SuccessStoriesSection = ({ data, className }) => {
     </section>
   );
 };
+
+export default SuccessStoriesSection;

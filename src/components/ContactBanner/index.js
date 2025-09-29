@@ -1,13 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
-import { Input } from "../ui/Input";
-import { TextArea } from "../ui/TextArea";
-import { Button } from "../ui/Button";
-import { cn } from "@/lib/utils";
-import { HeadingH2, ParagraphElement } from "../ui/typography";
+import { Input, TextArea, Button, HeadingH2, ParagraphElement } from "../ui";
+import { cn } from "../../lib/utils";
 
-export const ContactBanner = ({ data = {}, className }) => {
+const ContactBanner = ({ data = {}, className }) => {
   const { title, ratings, iso, salesManager, starImage } = data;
 
   const {
@@ -189,3 +186,5 @@ export const ContactBanner = ({ data = {}, className }) => {
     </section>
   );
 };
+
+export default ContactBanner;

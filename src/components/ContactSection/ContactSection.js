@@ -1,10 +1,10 @@
 import React from "react";
-import { ContactForm } from "./ContactForm";
-import { CalendlyScript } from "./CalendlyScript";
+import ContactForm from "./ContactForm";
+import CalendlyScript from "./CalendlyScript";
 import { cn } from "@/lib/utils";
-import { HeadingH2 } from "../ui/typography";
+import { HeadingH2 } from "../ui";
 
-export function ContactSection({ data, className }) {
+const ContactSection = ({ data, className }) => {
   const { backgroundImage, ctaButton } = data;
 
   const cdnImage = process.env.NEXT_PUBLIC_IMG_URL;
@@ -70,4 +70,6 @@ export function ContactSection({ data, className }) {
       </div>
     </section>
   );
-}
+};
+
+export default ContactSection;

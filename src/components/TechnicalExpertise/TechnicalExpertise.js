@@ -1,10 +1,9 @@
 import React from "react";
-import { cn } from "@/lib/utils";
-import { ExpertiseCard } from "./ExpertiseCard";
-import { HeadingH2, ParagraphElement } from "@/components/ui/typography";
-import { Button } from "../ui";
+import { cn } from "../../lib/utils";
+import { HeadingH2, ParagraphElement, Button } from "../ui";
+import ExpertiseCard from "./ExpertiseCard";
 
-export const TechnicalExpertise = ({ data, className }) => {
+const TechnicalExpertise = ({ data, className }) => {
   const { title, subtitle, categories } = data;
 
   return (
@@ -44,3 +43,5 @@ export const TechnicalExpertise = ({ data, className }) => {
     </section>
   );
 };
+
+export default TechnicalExpertise;

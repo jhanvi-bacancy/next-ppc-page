@@ -1,11 +1,11 @@
 import React from "react";
 import Image from "next/image";
-import { Button } from "./Button";
-import { HeadingH1, ParagraphElement } from "./typography";
+import { Button } from "../ui/button";
+import { HeadingH1, ParagraphElement } from "../ui/typography";
 import { cn } from "../../lib/utils";
 
 // Banner with list component
-export function BannerWithList({ data, className }) {
+const BannerWithList = ({ data, className }) => {
   const { backgroundImage, badge, title, description, ctaButton, statsList } =
     data;
 
@@ -105,4 +105,6 @@ export function BannerWithList({ data, className }) {
       </div>
     </section>
   );
-}
+};
+
+export default BannerWithList;

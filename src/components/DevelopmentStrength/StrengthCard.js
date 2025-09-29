@@ -1,5 +1,5 @@
 import React from "react";
-import { HeadingH2, ParagraphElement } from "../ui/typography";
+import { HeadingH2, ParagraphElement } from "../ui";
 
 const StrengthCard = ({ number, title }) => {
   return (

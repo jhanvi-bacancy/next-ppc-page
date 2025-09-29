@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { ParagraphElement } from "../ui/typography";
+import { ParagraphElement } from "../ui";
 
 const FeatureCard = ({ icon, title }) => {
   return (

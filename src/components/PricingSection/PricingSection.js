@@ -1,11 +1,10 @@
 import React from "react";
-import { HeadingH2, ParagraphElement } from "../ui/typography";
-import { PricingCard } from "./PricingCard";
-import { RequirementSelector } from "./RequirementSelector";
+import { HeadingH2, ParagraphElement, Button } from "../ui";
+import PricingCard from "./PricingCard";
+import RequirementSelector from "./RequirementSelector";
 import { cn } from "../../lib/utils";
-import { Button } from "../ui";
 
-export function PricingSection({ className, data }) {
+const PricingSection = ({ className, data }) => {
   const handleRequirementSubmit = (selectedOption) => {
     // Handle the submission based on the selected option
     console.log("Selected option:", selectedOption);
@@ -71,4 +70,6 @@ export function PricingSection({ className, data }) {
       </div>
     </section>
   );
-}
+};
+
+export default PricingSection;

@@ -1,12 +1,10 @@
 import React from "react";
 import { cn } from "@/lib/utils";
-import { HeadingH2, ParagraphElement } from "@/components/ui/typography";
-import { StepCard } from "./StepCard";
-import { Button } from "@/components/ui";
+import { HeadingH2, ParagraphElement, Button, Carousel } from "../ui";
+import StepCard from "./StepCard";
 import { ArrowIcon } from "@/icons";
-import Carousel from "../Carousel";
 
-export const StepsSection = ({ data, className }) => {
+const StepsSection = ({ data, className }) => {
   const { title, subtitle, steps, backgroundImage } = data;
 
   const CustomArrow = ({ className, onClick, direction }) => {
@@ -139,3 +137,5 @@ export const StepsSection = ({ data, className }) => {
     </section>
   );
 };
+
+export default StepsSection;

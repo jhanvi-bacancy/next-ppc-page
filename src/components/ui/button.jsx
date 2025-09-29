@@ -1,16 +1,23 @@
-import React from "react";
-import Link from "next/link";
+import * as React from "react";
+import { Slot } from "@radix-ui/react-slot";
 import { cva } from "class-variance-authority";
-import { cn } from "../../lib/utils";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center transition-all duration-300 font-semibold focus:outline-none disabled:opacity-50 disabled:pointer-events-none",
+  "inline-flex items-center justify-center transition-all duration-300 font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:opacity-50 disabled:pointer-events-none [&_svg]:pointer-events-none",
   {
     variants: {
       variant: {
+        default:
+          "bg-primary text-primary-foreground shadow hover:bg-primary/90",
         filled: "bg-primary text-white hover:bg-primary-hover",
+        destructive:
+          "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
         outline:
           "border-2 border-primary text-primary hover:bg-primary hover:text-white",
+        secondary:
+          "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "text-primary hover:bg-primary/10",
         link: "text-primary underline-offset-4 hover:underline",
         text: "text-primary hover:text-primary-hover",
@@ -38,7 +45,7 @@ const buttonVariants = cva(
       iconSpacing: {
         none: "",
         sm: "gap-1",
-        md: "gap-2",
+        default: "gap-2",
         lg: "gap-3",
       },
       iconPosition: {
@@ -48,10 +55,10 @@ const buttonVariants = cva(
     },
     defaultVariants: {
       variant: "filled",
-      size: "md",
+      size: "default",
       fullWidth: false,
       uppercase: false,
-      iconSpacing: "md",
+      iconSpacing: "default",
       iconPosition: "left",
     },
   }
@@ -77,9 +84,9 @@ const Button = React.forwardRef(
   (
     {
       className,
-      children,
       variant,
       size,
+      asChild = false,
       fullWidth,
       uppercase,
       href,
@@ -89,11 +96,12 @@ const Button = React.forwardRef(
       endIcon,
       iconSpacing,
       iconPosition,
+      children,
       ...props
     },
     ref
   ) => {
-    const Comp = href ? Link : "button";
+    const Comp = asChild ? Slot : href ? Link : "button";
     const isDisabled = disabled || loading;
 
     const content = loading ? (

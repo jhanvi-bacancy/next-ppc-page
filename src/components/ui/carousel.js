@@ -1,42 +1,16 @@
 import React from "react";
-import Image from "next/image";
 import Slider from "react-slick";
-import {
-  HeadingH2,
-  HeadingH4,
-  HeadingH6,
-  ParagraphElement,
-} from "./typography";
-import { cn } from "../../lib/utils";
-import { Button } from "./Button";
 
-const cdnImage = process.env.NEXT_PUBLIC_IMG_URL;
-
-export function ExpertCarousel({ title, subtitle, experts, className }) {
+const Carousel = ({ children, carouselSettings }) => {
   const sliderSettings = {
     dots: true,
-    infinite: false,
+    infinite: true,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    arrows: false,
-    initialSlide: 0,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-        },
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
     appendDots: (dots) => (
       <div className="w-full">
         <ul className="flex justify-center items-center gap-2">{dots}</ul>
@@ -45,18 +19,27 @@ export function ExpertCarousel({ title, subtitle, experts, className }) {
     customPaging: (i) => (
       <button
         className="w-6 h-1 p-0 m-0 border-0 rounded-none transition-all duration-300 ease-in-out cursor-pointer bg-[#D1D5DB] hover:bg-gray-400 [&.slick-active]:!bg-[#f58220]"
-        aria-label={`Go to page ${i + 1}`}
+        aria-label={`Go to slide ${i + 1}`}
       />
     ),
-    dotsClass: "slick-dots", // Override Slick's absolute positioning
+    ...carouselSettings,
   };
 
   return (
-    <section className={cn("", className)}>
+    <div className="relative md:px-12">
       <style jsx global>{`
+        .slick-slider {
+          position: static;
+        }
+        .slick-list {
+          margin: 0 -12px;
+        }
+        .slick-slide {
+          padding: 0 12px;
+        }
         .slick-dots {
           position: static;
-          margin-top: 16px;
+          margin-top: 24px;
         }
         .slick-dots li {
           margin: 0;
@@ -69,7 +52,7 @@ export function ExpertCarousel({ title, subtitle, experts, className }) {
           padding: 0;
         }
         .slick-dots {
-          @apply mt-16;
+          @apply mt-8;
         }
         .slick-dots li {
           @apply mx-1;
@@ -86,146 +69,45 @@ export function ExpertCarousel({ title, subtitle, experts, className }) {
         .slick-dots li.slick-active button {
           background-color: #f58220 !important;
         }
+        .slick-prev,
+        .slick-next {
+          width: 40px;
+          height: 40px;
+          background-color: #f58220 !important;
+          border-radius: 9999px;
+          z-index: 10;
+          transition: all 0.3s ease;
+          transform: translateY(-50%);
+        }
+        .slick-prev {
+          left: -8px;
+        }
+        .slick-next {
+          right: -8px;
+        }
+        .slick-prev:hover,
+        .slick-next:hover {
+          background-color: #ea7110 !important;
+        }
+        .slick-prev:before,
+        .slick-next:before {
+          color: white;
+          font-size: 24px;
+          opacity: 1;
+          line-height: 1;
+        }
+        @media (min-width: 1024px) {
+          .slick-prev {
+            left: -20px;
+          }
+          .slick-next {
+            right: -20px;
+          }
+        }
       `}</style>
-      <div className="container mx-auto px-20">
-        {/* Heading Section */}
-        <div className="text-center mb-12">
-          <HeadingH2 className="mb-4">{title}</HeadingH2>
-          <HeadingH4 className="">{subtitle}</HeadingH4>
-        </div>
-
-        {/* Experts Carousel */}
-        <Slider {...sliderSettings}>
-          {experts.map((expert, index) => (
-            <div key={index} className="px-3">
-              <div className="bg-gray-light rounded-lg p-6 shadow-sm border border-gray-100">
-                {/* Expert Header */}
-                <div className="flex items-center gap-4 mb-9">
-                  <div className="w-97 h-97 rounded-full overflow-hidden relative flex-shrink-0">
-                    <Image
-                      src={expert.image}
-                      alt={expert.name}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="min-w-0">
-                    <HeadingH6 className="truncate !mb-2">
-                      {expert.name}
-                    </HeadingH6>
-                    <p className="text-gray-600 text-sm truncate">
-                      {expert.role}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Stats Grid */}
-                <div className="grid grid-cols-3 gap-2 mb-9">
-                  <div className="text-left">
-                    <p className="font-bold text-gray-900 text-sm !mb-0.5">
-                      {expert.experience}
-                    </p>
-                    <p className="text-sm text-gray-600 mb-0.5">Experience</p>
-                  </div>
-                  <div className="text-left">
-                    <p className="font-bold text-gray-900 text-sm !mb-0.5">
-                      {expert.availability}
-                    </p>
-                    <p className="text-sm text-gray-600 mb-0.5">Availability</p>
-                  </div>
-                  <div className="text-left">
-                    <p className="font-bold text-gray-900 text-sm !mb-0.5">
-                      {expert.projects}
-                    </p>
-                    <p className="text-sm text-gray-600 mb-0.5">Completed</p>
-                  </div>
-                </div>
-
-                {/* Description */}
-                <p className="text-gray-600 text-sm !mb-9 leading-relaxed line-clamp-3">
-                  {expert.description}
-                </p>
-
-                {/* Expert Skills */}
-                <div className="mb-9">
-                  <span className="inline-flex items-center px-2 py-1 bg-dark text-white relative pr-3 text-sm">
-                    <Image
-                      src={`${cdnImage}main-boot-5/images/laravel-ppc/ic_star.png`}
-                      alt="star"
-                      title="star"
-                      width={16}
-                      height={16}
-                      className="mr-2 w-auto"
-                    />
-                    <Image
-                      src={`${cdnImage}main-boot-5/images/laravel-ppc/holder.png`}
-                      alt="holder"
-                      width={8}
-                      height={24}
-                      className="absolute bottom-0 -right-2 top-0 w-auto"
-                    />
-                    Expert in
-                  </span>
-                  <ParagraphElement className="text-sm">
-                    {expert.expertIn.map((skill, idx) => (
-                      <span
-                        key={idx}
-                        className="px-2 bg-light-orange border border-primary py-1 mr-2 mt-2 inline-block"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </ParagraphElement>
-                </div>
-
-                {/* Additional Skills */}
-                <div className="mb-9">
-                  <span className="font-medium text-sm text-gray-900">
-                    Also Skilled in
-                  </span>
-                  <ParagraphElement className="text-sm">
-                    {expert.alsoSkilledIn.map((skill, idx) => (
-                      <span
-                        key={idx}
-                        className="px-2 border py-1 mr-2 mt-2 inline-block"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </ParagraphElement>
-                </div>
-
-                {/* Worked With */}
-                <div className="mb-9">
-                  <span className="font-medium text-sm text-gray-900">
-                    Worked With
-                  </span>
-                  <ParagraphElement className="text-sm">
-                    {expert.workedWith.map((company, idx) => (
-                      <span
-                        key={idx}
-                        className="relative h-9 w-9 flex-shrink-0 mr-2 mt-2 inline-block"
-                      >
-                        <Image
-                          src={company.logo}
-                          alt={company.name}
-                          fill
-                          className="object-contain"
-                        />
-                      </span>
-                    ))}
-                  </ParagraphElement>
-                </div>
-
-                {/* Hire Button */}
-                <Button className="w-full bg-primary text-white py-3 rounded-md hover:bg-primary transition-colors font-normal text-sm">
-                  HIRE {expert.name.toUpperCase()}
-                </Button>
-              </div>
-            </div>
-          ))}
-        </Slider>
-      </div>
-    </section>
+      <Slider {...sliderSettings}>{children}</Slider>
+    </div>
   );
-}
+};
+
+export default Carousel;
