@@ -12,7 +12,7 @@ const axiosInstance = axios.create({
 // Helper to get the API URL based on environment
 const getApiUrl = (endpoint) => {
   const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "";
-  return `${baseUrl}/${endpoint}`;
+  return `${baseUrl}${endpoint}`;
 };
 
 // Request interceptor

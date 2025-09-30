@@ -59,6 +59,8 @@ const ContactForm = ({ data }) => {
       if (response.status === 200) {
         setSubmitSuccess(true);
         reset();
+        window.location.href = "https://www.bacancytechnology.com/thank-you";
+        // process.env.NEXT_PUBLIC_API_BASE_URL + "/thank-you";
       } else {
         throw new Error("No response from server");
       }
