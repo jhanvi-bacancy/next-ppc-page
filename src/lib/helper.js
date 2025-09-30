@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 
 // Render highlighted text
 const renderHighlightedText = (text, highlightWord, Tag = "span") => {
@@ -55,4 +56,61 @@ const formatDateWithDay = (date = new Date(), dayAdjustment = 0) => {
   return `${dayName}, ${monthName} ${dayOfMonth}`;
 };
 
-export { renderHighlightedText, formatDateWithDay };
+// Function to get client IP and format it like PHP version
+const getClientIp = async () => {
+  try {
+    // Get public IP using a reliable service
+    const response = await axios.get("https://api.ipify.org?format=json");
+    const ip = response.data.ip;
+    return ip;
+  } catch (error) {
+    console.error("Error getting IP:", error);
+    return "UNKNOWN";
+  }
+};
+
+// Function to get location data using browser's Geolocation API
+const getLocationData = async () => {
+  try {
+    // Get coordinates using browser's Geolocation API
+    const position = await new Promise((resolve, reject) => {
+      if (!navigator.geolocation) {
+        reject(new Error("Geolocation is not supported"));
+        return;
+      }
+      navigator.geolocation.getCurrentPosition(resolve, reject, {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0,
+      });
+    });
+
+    // Use reverse geocoding to get location details
+    const { latitude, longitude } = position.coords;
+    const response = await axios.get(
+      `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
+    );
+
+    return {
+      city: response.data.city || response.data.locality || "UNKNOWN",
+      state: response.data.principalSubdivision || "UNKNOWN",
+      country: response.data.countryName || "UNKNOWN",
+      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+    };
+  } catch (error) {
+    console.error("Error getting location:", error);
+    return {
+      city: "UNKNOWN",
+      state: "UNKNOWN",
+      country: "UNKNOWN",
+      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+    };
+  }
+};
+
+export {
+  renderHighlightedText,
+  formatDateWithDay,
+  getClientIp,
+  getLocationData,
+};

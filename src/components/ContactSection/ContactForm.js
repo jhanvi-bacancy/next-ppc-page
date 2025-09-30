@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { Input, TextArea, Button, HeadingH4, ParagraphElement } from "../ui";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
+import { api } from "../../api/apiManager";
+import { ENDPOINTS } from "../../api/endpoints";
+import { getClientIp, getLocationData } from "../../lib/helper";
 
 const ContactForm = ({ data }) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm({
     defaultValues: {
       name: "",
@@ -15,11 +23,54 @@ const ContactForm = ({ data }) => {
       phone: "",
       requirements: "",
     },
+    mode: "onBlur",
   });
 
-  const onSubmit = (formData) => {
-    // Handle form submission
-    console.log("Form submitted:", formData);
+  const onSubmit = async (formData) => {
+    try {
+      setIsSubmitting(true);
+      setSubmitError("");
+      setSubmitSuccess(false);
+
+      // Get IP and location data
+      const [clientIp, locationData] = await Promise.all([
+        getClientIp(),
+        getLocationData(),
+      ]);
+
+      // Transform form data to match API expectations
+      const payload = {
+        name: formData.name,
+        email: formData.email,
+        number: formData.phone,
+        description: formData.requirements,
+        leadingPage: "https://www.bacancytechnology.com/landing/python-2",
+        userVisit: sessionStorage.getItem("landingPage") || "-",
+        type: "reactForm",
+        ip: clientIp,
+        city: locationData.city,
+        state: locationData.state,
+        country: locationData.country,
+        timezone: locationData.timezone,
+      };
+
+      const response = await api.post(ENDPOINTS.SF_MAIL_DATA, payload);
+
+      if (response.status === 200) {
+        setSubmitSuccess(true);
+        reset();
+      } else {
+        throw new Error("No response from server");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setSubmitError(
+        error.response?.data?.message ||
+          "Failed to submit form. Please try again later."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -103,15 +154,29 @@ const ContactForm = ({ data }) => {
           className="bg-gray-light"
         />
 
+        {submitError && (
+          <div className="text-red-600 text-sm text-center mb-4">
+            {submitError}
+          </div>
+        )}
+
+        {submitSuccess && (
+          <div className="text-green-600 text-sm text-center mb-4">
+            Form submitted successfully! We&apos;ll get back to you soon.
+          </div>
+        )}
+
         <div className="flex justify-center">
           <Button
             type="submit"
             variant="filled"
             size="md"
             className="font-normal px-8 w-full sm:w-auto"
+            disabled={isSubmitting}
+            loading={isSubmitting}
             uppercase
           >
-            {data.text}
+            {isSubmitting ? "Submitting..." : data.text}
           </Button>
         </div>
       </form>

@@ -1,17 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { Input, TextArea, Button, HeadingH2, ParagraphElement } from "../ui";
 import { cn } from "../../lib/utils";
+import { getClientIp, getLocationData } from "../../lib/helper";
+import { api } from "../../api/apiManager";
+import { ENDPOINTS } from "../../api/endpoints";
 
 const ContactBanner = ({ data = {}, className }) => {
   const { title, ratings, iso, salesManager, starImage } = data;
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isSubmitting },
+    formState: { errors },
   } = useForm({
     defaultValues: {
       fullName: "",
@@ -19,22 +25,53 @@ const ContactBanner = ({ data = {}, className }) => {
       phone: "",
       message: "",
     },
+    mode: "onBlur",
   });
 
   const onSubmit = async (formData) => {
     try {
-      // Here you would typically make an API call to submit the form
-      // For now, we'll simulate an API call with a timeout
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      setIsSubmitting(true);
+      setSubmitError("");
+      setSubmitSuccess(false);
 
-      // Clear form after successful submission
-      reset();
+      // Get IP and location data
+      const [clientIp, locationData] = await Promise.all([
+        getClientIp(),
+        getLocationData(),
+      ]);
 
-      // You might want to show a success message or redirect
-      alert("Form submitted successfully!");
+      // Transform form data to match API expectations
+      const payload = {
+        name: formData.name,
+        email: formData.email,
+        number: formData.phone,
+        description: formData.requirements,
+        leadingPage: "https://www.bacancytechnology.com/landing/python-2",
+        userVisit: sessionStorage.getItem("landingPage") || "-",
+        type: "reactForm",
+        ip: clientIp,
+        city: locationData.city,
+        state: locationData.state,
+        country: locationData.country,
+        timezone: locationData.timezone,
+      };
+
+      const response = await api.post(ENDPOINTS.SF_MAIL_DATA, payload);
+
+      if (response.status === 200) {
+        setSubmitSuccess(true);
+        reset();
+      } else {
+        throw new Error("No response from server");
+      }
     } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("Failed to submit form. Please try again.");
+      console.error("Form submission error:", error);
+      setSubmitError(
+        error.response?.data?.message ||
+          "Failed to submit form. Please try again later."
+      );
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -98,15 +135,30 @@ const ContactBanner = ({ data = {}, className }) => {
                   className="w-full min-h-[100px] sm:min-h-[120px]"
                   rows={4}
                 />
+
+                {submitError && (
+                  <div className="text-red-600 text-sm text-center mb-4">
+                    {submitError}
+                  </div>
+                )}
+
+                {submitSuccess && (
+                  <div className="text-green-600 text-sm text-center mb-4">
+                    Form submitted successfully! We&apos;ll get back to you
+                    soon.
+                  </div>
+                )}
+
                 <Button
                   type="submit"
                   variant="filled"
                   size="md"
                   loading={isSubmitting}
                   className="font-normal px-6"
+                  disabled={isSubmitting}
                   uppercase
                 >
-                  INQUIRE NOW
+                  {isSubmitting ? "Submitting..." : "INQUIRE NOW"}
                 </Button>
               </form>
             </div>
