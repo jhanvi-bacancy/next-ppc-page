@@ -1,6 +1,6 @@
 import BannerWithList from "./HeroBanner";
 import TrustedLogos from "./TrustedLogos";
-import ExpertCarousel from "./ExpertCarousel";
+import ExpertCarousel from "./Profile";
 import ServicesGrid from "./ServicesGrid";
 import ContactSection from "./ContactSection";
 import SuccessBanner from "./SuccessBanner";

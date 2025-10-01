@@ -12,22 +12,20 @@ const PricingSection = ({ className, data }) => {
 
   return (
     <section className={cn("py-8 md:py-12", className)}>
-      <div className="container px-4 md:px-8 lg:px-20">
-        <div className="text-center mx-auto mb-8 md:mb-12">
-          <HeadingH2 className="mb-4 md:mb-6">
+      <div className="container">
+        <div className="text-center mx-auto mb-sm">
+          <HeadingH2>
             Developer Hiring Made Simple:
-            <span className="text-primary"> Hourly</span>,
-            <span className="text-primary"> Monthly</span> or
-            <span className="text-primary"> Fixed Cost</span>
+            <span className="primary"> Hourly</span>,
+            <span className="primary"> Monthly</span> or
+            <span className="primary"> Fixed Cost</span>
             <br className="hidden md:block" />
             Based on Your Needs
           </HeadingH2>
-          <ParagraphElement className="text-secondary">
-            {data.subtitle}
-          </ParagraphElement>
+          <ParagraphElement color="secondary">{data.subtitle}</ParagraphElement>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start gap-6 lg:gap-0 mb-8 md:mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start gap-6 lg:gap-0 mb-sm">
           {data.plans.map((plan, index) => (
             <div
               key={index}
@@ -51,12 +49,11 @@ const PricingSection = ({ className, data }) => {
           ))}
         </div>
 
-        <div className="flex items-center justify-center mb-8 md:mb-12">
+        <div className="flex items-center justify-center mb-sm">
           <Button
             href={data.ctaButton.href}
-            variant="filled"
-            size="md"
-            className="font-normal px-8 w-full sm:w-auto"
+            className="font-normal w-full sm:w-auto"
+            fullWidth
             uppercase
           >
             {data.ctaButton.text}

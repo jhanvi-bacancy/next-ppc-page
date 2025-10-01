@@ -1,31 +1,58 @@
 import React from "react";
-import { HeadingH2, HeadingH3 } from "../ui";
+import { HeadingH2, ParagraphElement } from "../ui";
 import Image from "next/image";
 import { cn } from "../../lib/utils";
 
-// Responsive grid of trusted company logos shown under the banner
-const TrustedLogos = ({ data, className }) => {
-  const { logos } = data;
+const cdnImage = process.env.NEXT_PUBLIC_IMG_URL;
+
+const trustedLogosData = {
+  logos: [
+    {
+      alt: "Disney+",
+      src: `${cdnImage}landing/images/react-ppc/client-logo-1.svg`,
+    },
+    {
+      alt: "3M",
+      src: `${cdnImage}landing/images/react-ppc/client-logo-2.svg`,
+    },
+    {
+      alt: "National Geographic",
+      src: `${cdnImage}landing/images/react-ppc/client-logo-3.svg`,
+    },
+    {
+      alt: "Verizon",
+      src: `${cdnImage}landing/images/react-ppc/client-logo-4.svg`,
+    },
+    {
+      alt: "Wipro",
+      src: `${cdnImage}landing/images/react-ppc/client-logo-5.svg`,
+    },
+    {
+      alt: "KPMG",
+      src: `${cdnImage}landing/images/react-ppc/client-logo-6.svg`,
+    },
+  ],
+};
+
+const TrustedLogos = ({ className }) => {
+  const { logos } = trustedLogosData;
 
   return (
     <section className={cn("", className)}>
-      <div className="container w-[85%] mx-auto px-4">
-        <div className="text-center mb-6 w-5/6 mx-auto">
+      <div className="container">
+        <div className="text-center mb-sm mx-auto">
           <HeadingH2>
             Winning The Trust Of{" "}
             <span className="text-primary">100+ NASDAQ & NYSE</span> Listed
             Companies And Fast-Growing Startups
           </HeadingH2>
-          <HeadingH3
-            color="primary"
-            className="text-sm sm:text-base text-primary mt-2"
-          >
+          <ParagraphElement color="primary">
             Join Us to Build Your Idea into Reality
-          </HeadingH3>
+          </ParagraphElement>
         </div>
 
-        <div className="w-5/6 mx-auto rounded-2xl border-2 border-gray-200/70 p-sm sm:p-6">
-          <ul className="flex flex-wrap justify-center items-center gap-8">
+        <div className="mx-auto border-2 border-gray-200/70 boxed sm:p-6">
+          <ul className="flex flex-wrap justify-center items-center gap-6">
             {logos.map((logo, index) => (
               <li key={index} className="flex items-center justify-center">
                 {/* As requested, use # for src attribute */}

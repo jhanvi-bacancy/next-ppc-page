@@ -14,8 +14,8 @@ const StepsSection = ({ data, className }) => {
         onClick={onClick}
         variant="light"
         className={cn(
-          "!absolute !p-0 top-1/2 -translate-y-1/2 !rounded-full shadow-md z-10 md:hidden",
-          direction === "next" ? "-right-5" : "-left-5",
+          "absolute p-0 -top-3 -translate-y-1/2 !rounded-full shadow-md z-10 md:hidden",
+          direction === "next" ? "-right-5" : "right-0",
           isDisabled && "!opacity-50 !cursor-not-allowed"
         )}
         disabled={isDisabled}
@@ -37,6 +37,7 @@ const StepsSection = ({ data, className }) => {
     slidesToScroll: 1,
     arrows: true,
     initialSlide: 0,
+    autoPlay: false,
     nextArrow: <CustomArrow direction="next" />,
     prevArrow: <CustomArrow direction="prev" />,
   };
@@ -51,15 +52,17 @@ const StepsSection = ({ data, className }) => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container relative z-10">
         {/* Header */}
-        <div className="text-center mb-8 sm:mb-16">
-          <HeadingH2 className="mb-4">
+        <div className="text-center mb-sm">
+          <HeadingH2>
             {title.text}
             <span className="text-primary"> {title.highlight}</span>
             {title.suffix && ` ${title.suffix}`}
           </HeadingH2>
-          <ParagraphElement>{subtitle}</ParagraphElement>
+          <ParagraphElement color="secondary" noMargin>
+            {subtitle}
+          </ParagraphElement>
         </div>
 
         {/* Steps Container */}
@@ -117,7 +120,7 @@ const StepsSection = ({ data, className }) => {
           </div>
 
           {/* Desktop View */}
-          <div className="hidden md:grid md:grid-cols-3 gap-8 lg:gap-10">
+          <div className="hidden md:grid md:grid-cols-3 gap-6">
             {steps.map((step, index) => (
               <StepCard
                 key={index}

@@ -1,41 +1,40 @@
 import React from "react";
 import { cn } from "../../lib/utils";
-import { HeadingH2, HeadingH3, ParagraphElement } from "../ui";
+import { ParagraphElement } from "../ui";
 
 const SuccessBanner = ({ data, className }) => {
   const { email, title, description, tools } = data;
 
   return (
     <section className={cn("w-full relative", className)}>
-      <div className="container mx-auto px-4 -mt-32 md:-mt-44">
-        <div className="!bg-primary text-center py-12 md:py-16">
+      <div className="container -mt-36 md:-mt-72">
+        <div className="bg-primary text-center boxed">
           <a
             href={`mailto:${email}`}
-            className="inline-block hover:opacity-90 transition-opacity"
+            className="inline-block hover:opacity-90 transition-opacity mb-sm"
           >
-            <HeadingH2 className="!text-white mb-3 underline">
+            <ParagraphElement
+              color="white"
+              className="underline text-h3"
+              noMargin
+            >
               {email}
-            </HeadingH2>
+            </ParagraphElement>
           </a>
 
-          <HeadingH3 className="!text-white font-normal !mb-6">
+          <ParagraphElement color="white" className="font-normal text-h3">
             {title}
-          </HeadingH3>
+          </ParagraphElement>
 
-          <ParagraphElement className="!text-white !mb-3">
+          <ParagraphElement color="white" className="mb-sm">
             {description}
           </ParagraphElement>
 
-          <div className="!text-white flex flex-wrap justify-center items-center gap-x-2">
+          <div className="text-white flex flex-wrap justify-center items-center gap-x-2">
             <span>We Use</span>
-            {tools.map((tool, index) => (
-              <React.Fragment key={tool}>
-                <span className="font-bold whitespace-nowrap">{tool}</span>
-                {index < tools.length - 1 && (
-                  <span className="whitespace-nowrap">&</span>
-                )}
-              </React.Fragment>
-            ))}
+            <span className="font-bold whitespace-nowrap">
+              Slack, Jira &amp; GitHub
+            </span>
             <span className="whitespace-normal">
               for Accurate Deployment and Effective Communication.
             </span>

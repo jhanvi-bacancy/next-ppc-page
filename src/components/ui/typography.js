@@ -6,14 +6,14 @@ import { cn } from "../../lib/utils";
 const Typography = cva("", {
   variants: {
     color: {
-      default: "!text-dark",
-      white: "!text-white",
-      primary: "!text-primary",
-      secondary: "!text-secondary",
+      default: "dark",
+      white: "white",
+      primary: "primary",
+      secondary: "secondary",
       success: "!text-green-600",
-      warning: "!text-yellow-600",
-      error: "!text-red-600",
-      muted: "!text-gray-500",
+      warning: "!text-warning",
+      error: "!text-error",
+      muted: "!text-muted",
     },
   },
   defaultVariants: {
@@ -39,62 +39,67 @@ const TypographyElement = ({
 };
 
 // Individual component exports
-export const HeadingH1 = ({ color, className, ...props }) => (
+export const HeadingH1 = ({ color, className, noMargin, ...props }) => (
   <TypographyElement
-    className={cn("text-h1 mb-4 font-bold", className)}
+    className={cn("text-h1 font-bold", !noMargin && "mb-sm", className)}
     color={color}
     {...props}
     variant="h1"
   />
 );
 
-export const HeadingH2 = ({ color, className, ...props }) => (
+export const HeadingH2 = ({ color, className, noMargin, ...props }) => (
   <TypographyElement
-    className={cn("text-h2 mb-5 font-bold", className)}
+    className={cn("text-h2 font-bold", !noMargin && "mb-sm", className)}
     color={color}
     {...props}
     variant="h2"
   />
 );
 
-export const HeadingH3 = ({ color, className, ...props }) => (
+export const HeadingH3 = ({ color, className, noMargin, ...props }) => (
   <TypographyElement
-    className={cn("text-h3 mb-sm font-bold", className)}
+    className={cn("text-h3 font-bold", !noMargin && "mb-sm", className)}
     color={color}
     {...props}
     variant="h3"
   />
 );
 
-export const HeadingH4 = ({ color, className, ...props }) => (
+export const HeadingH4 = ({ color, className, noMargin, ...props }) => (
   <TypographyElement
-    className={cn("text-h4 mb-sm font-bold", className)}
+    className={cn("text-h4 font-bold", !noMargin && "mb-sm", className)}
     color={color}
     {...props}
     variant="h4"
   />
 );
 
-export const HeadingH5 = ({ color, className, ...props }) => (
+export const HeadingH5 = ({ color, className, noMargin, ...props }) => (
   <TypographyElement
-    className={cn("text-h5 mb-sm font-bold", className)}
+    className={cn("text-h5 font-bold", !noMargin && "mb-sm", className)}
     color={color}
     {...props}
     variant="h5"
   />
 );
 
-export const HeadingH6 = ({ color, className, ...props }) => (
+export const HeadingH6 = ({ color, className, noMargin, ...props }) => (
   <TypographyElement
-    className={cn("text-h6 mb-sm font-bold", className)}
+    className={cn("text-h6 font-bold", !noMargin && "mb-sm", className)}
     color={color}
     {...props}
     variant="h6"
   />
 );
 
-export const ParagraphElement = ({ color, ...props }) => (
-  <TypographyElement {...props} variant="p" color={color} />
+export const ParagraphElement = ({ color, className, noMargin, ...props }) => (
+  <TypographyElement
+    className={cn("text-base font-normal", !noMargin && "mb-sm", className)}
+    variant="p"
+    color={color}
+    {...props}
+  />
 );
 
 export default Typography;

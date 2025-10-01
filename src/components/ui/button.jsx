@@ -55,7 +55,7 @@ const buttonVariants = cva(
     },
     defaultVariants: {
       variant: "filled",
-      size: "default",
+      size: "md",
       fullWidth: false,
       uppercase: false,
       iconSpacing: "default",

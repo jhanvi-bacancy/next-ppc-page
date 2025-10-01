@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { HeadingH3, HeadingH4, ParagraphElement } from "../ui";
+import { HeadingH3, ParagraphElement } from "../ui";
 
 const SuccessStory = ({
   category,
@@ -11,16 +11,16 @@ const SuccessStory = ({
   image,
 }) => {
   return (
-    <div className="bg-white p-8 rounded-lg shadow-sm h-full">
+    <div className="bg-white boxed h-full">
       <div className="flex flex-col h-full">
         {/* Image */}
-        <div className="mb-6">
-          <div className="relative aspect-[4/3] w-full">
+        <div className="mb-sm">
+          <div className="relative boxed aspect-[4/3] w-full">
             <Image
               src={image}
               alt={title}
               fill
-              className="rounded-lg object-cover"
+              className="object-cover"
               priority
             />
           </div>
@@ -29,30 +29,52 @@ const SuccessStory = ({
         {/* Content */}
         <div>
           {/* Category Badge */}
-          <span className="inline-block px-4 py-1 bg-orange-500 text-white rounded-full text-sm mb-4">
+          <ParagraphElement
+            color="white"
+            className="inline-block px-4 py-2 bg-primary rounded-full text-sm"
+          >
             {category}
-          </span>
-
-          {/* Title */}
-          <HeadingH3 className="!mb-2">{title}</HeadingH3>
-
-          {/* Description */}
-          <ParagraphElement className="!text-secondary text-sm leading-relaxed mb-3">
-            {description}
           </ParagraphElement>
 
+          {/* Title */}
+          <HeadingH3 className="text-h5" noMargin>
+            {title}
+          </HeadingH3>
+
+          {/* Description */}
+          <div className="mb-sm">
+            <ParagraphElement
+              className="text-sm leading-relaxed"
+              color="secondary"
+            >
+              {description}
+            </ParagraphElement>
+          </div>
+
           {/* Client Requirement Section */}
-          <div className="mb-4">
-            <HeadingH4 className="!mb-2">Client Requirement</HeadingH4>
-            <ParagraphElement className="!text-secondary text-sm leading-relaxed">
+          <div className="mb-sm">
+            <ParagraphElement className="text-h6 font-bold !mb-0" noMargin>
+              Client Requirement
+            </ParagraphElement>
+            <ParagraphElement
+              className="text-sm leading-relaxed"
+              color="secondary"
+              noMargin
+            >
               {clientRequirement}
             </ParagraphElement>
           </div>
 
           {/* Result Section */}
-          <div className="mt-auto">
-            <HeadingH4 className="!mb-2">Result</HeadingH4>
-            <ParagraphElement className="!text-secondary text-sm leading-relaxed">
+          <div>
+            <ParagraphElement className="text-h6 font-bold !mb-0" noMargin>
+              Result
+            </ParagraphElement>
+            <ParagraphElement
+              className="text-sm leading-relaxed"
+              color="secondary"
+              noMargin
+            >
               {result}
             </ParagraphElement>
           </div>

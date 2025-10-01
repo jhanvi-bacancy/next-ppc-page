@@ -4,11 +4,11 @@ import { ParagraphElement } from "../ui";
 
 const FeatureCard = ({ icon, title }) => {
   return (
-    <div className="flex flex-col items-center gap-4">
-      <div className="w-12 h-12">
-        <Image src={icon} alt={title} width={48} height={48} />
+    <div className="flex flex-col items-center gap-sm">
+      <div className="h-svg-icon w-svg-icon">
+        <Image src={icon} alt={title} width={48} height={48} className="object-contain" />
       </div>
-      <ParagraphElement className="!text-secondary text-center">
+      <ParagraphElement color="secondary" noMargin>
         {title}
       </ParagraphElement>
     </div>

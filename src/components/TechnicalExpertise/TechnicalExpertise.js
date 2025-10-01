@@ -8,15 +8,15 @@ const TechnicalExpertise = ({ data, className }) => {
 
   return (
     <section className={cn("", className)}>
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-8 sm:mb-12">
-          <HeadingH2 className="mb-4">{title}</HeadingH2>
-          <ParagraphElement className="mx-auto text-sm sm:text-base">
+      <div className="container">
+        <div className="text-center mb-sm">
+          <HeadingH2>{title}</HeadingH2>
+          <ParagraphElement color="secondary" noMargin>
             {subtitle}
           </ParagraphElement>
         </div>
 
-        <div className="space-y-2 sm:space-y-4">
+        <div className="space-y-2 sm:space-y-4 mb-sm">
           {categories.map((category, index) => (
             <ExpertiseCard
               key={index}
@@ -26,14 +26,12 @@ const TechnicalExpertise = ({ data, className }) => {
           ))}
         </div>
 
-        <div className="text-center mt-8 sm:mt-12">
+        <div className="text-center">
           <Button
             key={"schedule-developer-interview"}
             href={data.ctaButton.href}
             target={data.ctaButton.target || "_self"}
-            variant="filled"
-            size="md"
-            className="px-4 sm:px-8 w-full font-normal sm:w-auto"
+            className="w-full font-normal sm:w-auto"
             uppercase
           >
             {data.ctaButton.text}

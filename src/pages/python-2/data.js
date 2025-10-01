@@ -47,36 +47,6 @@ export const bannerTypes = {
   // etc.
 };
 
-// export trusted logos data
-export const trustedLogosData = {
-  logos: [
-    {
-      alt: "Disney+",
-      src: `${cdnImage}landing/images/react-ppc/client-logo-1.svg`,
-    },
-    {
-      alt: "3M",
-      src: `${cdnImage}landing/images/react-ppc/client-logo-2.svg`,
-    },
-    {
-      alt: "National Geographic",
-      src: `${cdnImage}landing/images/react-ppc/client-logo-3.svg`,
-    },
-    {
-      alt: "Verizon",
-      src: `${cdnImage}landing/images/react-ppc/client-logo-4.svg`,
-    },
-    {
-      alt: "Wipro",
-      src: `${cdnImage}landing/images/react-ppc/client-logo-5.svg`,
-    },
-    {
-      alt: "KPMG",
-      src: `${cdnImage}landing/images/react-ppc/client-logo-6.svg`,
-    },
-  ],
-};
-
 // export python experts data
 export const pythonExpertsData = {
   title: "Our Top Talent, Available for Hire",

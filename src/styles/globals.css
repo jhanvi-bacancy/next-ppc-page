@@ -33,6 +33,11 @@
     font-family: var(--font-lato);
     @apply m-0 p-0 box-border text-base bg-opacity-5 text-secondary;
   }
+
+  section {
+    @apply py-lg;
+  }
+
   .primary {
     @apply text-primary;
   }
@@ -66,7 +71,7 @@
     @apply h-60 w-60;
   }
   .boxed {
-    @apply p-7;
+    @apply p-7 rounded-lg;
   }
   .banner {
     @apply flex items-center;

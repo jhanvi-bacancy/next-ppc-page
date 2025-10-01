@@ -1,14 +1,18 @@
 import React from "react";
-import { HeadingH5 } from "../ui";
+import { ParagraphElement } from "../ui";
 
 const ExpertiseCard = ({ title, items }) => {
   return (
     <div className="flex flex-col sm:flex-row bg-gray-light rounded-lg overflow-hidden shadow-sm">
       {/* Orange Header */}
-      <div className="w-full sm:w-64 bg-primary text-white p-4 sm:p-6 flex items-center justify-center sm:justify-start">
-        <HeadingH5 className="font-semibold !text-white !text-sm !mb-0 text-center sm:text-left">
+      <div className="w-full sm:w-80 bg-primary text-white p-4 sm:p-6 flex items-center justify-center sm:justify-start">
+        <ParagraphElement
+          color="white"
+          className="font-semibold text-center sm:text-left"
+          noMargin
+        >
           {title}
-        </HeadingH5>
+        </ParagraphElement>
       </div>
 
       {/* White Content Area */}
@@ -17,13 +21,19 @@ const ExpertiseCard = ({ title, items }) => {
           {items.map((item, index) => (
             <React.Fragment key={index}>
               {index < items.length - 1 ? (
-                <span className="text-dark text-xs sm:text-sm font-normal px-1 sm:px-2 border-r border-r-secondary">
+                <ParagraphElement
+                  className="font-normal px-2 sm:px-4 border-r border-r-secondary !mb-0"
+                  noMargin
+                >
                   {item}
-                </span>
+                </ParagraphElement>
               ) : (
-                <span className="text-dark text-xs sm:text-sm font-normal px-1 sm:px-2 border-none">
+                <ParagraphElement
+                  className="font-normal px-4 border-none !mb-0"
+                  noMargin
+                >
                   {item}
-                </span>
+                </ParagraphElement>
               )}
             </React.Fragment>
           ))}

@@ -25,15 +25,19 @@ const StepCard = ({
           width={32}
           height={32}
         />
-        <span className="text-primary font-semibold text-base uppercase">
+        <ParagraphElement
+          color="primary"
+          className="font-semibold uppercase"
+          noMargin
+        >
           STEP {stepNumber}
-        </span>
+        </ParagraphElement>
       </div>
 
       {/* Main Card Container */}
-      <div className="bg-white rounded-xl shadow-md w-full flex flex-col items-center pb-8">
+      <div className="bg-white boxed w-full flex flex-col items-center pb-sm mb-sm">
         {/* Title */}
-        <HeadingH3 className="uppercase text-dark px-8 pt-8 text-center">
+        <HeadingH3 className="uppercase pt-6 text-center text-h4">
           {title}
         </HeadingH3>
 
@@ -41,7 +45,7 @@ const StepCard = ({
         <div className="px-6 flex-1 flex flex-col">
           <div
             className={cn(
-              "bg-gray-50 rounded-lg overflow-hidden p-4 flex items-center justify-center mb-6",
+              "bg-gray-50 boxed overflow-hidden p-4 flex items-center justify-center mb-6",
               bgColor
             )}
           >
@@ -81,7 +85,7 @@ const StepCard = ({
       </div>
 
       {/* Description */}
-      <ParagraphElement className="text-sm !text-secondary mt-6">
+      <ParagraphElement className="text-sm !text-secondary" noMargin>
         {description}
       </ParagraphElement>
     </div>

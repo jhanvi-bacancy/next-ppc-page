@@ -14,7 +14,7 @@ const PricingCard = ({
   return (
     <div
       className={cn(
-        "p-8 rounded-xl flex flex-col",
+        "boxed flex flex-col",
         highlighted ? "bg-white border border-primary" : "bg-primary-light",
         className
       )}
@@ -23,15 +23,16 @@ const PricingCard = ({
         <div className="text-center mb-4">
           {price ? (
             <>
-              <span className="text-primary text-h3 font-semibold">
-                ${price}
-              </span>
+              <span className="primary text-h3 font-semibold">${price}</span>
               <ParagraphElement className="font-normal">
                 {title} ({currency})
               </ParagraphElement>
             </>
           ) : (
-            <HeadingH3 className="!text-primary font-semibold text-h3 mb-0 leading-none">
+            <HeadingH3
+              color="primary"
+              className="font-semibold text-h2 mb-0 leading-none"
+            >
               {title}
             </HeadingH3>
           )}
@@ -39,15 +40,10 @@ const PricingCard = ({
       </div>
 
       <div className="flex-grow">
-        <ul
-          className={cn(
-            "space-y-2 mb-8 list-disc pl-5",
-            highlighted ? "mb-12" : "mb-8"
-          )}
-        >
+        <ul className={cn("list-disc pl-5", highlighted ? "mb-12" : "mb-8")}>
           {features.map((feature, index) => (
-            <li key={index} className="text-secondary marker:text-secondary">
-              <ParagraphElement className="text-sm" color="secondary">
+            <li key={index} className="marker:text-secondary">
+              <ParagraphElement className="text-sm" color="secondary" noMargin>
                 {feature}
               </ParagraphElement>
             </li>
@@ -58,9 +54,8 @@ const PricingCard = ({
       <Button
         href={ctaButton.href}
         variant={highlighted ? "outline" : "filled"}
-        size="md"
-        fullWidth
         className="font-normal"
+        fullWidth
       >
         {ctaButton.text}
       </Button>

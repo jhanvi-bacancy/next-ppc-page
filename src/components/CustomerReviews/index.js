@@ -11,15 +11,14 @@ const CustomerReviews = ({ data, className }) => {
 
   return (
     <section className={cn("overflow-hidden", className)}>
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-8">
+      <div className="container">
+        <div className="flex flex-col md:flex-row justify-between items-center mb-sm gap-sm">
           <div className="text-center md:text-left w-full md:w-2/3">
-            <HeadingH2 className="mb-4">
+            <HeadingH2 className="">
               {renderHighlightedText(title.text, title.highlight, "span")}
             </HeadingH2>
-            <ParagraphElement>
-              {description ||
-                "Don't just take our word for it. Hear what our valued clients have to say about their experiences with us."}
+            <ParagraphElement color="secondary" noMargin>
+              {description}
             </ParagraphElement>
           </div>
 

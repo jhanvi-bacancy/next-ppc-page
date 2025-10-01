@@ -13,9 +13,9 @@ export function Radio({
   disabled = false,
 }) {
   const variants = {
-    default: "border-gray-300 text-primary",
-    primary: "border-primary text-primary bg-white",
-    secondary: "border-secondary text-secondary",
+    default: "border-gray-300 primary",
+    primary: "border-primary primary bg-white",
+    secondary: "border-secondary secondary",
   };
 
   const sizes = {

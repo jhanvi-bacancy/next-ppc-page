@@ -26,11 +26,11 @@ const ContactSection = ({ data, className }) => {
         </div>
 
         {/* Content */}
-        <div className="container mx-auto px-4 z-10 relative">
+        <div className="container z-10 relative">
           <div className="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-28 w-full">
             {/* Left side - Contact Form */}
             <div className="w-full lg:w-1/2">
-              <HeadingH2 className="text-center font-bold !text-white mb-8">
+              <HeadingH2 color="white" className="text-center font-bold">
                 Start a Conversation
               </HeadingH2>
               <ContactForm data={ctaButton} />
@@ -52,7 +52,7 @@ const ContactSection = ({ data, className }) => {
 
             {/* Right side - Calendly Widget */}
             <div className="w-full lg:w-1/2">
-              <HeadingH2 className="text-center font-bold !text-white mb-8">
+              <HeadingH2 color="white" className="text-center font-bold">
                 Book a Meeting
               </HeadingH2>
               <div className="bg-white rounded-lg overflow-hidden shadow-lg">

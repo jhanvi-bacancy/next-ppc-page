@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Input, TextArea, Button, HeadingH4, ParagraphElement } from "../ui";
+import { Input, TextArea, Button, ParagraphElement } from "../ui";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { api } from "../../api/apiManager";
@@ -77,11 +77,11 @@ const ContactForm = ({ data }) => {
 
   return (
     <div className="w-full max-w-4xl mx-auto bg-white p-10 rounded-lg shadow-lg">
-      <HeadingH4 className="mb-6 text-center">
+      <ParagraphElement className="mb-6 text-center">
         Get Your 15 Days Risk Free Trial
-      </HeadingH4>
+      </ParagraphElement>
 
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 mb-sm">
         <Input
           {...register("name")}
           placeholder="Your Name"
@@ -171,11 +171,10 @@ const ContactForm = ({ data }) => {
         <div className="flex justify-center">
           <Button
             type="submit"
-            variant="filled"
-            size="md"
-            className="font-normal px-8 w-full sm:w-auto"
+            className="font-normal w-full sm:w-auto"
             disabled={isSubmitting}
             loading={isSubmitting}
+            fullWidth
             uppercase
           >
             {isSubmitting ? "Submitting..." : data.text}
@@ -185,7 +184,8 @@ const ContactForm = ({ data }) => {
 
       <ParagraphElement
         color={"secondary"}
-        className="mt-6 text-sm text-center text-gray-600"
+        className="text-sm text-center"
+        noMargin
       >
         We guarantee 100% security of your information. We will not share the
         details you provide above with anyone. Your email won&apos;t be used for

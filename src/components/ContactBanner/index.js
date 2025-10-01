@@ -77,15 +77,13 @@ const ContactBanner = ({ data = {}, className }) => {
 
   return (
     <section className={cn("", className)} id="contact-form-id">
-      <div className="container mx-auto px-4">
+      <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-0">
           {/* Left side - Form */}
           <div className="md:col-span-6 lg:col-span-7 bg-light-orange rounded-lg rounded-b-none md:rounded-r-none md:rounded-l-lg p-6 lg:p-12 shadow-lg">
-            <HeadingH2 className="!text-h2 font-medium mb-6 pr-4 lg:mb-8 text-dark">
-              {title}
-            </HeadingH2>
+            <HeadingH2 className="font-medium pr-4">{title}</HeadingH2>
             <div className="w-full lg:max-w-xl">
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-sm">
                 <Input
                   {...register("fullName", {
                     minLength: {
@@ -137,13 +135,13 @@ const ContactBanner = ({ data = {}, className }) => {
                 />
 
                 {submitError && (
-                  <div className="text-red-600 text-sm text-center mb-4">
+                  <div className="text-red-600 text-sm text-center mb-sm">
                     {submitError}
                   </div>
                 )}
 
                 {submitSuccess && (
-                  <div className="text-green-600 text-sm text-center mb-4">
+                  <div className="text-green-600 text-sm text-center mb-sm">
                     Form submitted successfully! We&apos;ll get back to you
                     soon.
                   </div>
@@ -151,10 +149,8 @@ const ContactBanner = ({ data = {}, className }) => {
 
                 <Button
                   type="submit"
-                  variant="filled"
-                  size="md"
                   loading={isSubmitting}
-                  className="font-normal px-6"
+                  className="font-normal"
                   disabled={isSubmitting}
                   uppercase
                 >
@@ -165,15 +161,15 @@ const ContactBanner = ({ data = {}, className }) => {
           </div>
 
           {/* Right side - Ratings and Info */}
-          <div className="md:col-span-6 lg:col-span-5 bg-primary rounded-lg rounded-t-none md:rounded-l-none md:rounded-r-lg p-8 lg:p-10 text-white">
-            <div className="flex flex-col px-16 py-4">
+          <div className="md:col-span-6 lg:col-span-5 bg-primary rounded-lg rounded-t-none md:rounded-l-none md:rounded-r-lg p-sm text-white">
+            <div className="flex flex-col px-16 py-sm">
               {/* Ratings and ISO Section */}
               <div className="flex-grow">
                 {/* Clutch Rating */}
                 {ratings.map((rating, index) => (
                   <div
                     key={index}
-                    className="first:pt-0 py-8 border-b border-dotted border-white"
+                    className="first:pt-0 py-sm border-b border-dotted border-white"
                   >
                     <Image
                       src={rating.logo}
@@ -182,15 +178,19 @@ const ContactBanner = ({ data = {}, className }) => {
                       height={40}
                       className="h-10 w-auto object-contain mb-4"
                     />
-                    <div className="flex items-center">
+                    <div className="flex items-center h-svg-icon-24 w-svg-icon-24">
                       <Image
                         src={starImage}
                         alt="Star"
                         width={24}
                         height={24}
-                        className="w-8 h-8 mr-2 object-contain"
+                        className="w-full h-full mr-2 object-contain"
                       />
-                      <ParagraphElement className="text-h4 font-medium !text-white">
+                      <ParagraphElement
+                        color="white"
+                        className="text-h4 font-medium"
+                        noMargin
+                      >
                         {rating.rating}
                       </ParagraphElement>
                     </div>
@@ -207,7 +207,11 @@ const ContactBanner = ({ data = {}, className }) => {
                       height={60}
                       className="h-12 w-auto object-contain"
                     />
-                    <ParagraphElement className="text-h5 font-medium !text-white">
+                    <ParagraphElement
+                      color="white"
+                      className="text-base font-medium"
+                      noMargin
+                    >
                       {iso.text}
                     </ParagraphElement>
                   </div>
@@ -216,8 +220,8 @@ const ContactBanner = ({ data = {}, className }) => {
             </div>
             {/* Sales Manager Info */}
             {salesManager && (
-              <div className="flex items-start gap-5 !mt-0 px-10 py-12 rounded-lg">
-                <div className="w-14 h-14 rounded-full overflow-hidden flex-shrink-0">
+              <div className="flex items-start gap-5 mt-0 px-md py-12 rounded-lg">
+                <div className="svg-icon rounded-full overflow-hidden flex-shrink-0">
                   <Image
                     src={salesManager.avatar}
                     alt={salesManager.name}
@@ -227,7 +231,11 @@ const ContactBanner = ({ data = {}, className }) => {
                   />
                 </div>
 
-                <ParagraphElement className="text-sm !text-white leading-relaxed">
+                <ParagraphElement
+                  color="white"
+                  className="text-sm leading-relaxed"
+                  noMargin
+                >
                   {salesManager.message}
                 </ParagraphElement>
               </div>

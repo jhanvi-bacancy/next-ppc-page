@@ -19,7 +19,6 @@ import {
 } from "../../components";
 import {
   pythonBannerData,
-  trustedLogosData,
   pythonExpertsData,
   pythonServicesGridData,
   pythonPricingData,
@@ -40,72 +39,69 @@ export default function PythonPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Banner */}
-      <BannerWithList data={pythonBannerData} className="py-lg" />
+      <BannerWithList data={pythonBannerData} className="" />
 
       {/* Trusted Logos */}
-      <TrustedLogos data={trustedLogosData} className="py-lg bg-gray-light" />
+      <TrustedLogos className=" bg-gray-light" />
 
       {/* Experts Carousel */}
       <ExpertCarousel
         title={pythonExpertsData.title}
         subtitle={pythonExpertsData.subtitle}
         experts={pythonExpertsData.experts}
-        className="py-lg bg-white"
+        className=" bg-white"
       />
 
       {/* Services Grid */}
-      <ServicesGrid
-        className="py-lg bg-gray-light"
-        data={pythonServicesGridData}
-      />
+      <ServicesGrid className=" bg-gray-light" data={pythonServicesGridData} />
 
       {/* Pricing Section */}
-      <PricingSection data={pythonPricingData} className="py-lg bg-white" />
+      <PricingSection data={pythonPricingData} className=" bg-white" />
 
       {/* Contact Section */}
       <ContactSection data={contactSectionData} className="pt-10" />
 
       {/* Success Banner */}
-      <SuccessBanner data={successBannerData} className="bg-gray-light py-lg" />
+      <SuccessBanner data={successBannerData} className="bg-gray-light " />
 
       {/* Technical Expertise */}
       <TechnicalExpertise
         data={technicalExpertiseData}
-        className="bg-gray-light py-lg"
+        className="bg-gray-light "
       />
 
       {/* Steps Section */}
-      <StepsSection data={stepsSectionData} className="bg-white py-lg" />
+      <StepsSection data={stepsSectionData} className="bg-white " />
 
       {/* AITalent Section */}
       <AITalentSection
         data={aiTalentSectionData}
-        className="bg-light-orange py-lg"
+        className="bg-light-orange "
       />
 
       {/* Success Stories Section */}
       <SuccessStoriesSection
         data={successStoriesData}
-        className="bg-gray-light py-lg"
+        className="bg-gray-light "
       />
 
       {/* Customer Reviews Section */}
       <CustomerReviews
         data={customerReviewsData}
-        className="bg-light-orange py-lg"
+        className="bg-light-orange "
       />
 
       {/* Development Strength */}
-      <DevelopmentStrength data={developmentStrengthData} className="py-lg" />
+      <DevelopmentStrength data={developmentStrengthData} className="" />
 
       {/* FAQ */}
-      <FAQ data={faqData} className="py-lg bg-gray-light" />
+      <FAQ data={faqData} className="bg-gray-light" />
 
       {/* Contact Banner */}
-      <ContactBanner data={contactBannerData} className="py-lg bg-gray-light" />
+      <ContactBanner data={contactBannerData} className="bg-gray-light" />
 
       {/* Footer */}
-      <Footer data={footerData} className="py-lg" />
+      <Footer data={footerData} />
     </div>
   );
 }

@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import StrengthCard from "./StrengthCard";
 import FeatureCard from "./FeatureCard";
-import { HeadingH2, HeadingH5 } from "../ui";
+import { HeadingH2, HeadingH3, ParagraphElement } from "../ui";
 import { cn } from "../../lib/utils";
 
 const DevelopmentStrength = ({ data, className }) => {
@@ -25,22 +25,22 @@ const DevelopmentStrength = ({ data, className }) => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <HeadingH2 className="font-bold mb-6">{title}</HeadingH2>
-          <HeadingH5 className="!text-secondary font-normal mb-12">
+      <div className="container">
+        <div className="text-center mb-sm">
+          <HeadingH2 className="">{title}</HeadingH2>
+          <ParagraphElement className="font-normal" color="secondary" noMargin>
             {description}
-          </HeadingH5>
+          </ParagraphElement>
         </div>
 
-        <div className="relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+        <div className="relative z-10 mb-sm">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-sm">
             {/* Left Content */}
             <div className="flex flex-col h-full">
-              <HeadingH5 className="mb-6 lg:mb-8">
+              <HeadingH3 className="text-h4">
                 Our Development Center Strength
-              </HeadingH5>
-              <div className="grid grid-cols-2 gap-4 lg:gap-6 flex-grow">
+              </HeadingH3>
+              <div className="grid grid-cols-2 gap-sm flex-grow">
                 {strengths.map((strength, index) => (
                   <StrengthCard
                     key={index}
@@ -59,7 +59,7 @@ const DevelopmentStrength = ({ data, className }) => {
                   alt="Development Center"
                   width={800}
                   height={600}
-                  className="rounded-lg w-full h-full object-cover"
+                  className="rounded-lg object-cover"
                   style={{ maxHeight: "585px" }}
                   priority
                 />
@@ -68,7 +68,7 @@ const DevelopmentStrength = ({ data, className }) => {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-6 mt-20">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-6 pt-sm">
           {features.map((feature, index) => (
             <FeatureCard
               key={index}

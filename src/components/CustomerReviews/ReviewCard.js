@@ -5,7 +5,7 @@ import { renderHighlightedText } from "@/lib/helper";
 
 const ReviewCard = ({ review, highlight, name, designation, companyLogo }) => {
   return (
-    <div className="bg-dark p-8 rounded-3xl max-w-[300px] sm:max-w-[400px] md:max-w-[650px] mx-auto flex flex-col">
+    <div className="bg-dark boxed max-w-[300px] sm:max-w-[400px] md:max-w-[650px] mx-auto flex flex-col">
       {/* Review Text */}
       <div className="h-[200px] xs:h-[250px] grow">
         <HeadingH3 className="!text-white text-[1.5rem] md:text-[2rem] xl:text-[2.5rem] leading-relaxed">

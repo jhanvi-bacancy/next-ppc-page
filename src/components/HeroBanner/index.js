@@ -34,22 +34,22 @@ const BannerWithList = ({ data, className }) => {
         {/* Left Content */}
         <div className="lg:col-span-3">
           {badge && (
-            <div className="mb-5 w-fit">
+            <div className="w-fit">
               <ParagraphElement
+                className="border-b-2 border-primary font-semibold"
                 color="primary"
-                className="border-b-2 border-primary pb-2 font-semibold"
               >
                 {badge}
               </ParagraphElement>
             </div>
           )}
 
-          <HeadingH1 color="white" className="mb-5">
+          <HeadingH1 color="white">
             {title.text} <span className="text-primary">{title.highlight}</span>{" "}
             {title.suffix}
           </HeadingH1>
 
-          <ParagraphElement color="white" className="text-base mb-5">
+          <ParagraphElement color="white" className="text-base">
             {description}
           </ParagraphElement>
 
@@ -64,15 +64,6 @@ const BannerWithList = ({ data, className }) => {
                 fullWidth
                 className="sm:w-auto font-normal"
               >
-                {ctaButton.icon && (
-                  <Image
-                    src={`${cdnImage}${ctaButton.icon}`}
-                    alt="icon"
-                    width={20}
-                    height={20}
-                    className="mr-2"
-                  />
-                )}
                 {ctaButton.text}
               </Button>
             </div>
@@ -80,24 +71,30 @@ const BannerWithList = ({ data, className }) => {
         </div>
 
         {/* Right Content - Image */}
-        <div className="lg:col-span-2 lg:block hidden">
+        <div className="lg:col-span-2 w-full">
           {/* Stats Grid */}
-          <div className="">
+          <div className="flex flex-col gap-sm">
             {statsList.map((stat, index) => (
               <div
                 key={index}
-                className="flex items-center space-x-4 p-4 bg-gray-800 bg-opacity-50 rounded-lg backdrop-blur-sm mb-4 w-3/4"
+                className="flex items-center space-x-4 p-4 bg-gray-800 bg-opacity-50 rounded-lg backdrop-blur-sm lg:w-3/4"
               >
-                <div className="mr-2">
+                <div className="svg-icon">
                   <Image
                     src={`${cdnImage}${stat.icon}`}
                     alt={stat.text}
                     width={40}
                     height={40}
-                    className="w-10 h-10"
+                    className="h-full w-full"
                   />
                 </div>
-                <p className="text-base w-3/4">{stat.text}</p>
+                <ParagraphElement
+                  className="text-base w-3/4"
+                  color="white"
+                  noMargin
+                >
+                  {stat.text}
+                </ParagraphElement>
               </div>
             ))}
           </div>

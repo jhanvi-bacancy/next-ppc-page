@@ -1,5 +1,5 @@
 import React from "react";
-import { HeadingH2, HeadingH5 } from "../ui";
+import { HeadingH2, HeadingH3, ParagraphElement } from "../ui";
 import {
   Accordion,
   AccordionContent,
@@ -7,41 +7,56 @@ import {
   AccordionTrigger,
 } from "../ui/accordion";
 import { cn } from "../../lib/utils";
+import Image from "next/image";
 
 const FAQ = ({ data, className }) => {
   return (
     <section className={cn("", className)}>
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col gap-y-12 md:relative md:flex-row w-full">
+      <div className="container">
+        <div className="flex flex-col gap-y-sm md:relative md:flex-row w-full">
           {/* Left Container - Sticky */}
           <div className="w-full md:w-1/4 md:sticky md:top-[10rem] md:h-fit">
             <HeadingH2 className="">Frequently Asked Questions</HeadingH2>
-            <div className="flex md:flex-col gap-x-1 mt-20">
-              <HeadingH5 className="!text-primary !mb-0">
+            <div className="flex md:flex-col gap-x-1">
+              <ParagraphElement
+                color="primary"
+                className="text-h5 !mb-0"
+                noMargin
+              >
                 Still have questions?
-              </HeadingH5>
+              </ParagraphElement>
               <div
-                className="flex items-center gap-x-2 cursor-pointer"
+                className="cursor-pointer"
                 onClick={() => {
                   window.location.href = "#contact-form-id";
                 }}
               >
-                <span
-                  className="text-primary text-h5 font-semibold"
+                <ParagraphElement
+                  color="primary"
+                  className="text-h5"
                   onClick={() => {
                     window.location.href = "#contact-form-id";
                   }}
+                  noMargin
                 >
-                  Let&apos;s talk
-                </span>
-                <span className="text-gray-light text-h5">&rarr;</span>
+                  Let&apos;s talk{" "}
+                  <div className="inline-block h-svg-icon-24 w-svg-icon-24">
+                    <Image
+                      src="https://assets.bacancytechnology.com/main-boot-5/images/tailwind/images/right-arrow-line-black.svg"
+                      alt="right-arrow"
+                      width={16}
+                      height={16}
+                      className="object-contain inline-block h-full w-full bg-no-repeat"
+                    />
+                  </div>
+                </ParagraphElement>
               </div>
             </div>
           </div>
 
           {/* Right Container - Scrollable Accordion */}
           <div className="w-full md:w-3/4 md:pl-8">
-            <Accordion type="single" collapsible className="w-full space-y-4">
+            <Accordion type="single" collapsible className="w-full space-y-sm">
               {data.map((faq, index) => (
                 <AccordionItem
                   key={index}
@@ -49,13 +64,15 @@ const FAQ = ({ data, className }) => {
                   className="rounded-lg px-6 bg-white shadow-sm"
                 >
                   <AccordionTrigger
-                    className="md:text-xl text-sm leading-relaxed font-medium text-dark hover:no-underline py-6"
+                    className="hover:no-underline"
                     iconClassName="text-primary h-8 w-8"
                   >
-                    {faq.question}
+                    <HeadingH3 className="text-sm dark py-2" noMargin>
+                      {faq.question}
+                    </HeadingH3>
                   </AccordionTrigger>
-                  <AccordionContent className="md:text-xl text-sm leading-relaxed text-secondary pb-6 mt-2">
-                    <div dangerouslySetInnerHTML={{ __html: faq.answer }} />
+                  <AccordionContent className="text-sm leading-relaxed text-secondary pb-6 mt-sm">
+                    <p dangerouslySetInnerHTML={{ __html: faq.answer }} />
                   </AccordionContent>
                 </AccordionItem>
               ))}

@@ -12,11 +12,11 @@ const SuccessStoriesSection = ({ data, className }) => {
     const baseClasses =
       "!absolute !p-0 !rounded-full shadow-md z-30 flex items-center justify-center";
     const layoutClasses =
-      "bottom-[-28px] left-1/2 -translate-x-1/2 md:bottom-auto md:left-auto md:top-1/2 md:-translate-y-1/2";
+      "-top-[32px] right-0 md:bottom-auto md:left-auto md:top-1/2 md:-translate-y-1/2";
     const positionClass =
       direction === "next"
-        ? "ml-10 md:ml-0 md:!-right-5"
-        : "-ml-10 md:ml-0 md:!-left-5";
+        ? "right-0 md:right-auto md:!-right-5"
+        : "right-12 md:right-auto md:!-left-5";
     const stateClass = isDisabled ? "!opacity-50 !cursor-not-allowed" : "";
 
     return (
@@ -72,13 +72,15 @@ const SuccessStoriesSection = ({ data, className }) => {
 
   return (
     <section className={cn("", className)}>
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <HeadingH2 className="mb-4">{title}</HeadingH2>
-          <ParagraphElement>{description}</ParagraphElement>
+      <div className="container">
+        <div className="text-center mb-sm">
+          <HeadingH2>{title}</HeadingH2>
+          <ParagraphElement color="secondary" noMargin>
+            {description}
+          </ParagraphElement>
         </div>
 
-        <div className="relative mb-12 z-0">
+        <div className="relative mb-sm mt-lg md:mt-0 z-0">
           <style jsx global>{`
             .slick-track {
               display: flex !important;
@@ -98,12 +100,7 @@ const SuccessStoriesSection = ({ data, className }) => {
         </div>
 
         <div className="relative z-20 text-center">
-          <Button
-            variant="filled"
-            size="md"
-            className="font-normal px-8"
-            uppercase
-          >
+          <Button className="font-normal" uppercase>
             Share Your Requirements
           </Button>
         </div>

@@ -15,29 +15,29 @@ const AITalentSection = ({ data, className }) => {
   } = data;
   return (
     <section className={cn("", className)}>
-      <div className="container mx-auto px-4">
+      <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
           {/* Left Content */}
-          <div className="grid gap-4">
-            <HeadingH2 className="font-bold mb-2">
+          <div className="grid gap-sm md:gap-0">
+            <HeadingH2 noMargin>
               {title} <span className="text-primary">{highlight}</span>{" "}
-              <Image
-                src={headingIcon}
-                alt="star-icon"
-                height={27}
-                width={27}
-                className="inline-block"
-              />
+              <div className="inline-block h-svg-icon-32 w-svg-icon-32">
+                <Image
+                  src={headingIcon}
+                  alt="star-icon"
+                  height={27}
+                  width={27}
+                  className="inline-block h-full w-full"
+                />
+              </div>
             </HeadingH2>
 
-            <div className="grid gap-1">
+            <div className="grid">
               {description.map((item, index) =>
                 index < description.length - 1 ? (
-                  <ParagraphElement key={index} className="mb-0">
-                    {item}
-                  </ParagraphElement>
+                  <ParagraphElement key={index}>{item}</ParagraphElement>
                 ) : (
-                  <ParagraphElement key={index} className="font-semibold mb-0">
+                  <ParagraphElement key={index} className="font-semibold">
                     {item}
                   </ParagraphElement>
                 )
@@ -46,8 +46,7 @@ const AITalentSection = ({ data, className }) => {
 
             <div>
               <Button
-                size="md"
-                className="px-12 font-normal"
+                className="font-normal"
                 href="#form"
                 target={ctaButton.target || "_self"}
               >
@@ -58,7 +57,7 @@ const AITalentSection = ({ data, className }) => {
 
           {/* Right Content */}
           <div className="flex items-center justify-center">
-            <div className="bg-white rounded-3xl p-6 md:p-8 w-full">
+            <div className="bg-white boxed w-full">
               {/* Horizontal Layout Container */}
               <div className="flex items-center justify-evenly gap-4 sm:gap-6 md:gap-8">
                 {/* Bacancy Logo */}
@@ -76,7 +75,7 @@ const AITalentSection = ({ data, className }) => {
                 </div>
 
                 {/* Plus Sign */}
-                <div className="text-3xl sm:text-4xl md:text-5xl text-dark font-normal flex-shrink-0">
+                <div className="text-h2 text-dark font-normal flex-shrink-0">
                   +
                 </div>
 
@@ -86,17 +85,17 @@ const AITalentSection = ({ data, className }) => {
                   {tools.map((tool, index) => (
                     <div
                       key={index}
-                      className="border-4 sm:border-6 md:border-8 border-light-orange rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6"
+                      className="border-4 sm:border-6 md:border-8 border-light-orange boxed p-2"
                     >
                       <div className="flex flex-col items-center gap-2 sm:gap-3">
                         <Image
                           src={tool.icon}
                           alt={tool.name}
-                          width={48}
-                          height={48}
+                          width={192}
+                          height={192}
                           className="w-11 h-11 md:w-14 md:h-14 object-contain"
                         />
-                        <ParagraphElement className="font-semibold text-center text-sm sm:text-base">
+                        <ParagraphElement className="font-semibold text-center text-wrap">
                           {tool.name}
                         </ParagraphElement>
                       </div>

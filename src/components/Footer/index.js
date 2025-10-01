@@ -16,7 +16,7 @@ const Footer = ({ data, className }) => {
     starImage,
   } = data;
   return (
-    <footer
+    <section
       className={cn("", className)}
       style={{
         backgroundImage: `url(${backgroundImage})`,
@@ -26,12 +26,12 @@ const Footer = ({ data, className }) => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="container mx-auto px-4">
+      <div className="container">
         {/* Addresses Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-8 pb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-sm pb-md">
           {addresses.map((item, index) => (
-            <div key={index} className="space-y-2">
-              <div className="flex items-center gap-4 font-semibold text-white">
+            <div key={index} className="space-y-sm">
+              <div className="flex items-center gap-6">
                 <Image
                   src={item.flag}
                   alt={item.country}
@@ -39,23 +39,39 @@ const Footer = ({ data, className }) => {
                   height={24}
                   className="object-contain !h-10 !w-10"
                 />
-                <span className="text-h4">{item.country}</span>
+                <ParagraphElement
+                  className="text-h4 font-medium"
+                  color="white"
+                  noMargin
+                >
+                  {item.country}
+                </ParagraphElement>
               </div>
-              {item.title && (
-                <span className="font-medium text-white !mt-1">
-                  {item.title}
-                </span>
-              )}
-              <ParagraphElement className="text-sm !text-secondary">
-                {item.address}
-              </ParagraphElement>
+              <div>
+                {item.title && (
+                  <ParagraphElement
+                    className="font-medium !mb-0"
+                    color="white"
+                    noMargin
+                  >
+                    {item.title}
+                  </ParagraphElement>
+                )}
+                <ParagraphElement
+                  className="text-sm"
+                  color="secondary"
+                  noMargin
+                >
+                  {item.address}
+                </ParagraphElement>
+              </div>
             </div>
           ))}
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-start py-20 border-t border-gray-700 gap-20 md:gap-48">
-          <div className="flex items-center gap-4 mb-4 md:mb-0">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-start py-md border-t border-gray-700 gap-20 md:gap-48">
+          <div className="flex items-center gap-4 mb-sm md:mb-0">
             <Image
               src={getInTouchImage}
               alt="Great Place to Work"
@@ -65,14 +81,13 @@ const Footer = ({ data, className }) => {
             />
             <Button
               variant="text"
-              size="md"
               href={"#form"}
-              className="!text-h5 font-normal text-white hover:text-primary transition-colors"
+              className="text-h3 font-medium white hover:text-primary transition-colors"
             >
               Get in Touch
             </Button>
           </div>
-          <div className="flex items-center gap-2 mb-4 md:mb-0">
+          <div className="flex items-center gap-2 mb-sm md:mb-0">
             <div className="h-12 w-12 md:h-20 md:w-20 flex items-center justify-center rounded-full bg-dark">
               <Image
                 src={bookCallImage}
@@ -84,12 +99,11 @@ const Footer = ({ data, className }) => {
             </div>
             <Button
               variant="text"
-              size="md"
               href={
                 "https://calendly.com/americas-3/30min?_gl=1*13146a6*_gcl_au*MjYzMjE4MzIzLjE3NTcwNjUyNjk.*_ga*MTMwNjQxMjg5NS4xNzQ4ODQyMDM5*_ga_5ZSTFLNPDY*czE3NTg4MDE5NzYkbzQ4JGcxJHQxNzU4ODA0NTg5JGo2MCRsMCRoNDMzMTcwNzUx"
               }
               target="_blank"
-              className="text-white !text-h4 font-normal hover:text-primary transition-colors"
+              className="text-h4 white font-normal hover:text-primary transition-colors"
             >
               Book a Call
             </Button>
@@ -97,23 +111,21 @@ const Footer = ({ data, className }) => {
         </div>
 
         {/* Links and Privacy */}
-        <div className="flex flex-col items-start justify-start py-20 border-t border-gray-700">
-          <div className="flex gap-10 mb-4 md:mb-6">
+        <div className="flex flex-col items-start justify-start py-md border-t border-gray-700">
+          <div className="flex gap-10 mb-sm md:mb-6">
             <Button
               variant="text"
-              size="md"
               href={privacyButton.href}
               target={privacyButton.target || "_self"}
-              className="text-sm p-0 font-normal text-white hover:text-primary transition-colors"
+              className="text-sm text-white font-normal hover:text-primary transition-colors"
             >
               Privacy Policy
             </Button>
             <Button
               variant="text"
-              size="md"
               href={faqsButton.href}
               target={faqsButton.target || "_self"}
-              className="text-sm p-0 font-normal text-white hover:text-primary transition-colors"
+              className="text-sm text-white font-normal hover:text-primary transition-colors"
             >
               FAQS
             </Button>
@@ -138,9 +150,13 @@ const Footer = ({ data, className }) => {
                     height={20}
                     className="object-contain"
                   />
-                  <span className="text-white text-h4 font-medium">
+                  <ParagraphElement
+                    color="white"
+                    className="text-h4 font-medium"
+                    noMargin
+                  >
                     {item.rating}
-                  </span>
+                  </ParagraphElement>
                 </div>
                 <Image
                   src={item.image}
@@ -161,7 +177,7 @@ const Footer = ({ data, className }) => {
                 className="object-contain"
                 priority
               />
-              <span className="text-white text-sm whitespace-nowrap">
+              <span className="text-sm whitespace-nowrap white">
                 ISO 27001:2013
               </span>
             </div>
@@ -169,16 +185,16 @@ const Footer = ({ data, className }) => {
         </div>
 
         {/* Copyright */}
-        <div className="text-center pt-20 border-t border-gray-700">
-          <HeadingH5 className="text-sm !mb-0 !text-white leading-relaxed">
+        <div className="text-center pt-md border-t border-gray-700">
+          <HeadingH5 className="text-sm" color="white" noMargin>
             <span className="text-primary">Copyright &copy; 2025 Bacancy.</span>{" "}
             All Rights Reserved. An{" "}
-            <span className="text-primary">ISO 27001:2013</span> Certified
+            <span className="text-primary">ISO 27001:2013</span> Certifie
             Company
           </HeadingH5>
         </div>
       </div>
-    </footer>
+    </section>
   );
 };
 
