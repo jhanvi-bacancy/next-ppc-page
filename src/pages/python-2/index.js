@@ -22,18 +22,14 @@ import {
   pythonExpertsData,
   pythonServicesGridData,
   pythonPricingData,
-  successBannerData,
   technicalExpertiseData,
   contactSectionData,
-  stepsSectionData,
-  aiTalentSectionData,
   successStoriesData,
-  customerReviewsData,
-  developmentStrengthData,
   footerData,
   contactBannerData,
   faqData,
 } from "./data";
+import { developmentStrengthVariables } from "./variable";
 
 export default function PythonPage() {
   return (
@@ -62,7 +58,7 @@ export default function PythonPage() {
       <ContactSection data={contactSectionData} className="pt-10" />
 
       {/* Success Banner */}
-      <SuccessBanner data={successBannerData} className="bg-gray-light " />
+      <SuccessBanner className="bg-gray-light " />
 
       {/* Technical Expertise */}
       <TechnicalExpertise
@@ -71,13 +67,10 @@ export default function PythonPage() {
       />
 
       {/* Steps Section */}
-      <StepsSection data={stepsSectionData} className="bg-white " />
+      <StepsSection className="bg-white " />
 
       {/* AITalent Section */}
-      <AITalentSection
-        data={aiTalentSectionData}
-        className="bg-light-orange "
-      />
+      <AITalentSection className="bg-light-orange " />
 
       {/* Success Stories Section */}
       <SuccessStoriesSection
@@ -86,13 +79,10 @@ export default function PythonPage() {
       />
 
       {/* Customer Reviews Section */}
-      <CustomerReviews
-        data={customerReviewsData}
-        className="bg-light-orange "
-      />
+      <CustomerReviews className="bg-light-orange " />
 
       {/* Development Strength */}
-      <DevelopmentStrength data={developmentStrengthData} className="" />
+      <DevelopmentStrength variable={developmentStrengthVariables} />
 
       {/* FAQ */}
       <FAQ data={faqData} className="bg-gray-light" />

@@ -2,8 +2,15 @@ import React from "react";
 import { cn } from "../../lib/utils";
 import { ParagraphElement } from "../ui";
 
-const SuccessBanner = ({ data, className }) => {
-  const { email, title, description, tools } = data;
+const successBannerData = {
+  email: "solutions@bacancy.com",
+  title: "Your Success is Guaranteed !",
+  description:
+    "We accelerate the release of digital products and guarantee your success",
+};
+
+const SuccessBanner = ({ className }) => {
+  const { email, title, description } = successBannerData;
 
   return (
     <section className={cn("w-full relative", className)}>

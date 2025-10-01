@@ -9,7 +9,7 @@ import StepsSection from "./StepsSection";
 import AITalentSection from "./AITalentSection";
 import SuccessStoriesSection from "./SuccessStories";
 import CustomerReviews from "./CustomerReviews";
-import DevelopmentStrength from "./DevelopmentStrength";
+import DevelopmentStrength from "./CountingSection";
 import Footer from "./Footer";
 import ContactBanner from "./ContactBanner";
 import FAQ from "./FAQ";

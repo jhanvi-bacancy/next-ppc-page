@@ -330,15 +330,6 @@ export const contactSectionData = {
   },
 };
 
-// export success banner data
-export const successBannerData = {
-  email: "solutions@bacancy.com",
-  title: "Your Success is Guaranteed !",
-  description:
-    "We accelerate the release of digital products and guarantee your success",
-  tools: ["Slack", "Jira", "GitHub"],
-};
-
 // export technical expertise data
 export const technicalExpertiseData = {
   title: "Technical Expertise of our Python Developer",
@@ -464,83 +455,6 @@ export const technicalExpertiseData = {
   },
 };
 
-// export steps section data
-export const stepsSectionData = {
-  title: {
-    text: "Three steps to your",
-    highlight: "perfect Specialist",
-    suffix: "",
-  },
-  subtitle: "Get hand-picked talent in days—our 3-step process makes it simple",
-  backgroundImage: `${cdnImage}landing/images/common-img/step-section-bg.png`,
-  steps: [
-    {
-      stepNumber: 1,
-      title: "BOOK A MEETING",
-      description:
-        "Start with a quick 20-minute call where we learn about your goals, team structure, and what kind of talent you're looking for.",
-      contentImage: `${cdnImage}landing/images/common-img/book-meeting.png`,
-      stepIcon: `${cdnImage}landing/images/fullstack-ppc/mentoring.gif`,
-      dateButton: {
-        text: `TODAY, ${formatDateWithDay()}`,
-        href: "https://calendly.com/americas-3/30min?_gl=1*1omd485*_gcl_au*MjYzMjE4MzIzLjE3NTcwNjUyNjk.*_ga*MTMwNjQxMjg5NS4xNzQ4ODQyMDM5*_ga_5ZSTFLNPDY*czE3NTg2MDQ5NDQkbzMzJGcxJHQxNzU4NjA5MzcxJGo1MiRsMCRoMTUxMDYzNDE2Mw..",
-        target: "_blank",
-      },
-      isButton: true,
-    },
-    {
-      stepNumber: 2,
-      title: "REVIEW YOUR MATCHES",
-      description:
-        "Within 48 hours, you'll receive a tailored shortlist of vetted, ready-to-go specialists—complete with direct links to book interviews at your convenience.",
-      contentImage: `${cdnImage}landing/images/common-img/ai-step-2.png`,
-      stepIcon: `${cdnImage}landing/images/fullstack-ppc/teamwork.gif`,
-      dateButton: {
-        text: formatDateWithDay(undefined, 1),
-      },
-      isButton: false,
-    },
-    {
-      stepNumber: 3,
-      title: "START WORKING TOGETHER",
-      description:
-        "Your chosen candidates can be fully integrated in as little as 10 days. We take care of HR, contracts, and onboarding so you can stay focused on execution.",
-      contentImage: `${cdnImage}landing/images/common-img/start-working-together.png`,
-      stepIcon: `${cdnImage}landing/images/fullstack-ppc/handshake.gif`,
-      dateButton: {
-        text: formatDateWithDay(undefined, 2),
-      },
-      isButton: false,
-      bgColor: "bg-light-orange",
-    },
-  ],
-};
-
-// export AI Talent section data
-export const aiTalentSectionData = {
-  title: "Get Your Work Done Faster with",
-  highlight: "AI-Enhanced Talent",
-  description: [
-    "Our developers leverage powerful AI tools to automate tasks, enhance productivity, and optimize workflows.",
-    "Get 3X faster Product delivery than ordinary development process.",
-    "Launch your First Module/Product in 15 Days!",
-  ],
-  tools: [
-    {
-      name: "GitHub Copilot",
-      icon: `${cdnImage}landing/images/icons/copilot.svg`,
-    },
-    { name: "Cursor AI", icon: `${cdnImage}landing/images/icons/cursor.svg` },
-  ],
-  headingIcon: `${cdnImage}landing/images/icons/heading-icon.svg`,
-  bacancyLogo: `${cdnImage}landing/images/icons/bacancy-icon.svg`,
-  ctaButton: {
-    text: "Talk to Our Expert",
-    href: "#form",
-    target: "_blank",
-  },
-};
-
 // export success stories data
 export const successStoriesData = {
   title: "Our Amazing Customer Success Stories",
@@ -590,100 +504,6 @@ export const successStoriesData = {
       result:
         "ContenStack and Kibo were used and therefore app labels and configuration was possible at any time. Now, the users get recommendations as per their interests and previous searches.",
       image: `${cdnImage}landing/images/case-study/cs-3.jpg`,
-    },
-  ],
-};
-
-// export customer reviews data
-export const customerReviewsData = {
-  title: { text: "What Our Customers Say", highlight: "Customers" },
-  description:
-    "Don't just take our word for it. Hear what our valued clients have to say about their experiences with us.",
-  rating: `${cdnImage}landing/images/web-ppc/clutchreview-icon.svg`,
-  reviews: [
-    {
-      highlight: "Flexibility",
-      review: "Flexibility to work based on demand is impressive",
-      name: "Bryan Boulton",
-      designation: "IT Lead, Birchmount Network",
-      companyLogo: `${cdnImage}landing/images/web-ppc/birchmount-network-logo.svg`,
-    },
-    {
-      highlight: "Timely delivery",
-      review: "Timely delivery with a remarkable feedback approach.",
-      name: "Dylan de Szabo",
-      designation: "Director, D-BIT APAC",
-      companyLogo: `${cdnImage}landing/images/web-ppc/d-bit-logo.svg`,
-    },
-    {
-      highlight: "Customer-centric",
-      review: "Customer-centric approach paired with effective communication.",
-      name: "Philip Gomez",
-      designation: "Co-Owner, Patty's Cakes and Desserts",
-      companyLogo: `${cdnImage}landing/images/web-ppc/patty-cake-logo.svg`,
-    },
-    {
-      highlight: "affordable prices",
-      review: "Exceptional results at affordable prices",
-      name: "Yash Daftary",
-      designation: "CEO, Fanbasis",
-      companyLogo: `${cdnImage}landing/images/web-ppc/fanbasis-logo.svg`,
-    },
-    {
-      highlight: "Collabrative",
-      review: "Collabrative environment and highly responsive team",
-      name: "Vennila Rajes",
-      designation: "Director of Operations, Help Desk Technology",
-      companyLogo: `${cdnImage}landing/images/web-ppc/helpdesk-logo.svg`,
-    },
-  ],
-};
-
-// export development strength data
-export const developmentStrengthData = {
-  title: "13+ Years and Counting...",
-  backgroundImage: `${cdnImage}landing/images/aus-img/dot-bg.png`,
-  sideImage: `${cdnImage}landing/images/common-img/side-img-5.jpg`,
-  description:
-    "By establishing an Python development center, we offer our tailored engagement models that cater to the unique needs by providing B2B and B2C Dedicated development support.",
-  strengths: [
-    {
-      number: "1050+",
-      title: "Agile Developers",
-    },
-    {
-      number: "80+",
-      title: "Python Developers",
-    },
-    {
-      number: "05",
-      title: "Agile Coaches",
-    },
-    {
-      number: "14",
-      title: "Certified Scrum Masters",
-    },
-  ],
-  features: [
-    {
-      icon: `${cdnImage}landing/images/common-img/counting-ico-1.png`,
-      title: "Work at Your Time Zone",
-    },
-    {
-      icon: `${cdnImage}landing/images/common-img/counting-ico-3.png`,
-      title: "Easy Communication",
-    },
-    {
-      icon: `${cdnImage}landing/images/common-img/counting-ico-4.png`,
-      title: "Hire in 48 Hours",
-    },
-    {
-      icon: `${cdnImage}landing/images/common-img/counting-ico-2.png`,
-      title: "In Business Since 2011",
-    },
-    {
-      icon: `${cdnImage}landing/images/common-img/counting-ico-5.png`,
-      title: "5/5 Pro User Rating",
     },
   ],
 };

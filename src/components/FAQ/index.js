@@ -40,7 +40,7 @@ const FAQ = ({ data, className }) => {
                   noMargin
                 >
                   Let&apos;s talk{" "}
-                  <div className="inline-block h-svg-icon-24 w-svg-icon-24">
+                  <span className="inline-block h-svg-icon-24 w-svg-icon-24">
                     <Image
                       src="https://assets.bacancytechnology.com/main-boot-5/images/tailwind/images/right-arrow-line-black.svg"
                       alt="right-arrow"
@@ -48,7 +48,7 @@ const FAQ = ({ data, className }) => {
                       height={16}
                       className="object-contain inline-block h-full w-full bg-no-repeat"
                     />
-                  </div>
+                  </span>
                 </ParagraphElement>
               </div>
             </div>

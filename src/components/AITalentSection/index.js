@@ -3,7 +3,33 @@ import Image from "next/image";
 import { HeadingH2, ParagraphElement, Button } from "../ui";
 import { cn } from "../../lib/utils";
 
-const AITalentSection = ({ data, className }) => {
+const cdnImage = process.env.NEXT_PUBLIC_IMG_URL;
+
+const aiTalentSectionData = {
+  title: "Get Your Work Done Faster with",
+  highlight: "AI-Enhanced Talent",
+  description: [
+    "Our developers leverage powerful AI tools to automate tasks, enhance productivity, and optimize workflows.",
+    "Get 3X faster Product delivery than ordinary development process.",
+    "Launch your First Module/Product in 15 Days!",
+  ],
+  tools: [
+    {
+      name: "GitHub Copilot",
+      icon: `${cdnImage}landing/images/icons/copilot.svg`,
+    },
+    { name: "Cursor AI", icon: `${cdnImage}landing/images/icons/cursor.svg` },
+  ],
+  headingIcon: `${cdnImage}landing/images/icons/heading-icon.svg`,
+  bacancyLogo: `${cdnImage}landing/images/icons/bacancy-icon.svg`,
+  ctaButton: {
+    text: "Talk to Our Expert",
+    href: "#form",
+    target: "_blank",
+  },
+};
+
+const AITalentSection = ({ className }) => {
   const {
     title,
     highlight,
@@ -12,7 +38,7 @@ const AITalentSection = ({ data, className }) => {
     bacancyLogo,
     tools,
     ctaButton,
-  } = data;
+  } = aiTalentSectionData;
   return (
     <section className={cn("", className)}>
       <div className="container">
