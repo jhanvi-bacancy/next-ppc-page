@@ -1,79 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
-import { useForm } from "react-hook-form";
-import { Input, TextArea, Button, HeadingH2, ParagraphElement } from "../ui";
+import { HeadingH2, ParagraphElement } from "../ui";
 import { cn } from "../../lib/utils";
-import { getClientIp, getLocationData } from "../../lib/helper";
-import { api } from "../../api/apiManager";
-import { ENDPOINTS } from "../../api/endpoints";
+import { useContactForm, ContactFormComponent } from "../SingleForm";
 
 const ContactBanner = ({ data = {}, className }) => {
   const { title, ratings, iso, salesManager, starImage } = data;
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitError, setSubmitError] = useState("");
-  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const {
     register,
     handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm({
-    defaultValues: {
-      fullName: "",
-      email: "",
-      phone: "",
-      message: "",
-    },
-    mode: "onBlur",
+    errors,
+    isSubmitting,
+    submitError,
+    submitSuccess,
+    onSubmit,
+  } = useContactForm({
+    leadingPage: "https://www.bacancytechnology.com/landing/python-2",
   });
-
-  const onSubmit = async (formData) => {
-    try {
-      setIsSubmitting(true);
-      setSubmitError("");
-      setSubmitSuccess(false);
-
-      // Get IP and location data
-      const [clientIp, locationData] = await Promise.all([
-        getClientIp(),
-        getLocationData(),
-      ]);
-
-      // Transform form data to match API expectations
-      const payload = {
-        name: formData.name,
-        email: formData.email,
-        number: formData.phone,
-        description: formData.requirements,
-        leadingPage: "https://www.bacancytechnology.com/landing/python-2",
-        userVisit: sessionStorage.getItem("landingPage") || "-",
-        type: "reactForm",
-        ip: clientIp,
-        city: locationData.city,
-        state: locationData.state,
-        country: locationData.country,
-        timezone: locationData.timezone,
-      };
-
-      const response = await api.post(ENDPOINTS.SF_MAIL_DATA, payload);
-
-      if (response.status === 200) {
-        setSubmitSuccess(true);
-        reset();
-      } else {
-        throw new Error("No response from server");
-      }
-    } catch (error) {
-      console.error("Form submission error:", error);
-      setSubmitError(
-        error.response?.data?.message ||
-          "Failed to submit form. Please try again later."
-      );
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   return (
     <section className={cn("", className)} id="contact-form-id">
@@ -83,80 +27,16 @@ const ContactBanner = ({ data = {}, className }) => {
           <div className="md:col-span-6 lg:col-span-7 bg-light-orange rounded-lg rounded-b-none md:rounded-r-none md:rounded-l-lg p-6 lg:p-12 shadow-lg">
             <HeadingH2 className="font-medium pr-4">{title}</HeadingH2>
             <div className="w-full lg:max-w-xl">
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-sm">
-                <Input
-                  {...register("fullName", {
-                    minLength: {
-                      value: 2,
-                      message: "Full Name must be at least 2 characters",
-                    },
-                  })}
-                  type="text"
-                  placeholder="Full Name"
-                  error={errors.fullName?.message}
-                  className="w-full"
-                />
-                <Input
-                  {...register("email", {
-                    required: "Email is required",
-                    pattern: {
-                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                      message: "Invalid email address",
-                    },
-                  })}
-                  type="email"
-                  placeholder="Your Business Email ID"
-                  error={errors.email?.message}
-                  className="w-full"
-                />
-                <Input
-                  {...register("phone", {
-                    pattern: {
-                      value: /^\+?[\d\s-]{10,}$/,
-                      message: "Invalid phone number",
-                    },
-                  })}
-                  type="tel"
-                  placeholder="Phone Number"
-                  error={errors.phone?.message}
-                  className="w-full"
-                />
-                <TextArea
-                  {...register("message", {
-                    minLength: {
-                      value: 10,
-                      message: "Message must be at least 10 characters",
-                    },
-                  })}
-                  placeholder="Message"
-                  error={errors.message?.message}
-                  className="w-full min-h-[100px] sm:min-h-[120px]"
-                  rows={4}
-                />
-
-                {submitError && (
-                  <div className="text-red-600 text-sm text-center mb-sm">
-                    {submitError}
-                  </div>
-                )}
-
-                {submitSuccess && (
-                  <div className="text-green-600 text-sm text-center mb-sm">
-                    Form submitted successfully! We&apos;ll get back to you
-                    soon.
-                  </div>
-                )}
-
-                <Button
-                  type="submit"
-                  loading={isSubmitting}
-                  className="font-normal"
-                  disabled={isSubmitting}
-                  uppercase
-                >
-                  {isSubmitting ? "Submitting..." : "INQUIRE NOW"}
-                </Button>
-              </form>
+              <ContactFormComponent
+                onSubmit={handleSubmit(onSubmit)}
+                register={register}
+                errors={errors}
+                isSubmitting={isSubmitting}
+                submitError={submitError}
+                submitSuccess={submitSuccess}
+                submitButtonText="INQUIRE NOW"
+                formClassName="space-y-sm"
+              />
             </div>
           </div>
 
