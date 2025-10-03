@@ -46,7 +46,9 @@ export const useContactForm = ({ onSuccess, onError, leadingPage }) => {
         description: formData.requirements,
         leadingPage:
           leadingPage || "https://www.bacancytechnology.com/landing/python-2",
-        userVisit: sessionStorage.getItem("landingPage") || "-",
+        userVisit:
+          sessionStorage.getItem("landingPage") ||
+          "https://www.bacancytechnology.com/landing/python-2",
         type: "reactForm",
         ip: clientIp,
         city: locationData.city,
