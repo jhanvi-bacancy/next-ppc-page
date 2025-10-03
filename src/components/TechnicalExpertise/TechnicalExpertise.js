@@ -7,7 +7,7 @@ const TechnicalExpertise = ({ data, className }) => {
   const { title, subtitle, categories } = data;
 
   return (
-    <section className={cn("", className)}>
+    <section className={cn("", className)} id="technical-stack">
       <div className="container">
         <div className="text-center mb-sm">
           <HeadingH2>{title}</HeadingH2>

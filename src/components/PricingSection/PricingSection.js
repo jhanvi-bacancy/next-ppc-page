@@ -11,7 +11,7 @@ const PricingSection = ({ className, data }) => {
   };
 
   return (
-    <section className={cn("py-8 md:py-12", className)}>
+    <section className={cn("", className)} id="pricing">
       <div className="container">
         <div className="text-center mx-auto mb-sm">
           <HeadingH2>

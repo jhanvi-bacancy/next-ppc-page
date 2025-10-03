@@ -71,7 +71,7 @@ const SuccessStoriesSection = ({ data, className }) => {
   };
 
   return (
-    <section className={cn("", className)}>
+    <section className={cn("", className)} id="case-study">
       <div className="container">
         <div className="text-center mb-sm">
           <HeadingH2>{title}</HeadingH2>

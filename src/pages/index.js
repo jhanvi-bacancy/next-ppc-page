@@ -30,8 +30,12 @@ export default function Home() {
 
         <div className="text-center sm:text-left">
           <h1 className="text-4xl font-bold mb-4">{homeData.title}</h1>
-          <h2 className="text-xl text-gray-600 dark:text-gray-300 mb-4">{homeData.subtitle}</h2>
-          <p className="text-gray-700 dark:text-gray-200 mb-6">{homeData.description}</p>
+          <h2 className="text-xl text-gray-600 dark:text-gray-300 mb-4">
+            {homeData.subtitle}
+          </h2>
+          <p className="text-gray-700 dark:text-gray-200 mb-6">
+            {homeData.description}
+          </p>
 
           <ul className="font-mono list-inside list-decimal text-sm/6 mb-6">
             {homeData.features.map((feature, index) => (

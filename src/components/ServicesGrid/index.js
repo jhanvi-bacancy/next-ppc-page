@@ -5,7 +5,7 @@ import { cn } from "../../lib/utils";
 
 const ServicesGrid = ({ className, data }) => {
   return (
-    <section className={cn("", className)}>
+    <section className={cn("", className)} id="services">
       <div className="container">
         <HeadingH2 className="text-center">{data.title}</HeadingH2>
 

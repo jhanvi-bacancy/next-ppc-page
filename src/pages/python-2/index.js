@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  Navbar,
   BannerWithList,
   TrustedLogos,
   ExpertCarousel,
@@ -34,6 +35,8 @@ import { developmentStrengthVariables } from "./variable";
 export default function PythonPage() {
   return (
     <div className="min-h-screen bg-white">
+      <Navbar />
+
       {/* Banner */}
       <BannerWithList data={pythonBannerData} className="" />
 

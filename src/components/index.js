@@ -1,3 +1,4 @@
+import Navbar from "./Navbar";
 import BannerWithList from "./HeroBanner";
 import TrustedLogos from "./TrustedLogos";
 import ExpertCarousel from "./Profile";
@@ -16,6 +17,7 @@ import FAQ from "./FAQ";
 import PricingSection from "./PricingSection";
 
 export {
+  Navbar,
   BannerWithList,
   TrustedLogos,
   ExpertCarousel,

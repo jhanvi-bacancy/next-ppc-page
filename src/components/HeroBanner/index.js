@@ -15,7 +15,7 @@ const BannerWithList = ({ data, className }) => {
   return (
     <section
       className={cn(
-        "bg-dark mt-97 py-lg flex items-center relative min-h-banner-height",
+        "bg-dark py-lg flex items-center relative min-h-banner-height",
         className
       )}
     >
