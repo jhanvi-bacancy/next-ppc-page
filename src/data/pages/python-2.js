@@ -620,8 +620,32 @@ export const faqData = [
   },
   {
     question: "What are the different engagement models you have?",
-    answer:
-      'We have two different types of engagement models:- <br /><br /> <strong style="color: #222;">Time & Material:</strong> <br /><br /> You can hire dedicated developers on a monthly basis (160 hours per month). This is the most suitable model where the developer will work with you as your augmented team member. Here you can also hire a developer on a part time basis (80 hours per month). <br /><br /> <strong style="color: #222;">Fixed price:</strong> <br /><br /> You can share your requirements with our team. Our team will evaluate your requirements and then get back to you with the detailed estimation of your project along with time and cost as well as the roadmap of the project.',
+    answer: [
+      {
+        type: "paragraph",
+        content: "We have two different types of engagement models:-",
+      },
+      {
+        type: "heading",
+        content: "Time & Material:",
+        className: "dark",
+      },
+      {
+        type: "paragraph",
+        content:
+          "You can hire dedicated developers on a monthly basis (160 hours per month). This is the most suitable model where the developer will work with you as your augmented team member. Here you can also hire a developer on a part time basis (80 hours per month).",
+      },
+      {
+        type: "heading",
+        content: "Fixed price:",
+        className: "dark",
+      },
+      {
+        type: "paragraph",
+        content:
+          "You can share your requirements with our team. Our team will evaluate your requirements and then get back to you with the detailed estimation of your project along with time and cost as well as the roadmap of the project.",
+      },
+    ],
   },
   {
     question: "What would be the Working Hours of the Developer?",
@@ -641,8 +665,18 @@ export const faqData = [
   {
     question:
       "If I want to be involved in the development process, is it okay?",
-    answer:
-      'Absolutely yes. The Bacancy is incepted based on Agile principles. With this Agile software development iterative approach, the "client – product owner" is always involved in the software development process. <br /><br /> The development process is not one-size-fits for all. With that consideration, from the ideation to deployment on each stage and on a daily basis, you will have an update from the team about project progress through Sprint. We let you have one to one interaction with the developer. Our daily scrum includes adaptive planning, continuous improvement, implementation, and rapid response to the changes.',
+    answer: [
+      {
+        type: "paragraph",
+        content:
+          'Absolutely yes. The Bacancy is incepted based on Agile principles. With this Agile software development iterative approach, the "client – product owner" is always involved in the software development process.',
+      },
+      {
+        type: "paragraph",
+        content:
+          "The development process is not one-size-fits for all. With that consideration, from the ideation to deployment on each stage and on a daily basis, you will have an update from the team about project progress through Sprint. We let you have one to one interaction with the developer. Our daily scrum includes adaptive planning, continuous improvement, implementation, and rapid response to the changes.",
+      },
+    ],
   },
   {
     question: "What is your payment method after the engagement?",
@@ -675,8 +709,18 @@ export const faqData = [
   {
     question:
       "What if I am not satisfied with the hired developer's work and would like to exit?",
-    answer:
-      "Be assured. That will never happen. Client satisfaction is our highest priority. Either Party to this agreement may terminate the contract, with or without cause, by providing at least 14 days (2) weeks written notice to the other Party. Upon termination of this agreement, Bacancy shall deliver a termination invoice for work completed to date, which shall be paid by the client (in 3 business days). <br /><br /> The Termination invoice shall specify all unpaid work and the remaining work done until the termination date. On termination, all work completed to time shall be delivered to the client in a usable electronic format.",
+    answer: [
+      {
+        type: "paragraph",
+        content:
+          "Be assured. That will never happen. Client satisfaction is our highest priority. Either Party to this agreement may terminate the contract, with or without cause, by providing at least 14 days (2) weeks written notice to the other Party. Upon termination of this agreement, Bacancy shall deliver a termination invoice for work completed to date, which shall be paid by the client (in 3 business days).",
+      },
+      {
+        type: "paragraph",
+        content:
+          "The Termination invoice shall specify all unpaid work and the remaining work done until the termination date. On termination, all work completed to time shall be delivered to the client in a usable electronic format.",
+      },
+    ],
   },
 ];
 

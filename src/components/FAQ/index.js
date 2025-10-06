@@ -11,6 +11,46 @@ import Image from "next/image";
 
 const cdnImage = process.env.NEXT_PUBLIC_IMG_URL;
 
+// Helper function to render answer content
+const renderAnswerContent = (answer) => {
+  // If answer is a string, render as simple paragraph
+  if (typeof answer === "string") {
+    return <p className="mb-4 last:mb-0">{answer}</p>;
+  }
+
+  // If answer is an array of structured content, render each element
+  if (Array.isArray(answer)) {
+    return answer.map((item, index) => {
+      switch (item.type) {
+        case "paragraph":
+          return (
+            <p key={index} className="mb-sm last:mb-0">
+              {item.content}
+            </p>
+          );
+        case "heading":
+          return (
+            <strong
+              key={index}
+              className={cn("block mb-2 font-semibold", item.className)}
+              style={item.style || {}}
+            >
+              {item.content}
+            </strong>
+          );
+        default:
+          return (
+            <p key={index} className="mb-sm last:mb-0">
+              {item.content}
+            </p>
+          );
+      }
+    });
+  }
+
+  return <p>{answer}</p>;
+};
+
 const FAQ = ({ data, className }) => {
   return (
     <section className={cn("", className)}>
@@ -74,7 +114,7 @@ const FAQ = ({ data, className }) => {
                     </HeadingH3>
                   </AccordionTrigger>
                   <AccordionContent className="text-sm leading-relaxed text-secondary pb-6">
-                    <p dangerouslySetInnerHTML={{ __html: faq.answer }} />
+                    <div>{renderAnswerContent(faq.answer)}</div>
                   </AccordionContent>
                 </AccordionItem>
               ))}
