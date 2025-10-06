@@ -2,6 +2,8 @@ import React from "react";
 import { ParagraphElement } from "../ui";
 import { useContactForm, ContactFormComponent } from "../SingleForm";
 
+const landingPage = process.env.NEXT_PUBLIC_API_BASE_URL;
+
 const ContactForm = ({ data }) => {
   const {
     register,
@@ -12,9 +14,9 @@ const ContactForm = ({ data }) => {
     submitSuccess,
     onSubmit,
   } = useContactForm({
-    leadingPage: "https://www.bacancytechnology.com/landing/python-2",
+    leadingPage: `${landingPage}/landing/python-2`,
     onSuccess: () => {
-      window.location.href = "https://www.bacancytechnology.com/thank-you";
+      window.location.href = `${landingPage}/thank-you`;
     },
   });
 

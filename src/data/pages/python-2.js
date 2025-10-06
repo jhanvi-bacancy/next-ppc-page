@@ -1,5 +1,5 @@
 const cdnImage = process.env.NEXT_PUBLIC_IMG_URL;
-import { formatDateWithDay } from "../../lib/helper";
+const landingPage = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 // Data for the Python Development page
 export const pythonBannerData = {
@@ -572,12 +572,12 @@ export const footerData = {
   ],
   privacyButton: {
     btnText: "Privacy Policy",
-    href: "https://www.bacancytechnology.com/landing/privacy-policy",
+    href: `${landingPage}/landing/privacy-policy`,
     target: "_blank",
   },
   faqsButton: {
     btnText: "FAQs",
-    href: "https://www.bacancytechnology.com/landing/faqs",
+    href: `${landingPage}/landing/faqs`,
     target: "_blank",
   },
 };

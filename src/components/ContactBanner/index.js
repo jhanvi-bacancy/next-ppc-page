@@ -4,6 +4,8 @@ import { HeadingH2, ParagraphElement } from "../ui";
 import { cn } from "../../lib/utils";
 import { useContactForm, ContactFormComponent } from "../SingleForm";
 
+const landingPage = process.env.NEXT_PUBLIC_API_BASE_URL;
+
 const ContactBanner = ({ data = {}, className }) => {
   const { title, ratings, iso, salesManager, starImage } = data;
 
@@ -16,7 +18,7 @@ const ContactBanner = ({ data = {}, className }) => {
     submitSuccess,
     onSubmit,
   } = useContactForm({
-    leadingPage: "https://www.bacancytechnology.com/landing/python-2",
+    leadingPage: `${landingPage}/landing/python-2`,
   });
 
   return (

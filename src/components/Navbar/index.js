@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
 
+const cdnImage = process.env.NEXT_PUBLIC_IMG_URL;
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -25,7 +27,7 @@ const Navbar = () => {
           <div className="flex items-center gap-x-6">
             <Link href="/" className="flex items-center h-8 w-auto lg:h-12">
               <Image
-                src="https://assets.bacancytechnology.com/landing/images/bacancy-logo-black.svg"
+                src={`${cdnImage}landing/images/bacancy-logo-black.svg`}
                 alt="Bacancy Technology"
                 width={120}
                 height={40}

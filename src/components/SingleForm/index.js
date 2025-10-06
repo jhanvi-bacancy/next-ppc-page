@@ -6,6 +6,9 @@ import { api } from "../../api/apiManager";
 import { ENDPOINTS } from "../../api/endpoints";
 import { getClientIp, getLocationData } from "../../lib/helper";
 
+const cdnImage = process.env.NEXT_PUBLIC_IMG_URL;
+const landingPage = process.env.NEXT_PUBLIC_API_BASE_URL;
+
 export const useContactForm = ({ onSuccess, onError, leadingPage }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
@@ -44,11 +47,10 @@ export const useContactForm = ({ onSuccess, onError, leadingPage }) => {
         email: formData.email,
         number: formData.phone,
         description: formData.requirements,
-        leadingPage:
-          leadingPage || "https://www.bacancytechnology.com/landing/python-2",
+        leadingPage: leadingPage || `${landingPage}/landing/python-2`,
         userVisit:
           sessionStorage.getItem("landingPage") ||
-          "https://www.bacancytechnology.com/landing/python-2",
+          `${landingPage}/landing/python-2`,
         type: "reactForm",
         ip: clientIp,
         city: locationData.city,
@@ -138,7 +140,7 @@ export const ContactFormComponent = ({
         error={errors.name?.message}
         icon={
           <Image
-            src="https://www.bacancytechnology.com/landing/images/person.png"
+            src={`${cdnImage}landing/images/person.png`}
             alt="user"
             width={16}
             height={16}
@@ -154,7 +156,7 @@ export const ContactFormComponent = ({
         error={errors.email?.message}
         icon={
           <Image
-            src="https://www.bacancytechnology.com/landing/images/email.png"
+            src={`${cdnImage}landing/images/email.png`}
             alt="email"
             width={16}
             height={16}
@@ -170,7 +172,7 @@ export const ContactFormComponent = ({
         error={errors.phone?.message}
         icon={
           <Image
-            src="https://www.bacancytechnology.com/landing/images/phone-call.png"
+            src={`${cdnImage}landing/images/phone-call.png`}
             alt="phone"
             width={16}
             height={16}
@@ -185,7 +187,7 @@ export const ContactFormComponent = ({
         error={errors.requirements?.message}
         icon={
           <Image
-            src="https://www.bacancytechnology.com/landing/images/message.png"
+            src={`${cdnImage}landing/images/message.png`}
             alt="message"
             width={16}
             height={16}

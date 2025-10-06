@@ -3,6 +3,8 @@ import Image from "next/image";
 import { HeadingH2, Button, ParagraphElement } from "../ui";
 import { cn } from "../../lib/utils";
 
+const landingPage = process.env.NEXT_PUBLIC_API_BASE_URL;
+
 const ServicesGrid = ({ className, data }) => {
   return (
     <section className={cn("", className)} id="services">
@@ -39,7 +41,7 @@ const ServicesGrid = ({ className, data }) => {
                 <div key={index} className="flex items-center gap-6">
                   <div className="w-5 h-5 flex-shrink-0 mr-2">
                     <Image
-                      src={`https://www.bacancytechnology.com/landing/images/right-arrow.png`}
+                      src={`${landingPage}/landing/images/right-arrow.png`}
                       alt="check"
                       width={20}
                       height={20}

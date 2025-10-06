@@ -9,6 +9,8 @@ import {
 import { cn } from "../../lib/utils";
 import Image from "next/image";
 
+const cdnImage = process.env.NEXT_PUBLIC_IMG_URL;
+
 const FAQ = ({ data, className }) => {
   return (
     <section className={cn("", className)}>
@@ -42,7 +44,7 @@ const FAQ = ({ data, className }) => {
                   Let&apos;s talk{" "}
                   <span className="inline-block h-svg-icon-24 w-svg-icon-24">
                     <Image
-                      src="https://assets.bacancytechnology.com/main-boot-5/images/tailwind/images/right-arrow-line-black.svg"
+                      src={`${cdnImage}main-boot-5/images/tailwind/images/right-arrow-line-black.svg`}
                       alt="right-arrow"
                       width={16}
                       height={16}

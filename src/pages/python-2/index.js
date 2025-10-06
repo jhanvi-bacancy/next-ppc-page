@@ -29,8 +29,8 @@ import {
   footerData,
   contactBannerData,
   faqData,
-} from "./data";
-import { developmentStrengthVariables } from "./variable";
+} from "../../data/pages/python-2";
+import { developmentStrengthVariables } from "../../variables/pages/python-2";
 
 export default function PythonPage() {
   return (
