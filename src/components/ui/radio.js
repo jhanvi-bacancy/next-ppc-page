@@ -70,7 +70,7 @@ export function Radio({
       {label && (
         <span
           className={cn(
-            "ml-2 text-sm text-gray-700",
+            "ml-2 text-sm secondary",
             disabled && "text-gray-400"
           )}
         >

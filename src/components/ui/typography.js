@@ -41,7 +41,7 @@ const TypographyElement = ({
 // Individual component exports
 export const HeadingH1 = ({ color, className, noMargin, ...props }) => (
   <TypographyElement
-    className={cn("text-h1 font-bold", !noMargin && "mb-sm", className)}
+    className={cn("text-h1 font-medium", !noMargin && "mb-sm", className)}
     color={color}
     {...props}
     variant="h1"
@@ -50,7 +50,7 @@ export const HeadingH1 = ({ color, className, noMargin, ...props }) => (
 
 export const HeadingH2 = ({ color, className, noMargin, ...props }) => (
   <TypographyElement
-    className={cn("text-h2 font-bold", !noMargin && "mb-sm", className)}
+    className={cn("text-h2 font-medium", !noMargin && "mb-sm", className)}
     color={color}
     {...props}
     variant="h2"
@@ -59,7 +59,7 @@ export const HeadingH2 = ({ color, className, noMargin, ...props }) => (
 
 export const HeadingH3 = ({ color, className, noMargin, ...props }) => (
   <TypographyElement
-    className={cn("text-h3 font-bold", !noMargin && "mb-sm", className)}
+    className={cn("text-h3 font-medium", !noMargin && "mb-sm", className)}
     color={color}
     {...props}
     variant="h3"
@@ -68,7 +68,7 @@ export const HeadingH3 = ({ color, className, noMargin, ...props }) => (
 
 export const HeadingH4 = ({ color, className, noMargin, ...props }) => (
   <TypographyElement
-    className={cn("text-h4 font-bold", !noMargin && "mb-sm", className)}
+    className={cn("text-h4 font-medium", !noMargin && "mb-sm", className)}
     color={color}
     {...props}
     variant="h4"
@@ -77,7 +77,7 @@ export const HeadingH4 = ({ color, className, noMargin, ...props }) => (
 
 export const HeadingH5 = ({ color, className, noMargin, ...props }) => (
   <TypographyElement
-    className={cn("text-h5 font-bold", !noMargin && "mb-sm", className)}
+    className={cn("text-h5 font-medium", !noMargin && "mb-sm", className)}
     color={color}
     {...props}
     variant="h5"
@@ -86,7 +86,7 @@ export const HeadingH5 = ({ color, className, noMargin, ...props }) => (
 
 export const HeadingH6 = ({ color, className, noMargin, ...props }) => (
   <TypographyElement
-    className={cn("text-h6 font-bold", !noMargin && "mb-sm", className)}
+    className={cn("text-h6 font-medium", !noMargin && "mb-sm", className)}
     color={color}
     {...props}
     variant="h6"

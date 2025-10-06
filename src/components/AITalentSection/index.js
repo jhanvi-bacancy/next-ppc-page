@@ -61,9 +61,9 @@ const AITalentSection = ({ className }) => {
             <div className="grid">
               {description.map((item, index) =>
                 index < description.length - 1 ? (
-                  <ParagraphElement key={index}>{item}</ParagraphElement>
+                  <ParagraphElement color="secondary" key={index}>{item}</ParagraphElement>
                 ) : (
-                  <ParagraphElement key={index} className="font-semibold">
+                  <ParagraphElement color="secondary" key={index} className="font-semibold">
                     {item}
                   </ParagraphElement>
                 )

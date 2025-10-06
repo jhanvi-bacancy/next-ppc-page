@@ -5,7 +5,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center transition-all duration-300 font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:opacity-50 disabled:pointer-events-none [&_svg]:pointer-events-none",
+  "inline-flex items-center text-center justify-center transition-all duration-300 font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:opacity-50 disabled:pointer-events-none [&_svg]:pointer-events-none",
   {
     variants: {
       variant: {
@@ -15,7 +15,7 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
         outline:
-          "border-2 border-primary text-primary hover:bg-primary hover:text-white",
+          "border border-primary text-primary hover:bg-primary hover:text-white",
         secondary:
           "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "text-primary hover:bg-primary/10",
@@ -23,10 +23,10 @@ const buttonVariants = cva(
         text: "text-primary hover:text-primary-hover",
         dark: "bg-dark text-white hover:bg-black",
         "outline-dark":
-          "border-2 border-dark text-dark hover:bg-dark hover:text-white",
+          "border border-dark text-dark hover:bg-dark hover:text-white",
         light: "bg-white text-dark hover:bg-gray-100",
         "outline-light":
-          "border-2 border-white text-white hover:bg-white hover:text-dark",
+          "border border-white text-white hover:bg-white hover:text-dark",
       },
       size: {
         sm: "text-sm px-3 py-1.5 rounded",

@@ -52,7 +52,7 @@ const StepCard = ({
             <Image
               src={contentImage}
               alt={`${title} content`}
-              className="w-full h-auto min-h-[180px] sm:min-h-[200px] md:min-h-[220px] lg:h-[250px] object-cover"
+              className="w-full h-auto min-h-[180px] sm:min-h-[200px] md:min-h-[220px] lg:h-[250px] object-contain"
               width={400}
               height={250}
               priority
@@ -85,7 +85,7 @@ const StepCard = ({
       </div>
 
       {/* Description */}
-      <ParagraphElement className="text-sm !text-secondary" noMargin>
+      <ParagraphElement color="secondary" noMargin>
         {description}
       </ParagraphElement>
     </div>

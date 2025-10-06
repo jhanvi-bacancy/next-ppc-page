@@ -1,3 +1,5 @@
+import { developmentStrengthVariables } from "../../variables/pages";
+
 const cdnImage = process.env.NEXT_PUBLIC_IMG_URL;
 const landingPage = process.env.NEXT_PUBLIC_API_BASE_URL;
 
@@ -619,7 +621,7 @@ export const faqData = [
   {
     question: "What are the different engagement models you have?",
     answer:
-      'We have two different types of engagement models:- <br /><br /> <b style="color: #222;">Time & Material:</b> <br /><br /> You can hire dedicated developers on a monthly basis (160 hours per month). This is the most suitable model where the developer will work with you as your augmented team member. Here you can also hire a developer on a part time basis (80 hours per month). <br /><br /> <b style="color: #222;">Fixed price:</b> <br /><br /> You can share your requirements with our team. Our team will evaluate your requirements and then get back to you with the detailed estimation of your project along with time and cost as well as the roadmap of the project.',
+      'We have two different types of engagement models:- <br /><br /> <strong style="color: #222;">Time & Material:</strong> <br /><br /> You can hire dedicated developers on a monthly basis (160 hours per month). This is the most suitable model where the developer will work with you as your augmented team member. Here you can also hire a developer on a part time basis (80 hours per month). <br /><br /> <strong style="color: #222;">Fixed price:</strong> <br /><br /> You can share your requirements with our team. Our team will evaluate your requirements and then get back to you with the detailed estimation of your project along with time and cost as well as the roadmap of the project.',
   },
   {
     question: "What would be the Working Hours of the Developer?",
@@ -677,3 +679,50 @@ export const faqData = [
       "Be assured. That will never happen. Client satisfaction is our highest priority. Either Party to this agreement may terminate the contract, with or without cause, by providing at least 14 days (2) weeks written notice to the other Party. Upon termination of this agreement, Bacancy shall deliver a termination invoice for work completed to date, which shall be paid by the client (in 3 business days). <br /><br /> The Termination invoice shall specify all unpaid work and the remaining work done until the termination date. On termination, all work completed to time shall be delivered to the client in a usable electronic format.",
   },
 ];
+
+export const developmentStrengthData = {
+  title: `${developmentStrengthVariables.yearsOfExperience} Years and Counting...`,
+  backgroundImage: `${cdnImage}landing/images/aus-img/dot-bg.png`,
+  sideImage: `${cdnImage}landing/images/common-img/side-img-5.jpg`,
+  description: `By establishing an ${developmentStrengthVariables.technology} development center, we offer our tailored engagement models that cater to the unique needs by providing B2B and B2C Dedicated development support.`,
+  strengths: [
+    {
+      number: "1050+",
+      title: "Agile Developers",
+    },
+    {
+      number: developmentStrengthVariables.techDevelopers,
+      title: `${developmentStrengthVariables.technology} Developers`,
+    },
+    {
+      number: "05",
+      title: "Agile Coaches",
+    },
+    {
+      number: "14",
+      title: "Certified Scrum Masters",
+    },
+  ],
+  features: [
+    {
+      icon: `${cdnImage}landing/images/common-img/counting-ico-1.png`,
+      title: "Work at Your Time Zone",
+    },
+    {
+      icon: `${cdnImage}landing/images/common-img/counting-ico-3.png`,
+      title: "Easy Communication",
+    },
+    {
+      icon: `${cdnImage}landing/images/common-img/counting-ico-4.png`,
+      title: "Hire in 48 Hours",
+    },
+    {
+      icon: `${cdnImage}landing/images/common-img/counting-ico-2.png`,
+      title: "In Business Since 2011",
+    },
+    {
+      icon: `${cdnImage}landing/images/common-img/counting-ico-5.png`,
+      title: "5/5 Pro User Rating",
+    },
+  ],
+};

@@ -73,7 +73,7 @@ const FAQ = ({ data, className }) => {
                       {faq.question}
                     </HeadingH3>
                   </AccordionTrigger>
-                  <AccordionContent className="text-sm leading-relaxed text-secondary pb-6 mt-sm">
+                  <AccordionContent className="text-sm leading-relaxed text-secondary pb-6">
                     <p dangerouslySetInnerHTML={{ __html: faq.answer }} />
                   </AccordionContent>
                 </AccordionItem>

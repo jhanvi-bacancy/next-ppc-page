@@ -29,8 +29,8 @@ import {
   footerData,
   contactBannerData,
   faqData,
+  developmentStrengthData,
 } from "../../data/pages/python-2";
-import { developmentStrengthVariables } from "../../variables/pages/python-2";
 
 export default function PythonPage() {
   return (
@@ -58,7 +58,10 @@ export default function PythonPage() {
       <PricingSection data={pythonPricingData} className=" bg-white" />
 
       {/* Contact Section */}
-      <ContactSection data={contactSectionData} className="pt-10" />
+      <ContactSection
+        data={contactSectionData}
+        className="pt-10 bg-gray-light"
+      />
 
       {/* Success Banner */}
       <SuccessBanner className="bg-gray-light " />
@@ -85,7 +88,7 @@ export default function PythonPage() {
       <CustomerReviews className="bg-light-orange " />
 
       {/* Development Strength */}
-      <DevelopmentStrength variable={developmentStrengthVariables} />
+      <DevelopmentStrength data={developmentStrengthData} />
 
       {/* FAQ */}
       <FAQ data={faqData} className="bg-gray-light" />
