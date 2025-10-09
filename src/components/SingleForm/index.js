@@ -5,6 +5,7 @@ import { Input, TextArea, Button } from "../ui";
 import { api } from "../../api/apiManager";
 import { ENDPOINTS } from "../../api/endpoints";
 import { getClientIp, getLocationData } from "../../lib/helper";
+import { Dialog, DialogContent, DialogHeader } from "../ui/dialog";
 
 const cdnImage = process.env.NEXT_PUBLIC_IMG_URL;
 const landingPage = process.env.NEXT_PUBLIC_API_BASE_URL;
@@ -113,13 +114,6 @@ export const nameValidation = {
   },
 };
 
-export const messageValidation = {
-  minLength: {
-    value: 10,
-    message: "Message must be at least 10 characters",
-  },
-};
-
 export const ContactFormComponent = ({
   onSubmit,
   register,
@@ -132,94 +126,110 @@ export const ContactFormComponent = ({
   formClassName = "space-y-6",
 }) => {
   return (
-    <form onSubmit={onSubmit} className={formClassName}>
-      {submitError && (
-        <div className="text-red-600 text-sm text-center mb-4">
-          {submitError}
+    <div>
+      <Dialog open={!!submitError}>
+        <DialogContent className="sm:max-w-[425px] text-center">
+          <DialogHeader className="flex flex-col items-center">
+            <p className="h1 font-bold mb-sm text-dark text-h2">
+              Oops, sorry. Something went wrong.
+            </p>
+            <p className="h4 mb-sm font-medium">
+              We recommend you Schedule a Free Call.
+            </p>
+            <a
+              href="https://calendly.com/bacancymeeting/30-minute-meeting"
+              className="btn btn-primary text-uppercase ls-xs calendly-btn-click mt-4"
+              data-calendly-path="bacancymeeting"
+            >
+              SCHEDULE A CALL NOW
+            </a>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
+
+      <form onSubmit={onSubmit} className={formClassName}>
+        {submitSuccess && (
+          <div className="text-green-600 text-sm text-center mb-4">
+            Form submitted successfully! We&apos;ll get back to you soon.
+          </div>
+        )}
+        <Input
+          {...register("name", nameValidation)}
+          type="text"
+          placeholder="Full Name"
+          error={errors.name?.message}
+          icon={
+            <Image
+              src={`${cdnImage}landing/images/person.png`}
+              alt="user"
+              width={16}
+              height={16}
+            />
+          }
+          className={`w-full bg-gray-light ${className}`}
+        />
+
+        <Input
+          {...register("email", emailValidation)}
+          type="email"
+          placeholder="Your Business Email ID"
+          error={errors.email?.message}
+          icon={
+            <Image
+              src={`${cdnImage}landing/images/email.png`}
+              alt="email"
+              width={16}
+              height={16}
+            />
+          }
+          className={`w-full bg-gray-light ${className}`}
+        />
+
+        <Input
+          {...register("phone", phoneValidation)}
+          type="tel"
+          placeholder="Phone Number"
+          error={errors.phone?.message}
+          icon={
+            <Image
+              src={`${cdnImage}landing/images/phone-call.png`}
+              alt="phone"
+              width={16}
+              height={16}
+            />
+          }
+          className={`w-full bg-gray-light ${className}`}
+        />
+
+        <TextArea
+          {...register("requirements")}
+          placeholder="Describe Your Requirements"
+          error={errors.requirements?.message}
+          icon={
+            <Image
+              src={`${cdnImage}landing/images/message.png`}
+              alt="message"
+              width={16}
+              height={16}
+            />
+          }
+          className={`w-full bg-gray-light min-h-[100px] sm:min-h-[120px] ${className}`}
+          rows={4}
+        />
+
+        <div className="flex justify-center">
+          <Button
+            type="submit"
+            loading={isSubmitting}
+            className="font-normal w-full sm:w-auto"
+            disabled={isSubmitting}
+            fullWidth
+            uppercase
+          >
+            {isSubmitting ? "Submitting..." : submitButtonText}
+          </Button>
         </div>
-      )}
-
-      {submitSuccess && (
-        <div className="text-green-600 text-sm text-center mb-4">
-          Form submitted successfully! We&apos;ll get back to you soon.
-        </div>
-      )}
-      <Input
-        {...register("name", nameValidation)}
-        type="text"
-        placeholder="Full Name"
-        error={errors.name?.message}
-        icon={
-          <Image
-            src={`${cdnImage}landing/images/person.png`}
-            alt="user"
-            width={16}
-            height={16}
-          />
-        }
-        className={`w-full bg-gray-light ${className}`}
-      />
-
-      <Input
-        {...register("email", emailValidation)}
-        type="email"
-        placeholder="Your Business Email ID"
-        error={errors.email?.message}
-        icon={
-          <Image
-            src={`${cdnImage}landing/images/email.png`}
-            alt="email"
-            width={16}
-            height={16}
-          />
-        }
-        className={`w-full bg-gray-light ${className}`}
-      />
-
-      <Input
-        {...register("phone", phoneValidation)}
-        type="tel"
-        placeholder="Phone Number"
-        error={errors.phone?.message}
-        icon={
-          <Image
-            src={`${cdnImage}landing/images/phone-call.png`}
-            alt="phone"
-            width={16}
-            height={16}
-          />
-        }
-        className={`w-full bg-gray-light ${className}`}
-      />
-
-      <TextArea
-        {...register("requirements", messageValidation)}
-        placeholder="Describe Your Requirements"
-        error={errors.requirements?.message}
-        icon={
-          <Image
-            src={`${cdnImage}landing/images/message.png`}
-            alt="message"
-            width={16}
-            height={16}
-          />
-        }
-        className={`w-full bg-gray-light min-h-[100px] sm:min-h-[120px] ${className}`}
-        rows={4}
-      />
-
-      <div className="flex justify-center">
-        <Button
-          type="submit"
-          loading={isSubmitting}
-          className="font-normal w-full sm:w-auto"
-          disabled={isSubmitting}
-          fullWidth
-          uppercase
-        >
-          {isSubmitting ? "Submitting..." : submitButtonText}
-        </Button>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 };

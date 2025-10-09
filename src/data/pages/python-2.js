@@ -265,7 +265,7 @@ export const pythonPricingData = {
   plans: [
     {
       title: "Hourly",
-      price: "22",
+      price: "$22",
       currency: "USD",
       features: [
         "Usage-based billing",
@@ -281,7 +281,7 @@ export const pythonPricingData = {
     },
     {
       title: "Monthly",
-      price: "3200",
+      price: "$3200",
       currency: "USD",
       features: [
         "160 Working Hours",
@@ -298,7 +298,8 @@ export const pythonPricingData = {
       highlighted: true,
     },
     {
-      title: "Fixed Cost Solution",
+      price: "Fixed Cost Solution",
+      title: "As per your needs",
       features: [
         "Get a Free Quote",
         "Fully Signed NDA",
@@ -589,33 +590,6 @@ export const footerData = {
     href: `${landingPage}/landing/faqs`,
     target: "_blank",
   },
-};
-
-// export contact banner data
-export const contactBannerData = {
-  title: "Big Ideas Start Here - Share Yours Now!",
-  ratings: [
-    {
-      logo: `${cdnImage}landing/images/footer-ppc/clutch-logo-footer.svg`,
-      rating: "4.7",
-    },
-    {
-      logo: `${cdnImage}landing/images/footer-ppc/goodfirm-logo.svg`,
-      rating: "4.8",
-    },
-  ],
-  iso: {
-    logo: `${cdnImage}landing/images/iso-2013.svg`,
-    text: "ISO 27001:2013",
-  },
-  salesManager: {
-    name: "Gautam Sharma",
-    role: "Sales Manager",
-    avatar: `${cdnImage}landing/images/footer-ppc/form-profile-pic.png`,
-    message:
-      "Hey, I'm Gautam Sharma, Sales Manager at Bacancy! Got questions? Fill out the form—I'm happy to help!",
-  },
-  starImage: `${cdnImage}main-boot-5/images/star-white.png`,
 };
 
 // export FAQ data

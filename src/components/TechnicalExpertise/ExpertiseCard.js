@@ -23,6 +23,7 @@ const ExpertiseCard = ({ title, items }) => {
               {index < items.length - 1 ? (
                 <ParagraphElement
                   className="font-normal px-2 sm:px-4 border-r border-r-secondary !mb-0"
+                  color="secondary"
                   noMargin
                 >
                   {item}
@@ -30,6 +31,7 @@ const ExpertiseCard = ({ title, items }) => {
               ) : (
                 <ParagraphElement
                   className="font-normal px-4 border-none !mb-0"
+                  color="secondary"
                   noMargin
                 >
                   {item}

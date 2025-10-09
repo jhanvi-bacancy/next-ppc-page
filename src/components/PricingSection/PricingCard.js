@@ -21,21 +21,12 @@ const PricingCard = ({
     >
       <div className="mb-6 border-b-2 border-primary">
         <div className="text-center mb-4">
-          {price ? (
-            <>
-              <span className="primary text-h3 font-semibold">${price}</span>
-              <ParagraphElement className="font-normal">
-                {title} ({currency})
-              </ParagraphElement>
-            </>
-          ) : (
-            <HeadingH3
-              color="primary"
-              className="font-semibold text-h2 mb-0 leading-none"
-            >
-              {title}
-            </HeadingH3>
-          )}
+          <HeadingH3 className="font-semibold" color="primary" noMargin>
+            {price}
+          </HeadingH3>
+          <ParagraphElement className="font-normal">
+            {title} ({currency})
+          </ParagraphElement>
         </div>
       </div>
 

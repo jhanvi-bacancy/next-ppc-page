@@ -27,7 +27,6 @@ import {
   contactSectionData,
   successStoriesData,
   footerData,
-  contactBannerData,
   faqData,
   developmentStrengthData,
 } from "../../data/pages/python-2";
@@ -48,44 +47,40 @@ export default function PythonPage() {
         title={pythonExpertsData.title}
         subtitle={pythonExpertsData.subtitle}
         experts={pythonExpertsData.experts}
-        className=" bg-white"
       />
 
       {/* Services Grid */}
       <ServicesGrid className=" bg-gray-light" data={pythonServicesGridData} />
 
       {/* Pricing Section */}
-      <PricingSection data={pythonPricingData} className=" bg-white" />
+      <PricingSection data={pythonPricingData} />
 
       {/* Contact Section */}
-      <ContactSection
-        data={contactSectionData}
-        className="pt-10"
-      />
+      <ContactSection data={contactSectionData} className="pt-10" />
 
       {/* Success Banner */}
-      <SuccessBanner className="bg-gray-light " />
+      <SuccessBanner />
 
       {/* Technical Expertise */}
       <TechnicalExpertise
         data={technicalExpertiseData}
-        className="bg-gray-light "
+        className="bg-gray-light"
       />
 
       {/* Steps Section */}
-      <StepsSection className="bg-white " />
+      <StepsSection />
 
       {/* AITalent Section */}
-      <AITalentSection className="bg-light-orange " />
+      <AITalentSection className="bg-light-orange" />
 
       {/* Success Stories Section */}
       <SuccessStoriesSection
         data={successStoriesData}
-        className="bg-gray-light "
+        className="bg-gray-light"
       />
 
       {/* Customer Reviews Section */}
-      <CustomerReviews className="bg-light-orange " />
+      <CustomerReviews className="bg-light-orange" />
 
       {/* Development Strength */}
       <DevelopmentStrength data={developmentStrengthData} />
@@ -94,7 +89,7 @@ export default function PythonPage() {
       <FAQ data={faqData} className="bg-gray-light" />
 
       {/* Contact Banner */}
-      <ContactBanner data={contactBannerData} className="bg-gray-light" />
+      <ContactBanner />
 
       {/* Footer */}
       <Footer data={footerData} />

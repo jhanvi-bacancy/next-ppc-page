@@ -25,7 +25,7 @@ const PricingSection = ({ className, data }) => {
           <ParagraphElement color="secondary">{data.subtitle}</ParagraphElement>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start gap-6 lg:gap-0 mb-sm">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start gap-6 lg:gap-0 mb-sm md:px-sm">
           {data.plans.map((plan, index) => (
             <div
               key={index}

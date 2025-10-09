@@ -122,10 +122,10 @@ const ExpertCarousel = ({ title, subtitle, experts, className }) => {
           {experts.map((expert, index) => (
             <div
               key={index}
-              className="bg-gray-light boxed flex flex-col h-full p-6 min-h-[600px]"
+              className="bg-gray-light boxed flex flex-col h-full p-6"
             >
               {/* Expert Header */}
-              <div className="flex items-center gap-6 mb-6 h-[80px]">
+              <div className="flex items-center gap-6 mb-sm">
                 <div className="size-60 rounded-full relative flex-shrink-0">
                   <Image
                     src={expert.image}
@@ -140,7 +140,7 @@ const ExpertCarousel = ({ title, subtitle, experts, className }) => {
                   </HeadingH3>
                   <ParagraphElement
                     color="secondary"
-                    className="truncate text-sm"
+                    className="truncate"
                     noMargin
                   >
                     {expert.role}
@@ -149,61 +149,40 @@ const ExpertCarousel = ({ title, subtitle, experts, className }) => {
               </div>
 
               {/* Stats Grid */}
-              <div className="grid grid-cols-3 gap-2 mb-6 h-[60px]">
+              <div className="flex flex-wrap gap-sm mb-sm">
                 <div className="text-left flex flex-col justify-center">
-                  <ParagraphElement
-                    className="font-bold text-sm !mb-1"
-                    noMargin
-                  >
+                  <ParagraphElement className="font-bold !mb-1" noMargin>
                     {expert.experience}
                   </ParagraphElement>
-                  <ParagraphElement
-                    className="text-sm"
-                    color="secondary"
-                    noMargin
-                  >
+                  <ParagraphElement color="secondary" noMargin>
                     Experience
                   </ParagraphElement>
                 </div>
                 <div className="text-left flex flex-col justify-center">
-                  <ParagraphElement
-                    className="font-bold text-sm !mb-1"
-                    noMargin
-                  >
+                  <ParagraphElement className="font-bold !mb-1" noMargin>
                     {expert.availability}
                   </ParagraphElement>
-                  <ParagraphElement
-                    className="text-sm"
-                    color="secondary"
-                    noMargin
-                  >
+                  <ParagraphElement color="secondary" noMargin>
                     Availability
                   </ParagraphElement>
                 </div>
                 <div className="text-left flex flex-col justify-center">
-                  <ParagraphElement
-                    className="font-bold text-sm !mb-1"
-                    noMargin
-                  >
+                  <ParagraphElement className="font-bold !mb-1" noMargin>
                     {expert.projects}
                   </ParagraphElement>
-                  <ParagraphElement
-                    className="text-sm"
-                    color="secondary"
-                    noMargin
-                  >
+                  <ParagraphElement color="secondary" noMargin>
                     Completed
                   </ParagraphElement>
                 </div>
               </div>
 
               {/* Content Area - Flexible */}
-              <div className="flex-1 flex flex-col min-h-[400px]">
-                <div className="flex-1 space-y-6">
+              <div className="flex-1 flex flex-col">
+                <div className="flex-1 space-y-sm">
                   {/* Description */}
-                  <div className="h-[72px]">
+                  <div>
                     <ParagraphElement
-                      className="text-sm leading-relaxed line-clamp-3"
+                      className="leading-relaxed"
                       color="secondary"
                     >
                       {expert.description}
@@ -211,8 +190,8 @@ const ExpertCarousel = ({ title, subtitle, experts, className }) => {
                   </div>
 
                   {/* Expert Skills */}
-                  <div className="space-y-2 h-[100px]">
-                    <span className="inline-flex items-center px-3 py-2 bg-gray-900 text-white relative pr-6 text-sm font-medium">
+                  <div className="space-y-sm">
+                    <span className="inline-flex items-center px-3 py-2 bg-gray-900 text-white relative pr-6 font-medium">
                       <Image
                         src={`${cdnImage}main-boot-5/images/laravel-ppc/ic_star.png`}
                         alt="star"
@@ -230,11 +209,11 @@ const ExpertCarousel = ({ title, subtitle, experts, className }) => {
                         className="absolute -right-2 top-0 bottom-0 h-full"
                       />
                     </span>
-                    <ParagraphElement className="text-sm">
+                    <ParagraphElement className="!mt-2">
                       {expert.expertIn.map((skill, idx) => (
                         <span
                           key={idx}
-                          className="px-2 bg-light-orange border border-primary py-1 mr-2 mt-2 inline-block"
+                          className="px-2 text-sm bg-light-orange border border-primary py-1 mr-2 mt-2 inline-block"
                         >
                           {skill}
                         </span>
@@ -243,15 +222,15 @@ const ExpertCarousel = ({ title, subtitle, experts, className }) => {
                   </div>
 
                   {/* Additional Skills */}
-                  <div className="space-y-2 h-[100px]">
-                    <span className="font-medium text-sm dark block">
+                  <div className="space-y-sm">
+                    <span className="font-medium dark block">
                       Also Skilled in
                     </span>
-                    <ParagraphElement className="text-sm">
+                    <ParagraphElement className="!mt-2">
                       {expert.alsoSkilledIn.map((skill, idx) => (
                         <span
                           key={idx}
-                          className="px-2 border py-1 mr-2 mt-2 inline-block"
+                          className="px-2 text-sm border py-1 mr-2 mt-2 inline-block"
                         >
                           {skill}
                         </span>
@@ -260,11 +239,9 @@ const ExpertCarousel = ({ title, subtitle, experts, className }) => {
                   </div>
 
                   {/* Worked With */}
-                  <div className="space-y-2 h-[80px]">
-                    <span className="font-medium text-sm dark block">
-                      Worked With
-                    </span>
-                    <div className="flex flex-wrap gap-2">
+                  <div className="space-y-sm">
+                    <span className="font-medium dark block">Worked With</span>
+                    <div className="flex flex-wrap gap-2 !mt-2">
                       {expert.workedWith.map((company, idx) => (
                         <span
                           key={idx}
@@ -284,7 +261,7 @@ const ExpertCarousel = ({ title, subtitle, experts, className }) => {
               </div>
 
               {/* Hire Button */}
-              <div className="mt-6">
+              <div className="!mt-sm">
                 <Button
                   className="transition-colors font-normal"
                   uppercase

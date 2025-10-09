@@ -51,8 +51,8 @@ const TrustedLogos = ({ className }) => {
           </ParagraphElement>
         </div>
 
-        <div className="mx-auto border-2 border-gray-200/70 boxed sm:p-6">
-          <ul className="flex flex-wrap justify-center items-center gap-6">
+        <div className="mx-auto border-2 border-gray-200/70 boxed">
+          <ul className="flex flex-wrap justify-center items-center gap-sm">
             {logos.map((logo, index) => (
               <li key={index} className="flex items-center justify-center">
                 {/* As requested, use # for src attribute */}

@@ -77,7 +77,7 @@ const BannerWithList = ({ data, className }) => {
             {statsList.map((stat, index) => (
               <div
                 key={index}
-                className="flex items-center space-x-4 p-4 bg-gray-800 bg-opacity-50 rounded-lg backdrop-blur-sm lg:w-3/4"
+                className="flex items-center space-x-4 p-4 bg-gray-800 bg-opacity-50 rounded-lg backdrop-blur-sm col-span-3"
               >
                 <div className="svg-icon">
                   <Image
@@ -86,10 +86,11 @@ const BannerWithList = ({ data, className }) => {
                     width={40}
                     height={40}
                     className="h-full w-full"
+                    priority
                   />
                 </div>
                 <ParagraphElement
-                  className="text-base w-3/4"
+                  className="text-base flex-1"
                   color="white"
                   noMargin
                 >
