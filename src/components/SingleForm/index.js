@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import Image from "next/image";
-import { Input, TextArea, Button } from "../ui";
+import { Input, TextArea, Button, ParagraphElement, HeadingH3 } from "../ui";
 import { api } from "../../api/apiManager";
 import { ENDPOINTS } from "../../api/endpoints";
 import { getClientIp, getLocationData } from "../../lib/helper";
-import { Dialog, DialogContent, DialogHeader } from "../ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogClose } from "../ui/dialog";
 
 const cdnImage = process.env.NEXT_PUBLIC_IMG_URL;
 const landingPage = process.env.NEXT_PUBLIC_API_BASE_URL;
@@ -48,10 +48,10 @@ export const useContactForm = ({ onSuccess, onError, leadingPage }) => {
         email: formData.email,
         number: formData.phone,
         description: formData.requirements,
-        leadingPage: leadingPage || `${landingPage}/landing/python-2`,
+        leadingPage: leadingPage || `${landingPage}landing/python-2`,
         userVisit:
           sessionStorage.getItem("landingPage") ||
-          `${landingPage}/landing/python-2`,
+          `${landingPage}landing/python-2`,
         type: "reactForm",
         ip: clientIp,
         city: locationData.city,
@@ -81,6 +81,10 @@ export const useContactForm = ({ onSuccess, onError, leadingPage }) => {
     }
   };
 
+  const clearError = () => {
+    setSubmitError("");
+  };
+
   return {
     register,
     handleSubmit,
@@ -89,6 +93,7 @@ export const useContactForm = ({ onSuccess, onError, leadingPage }) => {
     submitError,
     submitSuccess,
     onSubmit,
+    onClearError: clearError,
   };
 };
 
@@ -121,29 +126,28 @@ export const ContactFormComponent = ({
   isSubmitting,
   submitError,
   submitSuccess,
+  onClearError,
   submitButtonText = "INQUIRE NOW",
   className = "",
   formClassName = "space-y-6",
 }) => {
   return (
     <div>
-      <Dialog open={!!submitError}>
-        <DialogContent className="sm:max-w-[425px] text-center">
-          <DialogHeader className="flex flex-col items-center">
-            <p className="h1 font-bold mb-sm text-dark text-h2">
-              Oops, sorry. Something went wrong.
-            </p>
-            <p className="h4 mb-sm font-medium">
+      <Dialog open={!!submitError} onOpenChange={() => onClearError?.()}>
+        <DialogContent className="boxed text-center bg-white">
+          <div className="flex flex-col items-center">
+            <HeadingH3>Oops, sorry. Something went wrong.</HeadingH3>
+            <ParagraphElement color="secondary">
               We recommend you Schedule a Free Call.
-            </p>
-            <a
+            </ParagraphElement>
+            <Button
               href="https://calendly.com/bacancymeeting/30-minute-meeting"
-              className="btn btn-primary text-uppercase ls-xs calendly-btn-click mt-4"
-              data-calendly-path="bacancymeeting"
+              target="_blank"
+              uppercase
             >
               SCHEDULE A CALL NOW
-            </a>
-          </DialogHeader>
+            </Button>
+          </div>
         </DialogContent>
       </Dialog>
 

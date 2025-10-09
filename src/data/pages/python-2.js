@@ -7,7 +7,7 @@ export const metaProperties = {
   title: "Python",
   description: "Python",
   ogImage: `${cdnImage}landing/images/og-image.png`,
-  path: `${landingPage}/python-2`,
+  path: `${landingPage}python-2`,
 };
 
 // Data for the Python Development page
@@ -582,12 +582,12 @@ export const footerData = {
   ],
   privacyButton: {
     btnText: "Privacy Policy",
-    href: `${landingPage}/landing/privacy-policy`,
+    href: `${landingPage}landing/privacy-policy`,
     target: "_blank",
   },
   faqsButton: {
     btnText: "FAQs",
-    href: `${landingPage}/landing/faqs`,
+    href: `${landingPage}landing/faqs`,
     target: "_blank",
   },
 };

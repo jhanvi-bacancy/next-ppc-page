@@ -44,8 +44,9 @@ const ContactBanner = ({ className }) => {
     submitError,
     submitSuccess,
     onSubmit,
+    onClearError,
   } = useContactForm({
-    leadingPage: `${landingPage}/landing/python-2`,
+    leadingPage: `${landingPage}landing/python-2`,
   });
 
   return (
@@ -63,6 +64,7 @@ const ContactBanner = ({ className }) => {
                 isSubmitting={isSubmitting}
                 submitError={submitError}
                 submitSuccess={submitSuccess}
+                onClearError={onClearError}
                 submitButtonText="INQUIRE NOW"
                 formClassName="space-y-sm"
               />

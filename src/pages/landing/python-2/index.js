@@ -17,7 +17,7 @@ import {
   ContactBanner,
   FAQ,
   PricingSection,
-} from "../../components";
+} from "../../../components";
 import {
   pythonBannerData,
   pythonExpertsData,
@@ -29,7 +29,7 @@ import {
   footerData,
   faqData,
   developmentStrengthData,
-} from "../../data/pages/python-2";
+} from "../../../data/pages/python-2";
 
 export default function PythonPage() {
   return (

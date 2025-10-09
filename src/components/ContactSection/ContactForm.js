@@ -13,10 +13,11 @@ const ContactForm = ({ data }) => {
     submitError,
     submitSuccess,
     onSubmit,
+    onClearError,
   } = useContactForm({
-    leadingPage: `${landingPage}/landing/python-2`,
+    leadingPage: `${landingPage}landing/python-2`,
     onSuccess: () => {
-      window.location.href = `${landingPage}/thank-you`;
+      window.location.href = `${landingPage}thank-you`;
     },
   });
 
@@ -33,6 +34,7 @@ const ContactForm = ({ data }) => {
         isSubmitting={isSubmitting}
         submitError={submitError}
         submitSuccess={submitSuccess}
+        onClearError={onClearError}
         submitButtonText={data.text}
         formClassName="space-y-6 mb-sm"
       />
