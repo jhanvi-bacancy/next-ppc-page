@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import Slider from "react-slick";
 import { HeadingH2, ParagraphElement, Button, HeadingH3 } from "../ui";
 import { cn } from "../../lib/utils";
+import { useEqualHeight } from "../../lib/hooks/useEqualHeight";
 
 const cdnImage = process.env.NEXT_PUBLIC_IMG_URL;
 
 const ExpertCarousel = ({ title, subtitle, experts, className }) => {
+  // Initialize the equal height hook with all the elements we want to equalize
+  const { adjustAllHeights } = useEqualHeight([
+    ".expert-description",
+    ".expert-skills",
+    ".expert-additional-skills",
+    ".expert-worked-with",
+  ]);
+
+  // Add afterChange callback to slick settings to handle height adjustment after slide changes
   const sliderSettings = {
     dots: true,
     infinite: false,
@@ -43,6 +53,10 @@ const ExpertCarousel = ({ title, subtitle, experts, className }) => {
       />
     ),
     dotsClass: "slick-dots", // Override Slick's absolute positioning
+    afterChange: () => {
+      // Adjust heights after slide change
+      adjustAllHeights();
+    },
   };
 
   return (
@@ -180,7 +194,7 @@ const ExpertCarousel = ({ title, subtitle, experts, className }) => {
               <div className="flex-1 flex flex-col">
                 <div className="flex-1 space-y-sm">
                   {/* Description */}
-                  <div>
+                  <div className="expert-description">
                     <ParagraphElement
                       className="leading-relaxed"
                       color="secondary"
@@ -190,7 +204,7 @@ const ExpertCarousel = ({ title, subtitle, experts, className }) => {
                   </div>
 
                   {/* Expert Skills */}
-                  <div className="space-y-sm">
+                  <div className="expert-skills space-y-sm">
                     <span className="inline-flex items-center px-3 py-2 bg-gray-900 text-white relative pr-6 font-medium">
                       <Image
                         src={`${cdnImage}main-boot-5/images/laravel-ppc/ic_star.png`}
@@ -222,7 +236,7 @@ const ExpertCarousel = ({ title, subtitle, experts, className }) => {
                   </div>
 
                   {/* Additional Skills */}
-                  <div className="space-y-sm">
+                  <div className="expert-additional-skills space-y-sm">
                     <span className="font-medium dark block">
                       Also Skilled in
                     </span>
@@ -239,7 +253,7 @@ const ExpertCarousel = ({ title, subtitle, experts, className }) => {
                   </div>
 
                   {/* Worked With */}
-                  <div className="space-y-sm">
+                  <div className="expert-worked-with space-y-sm">
                     <span className="font-medium dark block">Worked With</span>
                     <div className="flex flex-wrap gap-2 !mt-2">
                       {expert.workedWith.map((company, idx) => (
