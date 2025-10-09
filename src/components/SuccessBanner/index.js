@@ -14,21 +14,8 @@ const SuccessBanner = ({ className }) => {
 
   return (
     <section className={cn("w-full relative", className)}>
-      <div className="container -mt-36 md:-mt-72">
+      <div className="container -mt-32 md:-mt-44">
         <div className="bg-primary text-center boxed">
-          <a
-            href={`mailto:${email}`}
-            className="inline-block hover:opacity-90 transition-opacity mb-sm"
-          >
-            <ParagraphElement
-              color="white"
-              className="underline text-h3"
-              noMargin
-            >
-              {email}
-            </ParagraphElement>
-          </a>
-
           <ParagraphElement color="white" className="font-normal text-h3">
             {title}
           </ParagraphElement>

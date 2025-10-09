@@ -10,8 +10,8 @@ const ContactSection = ({ data, className }) => {
   const cdnImage = process.env.NEXT_PUBLIC_IMG_URL;
 
   return (
-    <section className={cn("", className)} id="form">
-      <div className="relative min-h-screen w-full py-24 pb-32">
+    <section className={cn("pb-0", className)} id="form">
+      <div className="relative w-full py-24 pb-32">
         {/* Background Image */}
         <div
           className="absolute inset-0 z-0"

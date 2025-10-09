@@ -36,7 +36,10 @@ export function TextArea({
           {...props}
         />
       </div>
-      {error && <p className="mt-1 text-sm text-danger">{error}</p>}
+      {/* Reserve space for error message to prevent layout shift */}
+      <div className="h-1 mt-0.5">
+        {error && <p className="text-sm text-danger leading-tight">{error}</p>}
+      </div>
     </div>
   );
 }

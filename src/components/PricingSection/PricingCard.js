@@ -43,7 +43,7 @@ const PricingCard = ({
         <ul className={cn("list-disc pl-5", highlighted ? "mb-12" : "mb-8")}>
           {features.map((feature, index) => (
             <li key={index} className="marker:text-secondary">
-              <ParagraphElement className="text-sm" color="secondary" noMargin>
+              <ParagraphElement color="secondary" noMargin>
                 {feature}
               </ParagraphElement>
             </li>

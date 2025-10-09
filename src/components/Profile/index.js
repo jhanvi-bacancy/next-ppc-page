@@ -80,6 +80,35 @@ const ExpertCarousel = ({ title, subtitle, experts, className }) => {
         .slick-dots li.slick-active button {
           background-color: #f58220 !important;
         }
+        /* Equal height cards in slider */
+        .slick-track {
+          display: flex !important;
+          align-items: stretch;
+        }
+        .slick-slide {
+          height: inherit !important;
+          display: flex !important;
+        }
+        .slick-slide > div {
+          height: 100%;
+          width: 100%;
+          display: flex;
+        }
+        .slick-slide > div > div {
+          height: 100%;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+        }
+        /* Ensure buttons are at bottom */
+        .slick-slide .bg-gray-light.boxed {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+        }
+        .slick-slide .bg-gray-light.boxed > div:last-child {
+          margin-top: auto;
+        }
       `}</style>
       <div className="container">
         {/* Heading Section */}
@@ -91,10 +120,13 @@ const ExpertCarousel = ({ title, subtitle, experts, className }) => {
         {/* Experts Carousel */}
         <Slider {...sliderSettings}>
           {experts.map((expert, index) => (
-            <div key={index} className="bg-gray-light boxed">
+            <div
+              key={index}
+              className="bg-gray-light boxed flex flex-col h-full p-6 min-h-[600px]"
+            >
               {/* Expert Header */}
-              <div className="flex items-center gap-6 mb-sm">
-                <div className="size-60 rounded-full relative">
+              <div className="flex items-center gap-6 mb-6 h-[80px]">
+                <div className="size-60 rounded-full relative flex-shrink-0">
                   <Image
                     src={expert.image}
                     alt={expert.name}
@@ -117,8 +149,8 @@ const ExpertCarousel = ({ title, subtitle, experts, className }) => {
               </div>
 
               {/* Stats Grid */}
-              <div className="grid grid-cols-3 gap-2 mb-sm">
-                <div className="text-left">
+              <div className="grid grid-cols-3 gap-2 mb-6 h-[60px]">
+                <div className="text-left flex flex-col justify-center">
                   <ParagraphElement
                     className="font-bold text-sm !mb-1"
                     noMargin
@@ -133,7 +165,7 @@ const ExpertCarousel = ({ title, subtitle, experts, className }) => {
                     Experience
                   </ParagraphElement>
                 </div>
-                <div className="text-left">
+                <div className="text-left flex flex-col justify-center">
                   <ParagraphElement
                     className="font-bold text-sm !mb-1"
                     noMargin
@@ -148,7 +180,7 @@ const ExpertCarousel = ({ title, subtitle, experts, className }) => {
                     Availability
                   </ParagraphElement>
                 </div>
-                <div className="text-left">
+                <div className="text-left flex flex-col justify-center">
                   <ParagraphElement
                     className="font-bold text-sm !mb-1"
                     noMargin
@@ -165,91 +197,102 @@ const ExpertCarousel = ({ title, subtitle, experts, className }) => {
                 </div>
               </div>
 
-              {/* Description */}
-              <ParagraphElement
-                className="text-sm leading-relaxed line-clamp-3"
-                color="secondary"
-              >
-                {expert.description}
-              </ParagraphElement>
-
-              {/* Expert Skills */}
-              <div className="mb-sm">
-                <span className="inline-flex items-center px-2 py-1 bg-dark white relative pr-3 text-sm">
-                  <Image
-                    src={`${cdnImage}main-boot-5/images/laravel-ppc/ic_star.png`}
-                    alt="star"
-                    title="star"
-                    width={16}
-                    height={16}
-                    className="mr-2 w-auto"
-                  />
-                  <Image
-                    src={`${cdnImage}main-boot-5/images/laravel-ppc/holder.png`}
-                    alt="holder"
-                    width={8}
-                    height={24}
-                    className="absolute bottom-0 -right-2 top-0 w-auto"
-                  />
-                  Expert in
-                </span>
-                <ParagraphElement className="text-sm">
-                  {expert.expertIn.map((skill, idx) => (
-                    <span
-                      key={idx}
-                      className="px-2 bg-light-orange border border-primary py-1 mr-2 mt-2 inline-block"
+              {/* Content Area - Flexible */}
+              <div className="flex-1 flex flex-col min-h-[400px]">
+                <div className="flex-1 space-y-6">
+                  {/* Description */}
+                  <div className="h-[72px]">
+                    <ParagraphElement
+                      className="text-sm leading-relaxed line-clamp-3"
+                      color="secondary"
                     >
-                      {skill}
-                    </span>
-                  ))}
-                </ParagraphElement>
-              </div>
+                      {expert.description}
+                    </ParagraphElement>
+                  </div>
 
-              {/* Additional Skills */}
-              <div className="mb-sm">
-                <span className="font-medium text-sm dark">
-                  Also Skilled in
-                </span>
-                <ParagraphElement className="text-sm">
-                  {expert.alsoSkilledIn.map((skill, idx) => (
-                    <span
-                      key={idx}
-                      className="px-2 border py-1 mr-2 mt-2 inline-block"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </ParagraphElement>
-              </div>
-
-              {/* Worked With */}
-              <div className="mb-sm">
-                <span className="font-medium text-sm dark">Worked With</span>
-                <ParagraphElement className="text-sm">
-                  {expert.workedWith.map((company, idx) => (
-                    <span
-                      key={idx}
-                      className="relative h-9 w-9 flex-shrink-0 mr-2 mt-2 inline-block"
-                    >
+                  {/* Expert Skills */}
+                  <div className="space-y-2 h-[100px]">
+                    <span className="inline-flex items-center px-3 py-2 bg-gray-900 text-white relative pr-6 text-sm font-medium">
                       <Image
-                        src={company.logo}
-                        alt={company.name}
-                        fill
-                        className="object-contain"
+                        src={`${cdnImage}main-boot-5/images/laravel-ppc/ic_star.png`}
+                        alt="star"
+                        title="star"
+                        width={16}
+                        height={16}
+                        className="mr-2 flex-shrink-0"
+                      />
+                      Expert in
+                      <Image
+                        src={`${cdnImage}main-boot-5/images/laravel-ppc/holder.png`}
+                        alt="holder"
+                        width={8}
+                        height={24}
+                        className="absolute -right-2 top-0 bottom-0 h-full"
                       />
                     </span>
-                  ))}
-                </ParagraphElement>
+                    <ParagraphElement className="text-sm">
+                      {expert.expertIn.map((skill, idx) => (
+                        <span
+                          key={idx}
+                          className="px-2 bg-light-orange border border-primary py-1 mr-2 mt-2 inline-block"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </ParagraphElement>
+                  </div>
+
+                  {/* Additional Skills */}
+                  <div className="space-y-2 h-[100px]">
+                    <span className="font-medium text-sm dark block">
+                      Also Skilled in
+                    </span>
+                    <ParagraphElement className="text-sm">
+                      {expert.alsoSkilledIn.map((skill, idx) => (
+                        <span
+                          key={idx}
+                          className="px-2 border py-1 mr-2 mt-2 inline-block"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </ParagraphElement>
+                  </div>
+
+                  {/* Worked With */}
+                  <div className="space-y-2 h-[80px]">
+                    <span className="font-medium text-sm dark block">
+                      Worked With
+                    </span>
+                    <div className="flex flex-wrap gap-2">
+                      {expert.workedWith.map((company, idx) => (
+                        <span
+                          key={idx}
+                          className="relative h-9 w-9 flex-shrink-0 inline-block"
+                        >
+                          <Image
+                            src={company.logo}
+                            alt={company.name}
+                            fill
+                            className="object-contain"
+                          />
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
 
               {/* Hire Button */}
-              <Button
-                className="transition-colors font-normal"
-                uppercase
-                fullWidth
-              >
-                HIRE {expert.name}
-              </Button>
+              <div className="mt-6">
+                <Button
+                  className="transition-colors font-normal"
+                  uppercase
+                  fullWidth
+                >
+                  HIRE {expert.name}
+                </Button>
+              </div>
             </div>
           ))}
         </Slider>

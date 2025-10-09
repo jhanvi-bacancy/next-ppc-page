@@ -3,6 +3,13 @@ import { developmentStrengthVariables } from "../../variables/pages";
 const cdnImage = process.env.NEXT_PUBLIC_IMG_URL;
 const landingPage = process.env.NEXT_PUBLIC_API_BASE_URL;
 
+export const metaProperties = {
+  title: "Python",
+  description: "Python",
+  ogImage: `${cdnImage}landing/images/og-image.png`,
+  path: `${landingPage}/python-2`,
+};
+
 // Data for the Python Development page
 export const pythonBannerData = {
   backgroundImage: "landing/images/banner-ppc/python-banner.jpg",

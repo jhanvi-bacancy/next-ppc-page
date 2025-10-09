@@ -60,7 +60,7 @@ export default function PythonPage() {
       {/* Contact Section */}
       <ContactSection
         data={contactSectionData}
-        className="pt-10 bg-gray-light"
+        className="pt-10"
       />
 
       {/* Success Banner */}

@@ -133,6 +133,17 @@ export const ContactFormComponent = ({
 }) => {
   return (
     <form onSubmit={onSubmit} className={formClassName}>
+      {submitError && (
+        <div className="text-red-600 text-sm text-center mb-4">
+          {submitError}
+        </div>
+      )}
+
+      {submitSuccess && (
+        <div className="text-green-600 text-sm text-center mb-4">
+          Form submitted successfully! We&apos;ll get back to you soon.
+        </div>
+      )}
       <Input
         {...register("name", nameValidation)}
         type="text"
@@ -196,18 +207,6 @@ export const ContactFormComponent = ({
         className={`w-full bg-gray-light min-h-[100px] sm:min-h-[120px] ${className}`}
         rows={4}
       />
-
-      {submitError && (
-        <div className="text-red-600 text-sm text-center mb-4">
-          {submitError}
-        </div>
-      )}
-
-      {submitSuccess && (
-        <div className="text-green-600 text-sm text-center mb-4">
-          Form submitted successfully! We&apos;ll get back to you soon.
-        </div>
-      )}
 
       <div className="flex justify-center">
         <Button

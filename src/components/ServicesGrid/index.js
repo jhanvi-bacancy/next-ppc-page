@@ -3,7 +3,7 @@ import Image from "next/image";
 import { HeadingH2, Button, ParagraphElement } from "../ui";
 import { cn } from "../../lib/utils";
 
-const landingPage = process.env.NEXT_PUBLIC_API_BASE_URL;
+const cdnImage = process.env.NEXT_PUBLIC_IMG_URL;
 
 const ServicesGrid = ({ className, data }) => {
   return (
@@ -19,12 +19,12 @@ const ServicesGrid = ({ className, data }) => {
                 key={index}
                 className="bg-white boxed text-center flex flex-col items-center hover:shadow-sm transition-shadow"
               >
-                <div className="relative svg-icon w-12 md:w-16 h-12 md:h-16 mb-3 md:mb-4">
+                <div className="relative svg-icon w-full mb-3 md:mb-4">
                   <Image
                     src={service.icon}
                     alt={service.alt}
                     fill
-                    className="object-contain"
+                    className="object-contain h-full w-full"
                   />
                 </div>
                 <ParagraphElement color="secondary" noMargin>
@@ -41,7 +41,7 @@ const ServicesGrid = ({ className, data }) => {
                 <div key={index} className="flex items-center gap-6">
                   <div className="w-5 h-5 flex-shrink-0 mr-2">
                     <Image
-                      src={`${landingPage}/landing/images/right-arrow.png`}
+                      src={`${cdnImage}landing/images/right-arrow.png`}
                       alt="check"
                       width={20}
                       height={20}
