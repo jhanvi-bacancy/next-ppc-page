@@ -100,7 +100,7 @@ const SuccessStoriesSection = ({ data, className }) => {
         </div>
 
         <div className="relative z-20 text-center">
-          <Button className="font-normal" uppercase>
+          <Button className="font-normal" href="#form" uppercase>
             Share Your Requirements
           </Button>
         </div>

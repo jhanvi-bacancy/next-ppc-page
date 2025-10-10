@@ -15,6 +15,7 @@ import Footer from "./Footer";
 import ContactBanner from "./ContactBanner";
 import FAQ from "./FAQ";
 import PricingSection from "./PricingSection";
+import RequirementSelector from "./Requirement";
 
 export {
   Navbar,
@@ -34,4 +35,5 @@ export {
   ContactBanner,
   FAQ,
   PricingSection,
+  RequirementSelector,
 };

@@ -28,7 +28,7 @@ const Footer = ({ data, className }) => {
     >
       <div className="container">
         {/* Addresses Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-sm pb-md">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-sm pb-md">
           {addresses.map((item, index) => (
             <div key={index} className="space-y-sm">
               <div className="flex items-center gap-6">
@@ -99,9 +99,7 @@ const Footer = ({ data, className }) => {
             </div>
             <Button
               variant="text"
-              href={
-                "https://calendly.com/americas-3/30min?_gl=1*13146a6*_gcl_au*MjYzMjE4MzIzLjE3NTcwNjUyNjk.*_ga*MTMwNjQxMjg5NS4xNzQ4ODQyMDM5*_ga_5ZSTFLNPDY*czE3NTg4MDE5NzYkbzQ4JGcxJHQxNzU4ODA0NTg5JGo2MCRsMCRoNDMzMTcwNzUx"
-              }
+              href={"https://calendly.com/americas-3/30min"}
               target="_blank"
               className="text-h4 white font-normal hover:text-primary transition-colors"
             >
@@ -189,7 +187,7 @@ const Footer = ({ data, className }) => {
           <HeadingH5 className="text-sm" color="white" noMargin>
             <span className="text-primary">Copyright &copy; 2025 Bacancy.</span>
             &nbsp; All Rights Reserved. An&nbsp;
-            <span className="text-primary">ISO 27001:2013</span> Certifie
+            <span className="text-primary">ISO 27001:2013</span> Certified
             Company
           </HeadingH5>
         </div>

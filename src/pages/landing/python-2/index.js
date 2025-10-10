@@ -17,6 +17,7 @@ import {
   ContactBanner,
   FAQ,
   PricingSection,
+  RequirementSelector,
 } from "../../../components";
 import {
   pythonBannerData,
@@ -50,11 +51,8 @@ export default function PythonPage() {
         experts={pythonExpertsData.experts}
       />
 
-      {/* Services Grid */}
-      <ServicesGrid className=" bg-gray-light" data={pythonServicesGridData} />
-
       {/* Pricing Section */}
-      <PricingSection data={pythonPricingData} />
+      <PricingSection data={pythonPricingData} className="bg-gray-light" />
 
       {/* Contact Section */}
       <ContactSection
@@ -66,17 +64,17 @@ export default function PythonPage() {
       {/* Success Banner */}
       <SuccessBanner />
 
+      {/* Services Grid */}
+      <ServicesGrid className=" bg-gray-light" data={pythonServicesGridData} />
+
       {/* Technical Expertise */}
-      <TechnicalExpertise
-        data={technicalExpertiseData}
-        className="bg-gray-light"
-      />
+      <TechnicalExpertise data={technicalExpertiseData} />
+
+      {/* Requirement Section */}
+      <RequirementSelector className="bg-light-orange" />
 
       {/* Steps Section */}
       <StepsSection />
-
-      {/* AITalent Section */}
-      <AITalentSection className="bg-light-orange" />
 
       {/* Success Stories Section */}
       <SuccessStoriesSection
@@ -84,8 +82,11 @@ export default function PythonPage() {
         className="bg-gray-light"
       />
 
+      {/* AITalent Section */}
+      <AITalentSection className="bg-light-orange" />
+
       {/* Customer Reviews Section */}
-      <CustomerReviews className="bg-light-orange" />
+      <CustomerReviews className="bg-gray-light" />
 
       {/* Development Strength */}
       <DevelopmentStrength data={developmentStrengthData} />

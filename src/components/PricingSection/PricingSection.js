@@ -1,7 +1,6 @@
 import React from "react";
 import { HeadingH2, ParagraphElement, Button } from "../ui";
 import PricingCard from "./PricingCard";
-import RequirementSelector from "./RequirementSelector";
 import { cn } from "../../lib/utils";
 
 const PricingSection = ({ className, data }) => {
@@ -18,7 +17,7 @@ const PricingSection = ({ className, data }) => {
             Developer Hiring Made Simple:
             <span className="primary"> Hourly</span>,
             <span className="primary"> Monthly</span> or
-            <span className="primary"> Fixed Cost</span>
+            <span className="primary"> Fixed Cost </span>
             <br className="hidden md:block" />
             Based on Your Needs
           </HeadingH2>
@@ -59,11 +58,6 @@ const PricingSection = ({ className, data }) => {
             {data.ctaButton.text}
           </Button>
         </div>
-
-        <RequirementSelector
-          onSubmit={handleRequirementSubmit}
-          options={data.options}
-        />
       </div>
     </section>
   );

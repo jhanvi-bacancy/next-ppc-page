@@ -56,7 +56,7 @@ const Navbar = () => {
             <Button
               variant="outline"
               className="font-normal"
-              href="https://calendly.com/americas-3/30min?_gl=1*11z2jzn*_gcl_au*MjYzMjE4MzIzLjE3NTcwNjUyNjk.*_ga*MTMwNjQxMjg5NS4xNzQ4ODQyMDM5*_ga_5ZSTFLNPDY*czE3NTgxODgwMjAkbzIxJGcxJHQxNzU4MTg5NzIyJGo2MCRsMCRoMTIwODY4MzY2Nw.."
+              href="https://calendly.com/americas-3/30min"
               target="_blank"
               uppercase
             >
@@ -122,7 +122,7 @@ const Navbar = () => {
                   variant="outline"
                   className="w-full font-normal"
                   onClick={() => setIsMenuOpen(false)}
-                  href="https://calendly.com/americas-3/30min?_gl=1*11z2jzn*_gcl_au*MjYzMjE4MzIzLjE3NTcwNjUyNjk.*_ga*MTMwNjQxMjg5NS4xNzQ4ODQyMDM5*_ga_5ZSTFLNPDY*czE3NTgxODgwMjAkbzIxJGcxJHQxNzU4MTg5NzIyJGo2MCRsMCRoMTIwODY4MzY2Nw.."
+                  href="https://calendly.com/americas-3/30min"
                   target="_blank"
                   uppercase
                 >

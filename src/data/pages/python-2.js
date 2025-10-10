@@ -255,7 +255,7 @@ export const pythonServicesGridData = {
   ],
   ctaButton: {
     text: "Schedule a Discovery Call",
-    href: "https://calendly.com/americas-3/30min?_gl=1*11z2jzn*_gcl_au*MjYzMjE4MzIzLjE3NTcwNjUyNjk.*_ga*MTMwNjQxMjg5NS4xNzQ4ODQyMDM5*_ga_5ZSTFLNPDY*czE3NTgxODgwMjAkbzIxJGcxJHQxNzU4MTg5NzIyJGo2MCRsMCRoMTIwODY4MzY2Nw..",
+    href: "https://calendly.com/americas-3/30min",
     target: "_blank",
     icon: "landing/images/icons/calendar.svg",
   },
@@ -323,17 +323,6 @@ export const pythonPricingData = {
     href: "#form",
     target: "_blank",
     icon: "landing/images/icons/calendar.svg",
-  },
-  options: {
-    title: "Let's Get Your Python Project Moving!",
-    subtitle: "Select what you need help with - we'll handle the rest.",
-    buttonText: "Submit My Requirements",
-    optionsList: [
-      { value: "outline", label: "Outline My Requirements" },
-      { value: "rfp", label: "Request For Proposal (RFP)" },
-      { value: "continue", label: "Continue My Existing Project" },
-      { value: "cv", label: "Request Developer CVs" },
-    ],
   },
 };
 
@@ -464,7 +453,7 @@ export const technicalExpertiseData = {
   ],
   ctaButton: {
     text: "Schedule a Developer Interview",
-    href: "https://calendly.com/americas-3/30min?_gl=1*1cfuvr1*_gcl_au*MjYzMjE4MzIzLjE3NTcwNjUyNjk.*_ga*MTMwNjQxMjg5NS4xNzQ4ODQyMDM5*_ga_5ZSTFLNPDY*czE3NTg1Mzk0MzIkbzMxJGcxJHQxNzU4NTQxMDA4JGo2MCRsMCRoMTYyMzQ1NTg4Mw..",
+    href: "https://calendly.com/americas-3/30min",
     target: "_blank",
     icon: "",
   },

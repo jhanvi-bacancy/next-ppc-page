@@ -3,9 +3,9 @@ import { ParagraphElement } from "../ui";
 
 const ExpertiseCard = ({ title, items }) => {
   return (
-    <div className="flex flex-col sm:flex-row bg-gray-light rounded-lg overflow-hidden shadow-sm">
+    <div className="flex flex-col shadow-lg sm:flex-row bg-gray-light rounded-lg overflow-hidden">
       {/* Orange Header */}
-      <div className="w-full sm:w-80 bg-primary text-white p-4 sm:p-6 flex items-center justify-start sm:justify-center">
+      <div className="w-full sm:w-80 bg-primary text-white p-4 sm:p-6 flex items-center justify-start">
         <ParagraphElement
           color="white"
           className="font-semibold text-center sm:text-left"

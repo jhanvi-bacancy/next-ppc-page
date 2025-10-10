@@ -26,7 +26,7 @@ const stepsSectionData = {
       stepIcon: `${cdnImage}landing/images/fullstack-ppc/mentoring.gif`,
       dateButton: {
         text: `TODAY, ${formatDateWithDay()}`, // Write date directly to show
-        href: "https://calendly.com/americas-3/30min?_gl=1*1omd485*_gcl_au*MjYzMjE4MzIzLjE3NTcwNjUyNjk.*_ga*MTMwNjQxMjg5NS4xNzQ4ODQyMDM5*_ga_5ZSTFLNPDY*czE3NTg2MDQ5NDQkbzMzJGcxJHQxNzU4NjA5MzcxJGo1MiRsMCRoMTUxMDYzNDE2Mw..",
+        href: "https://calendly.com/americas-3/30min",
         target: "_blank",
       },
       isButton: true,

@@ -8,7 +8,7 @@ const FeatureCard = ({ icon, title }) => {
       <div className="h-svg-icon w-svg-icon">
         <Image src={icon} alt={title} width={48} height={48} className="object-contain" />
       </div>
-      <ParagraphElement color="secondary" noMargin>
+      <ParagraphElement color="secondary" className="text-center" noMargin>
         {title}
       </ParagraphElement>
     </div>

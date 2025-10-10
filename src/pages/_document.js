@@ -11,7 +11,6 @@ export default function Document() {
       <Head>
         <title>{metaProperties.title}</title>
         <link rel="profile" href="http://gmpg.org/xfn/11" />
-        <link rel="pingback" href={`${baseUrl}/xmlrpc.php`} />
         <meta name="description" content={metaProperties.description} />
         <meta property="og:title" content={metaProperties.title} />
         <meta property="og:description" content={metaProperties.description} />

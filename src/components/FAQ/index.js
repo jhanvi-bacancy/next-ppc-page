@@ -125,11 +125,7 @@ const FAQ = ({ data, className }) => {
               className="text-h5 !mb-0"
               noMargin
             >
-              Still have questions?
-            </ParagraphElement>
-
-            <ParagraphElement color="primary" className="text-h5" noMargin>
-              Let&apos;s talk&nbsp;
+              Still have questions? Let&apos;s talk&nbsp;
               <span className="inline-block h-svg-icon-24 w-svg-icon-24">
                 <Image
                   src={`${cdnImage}main-boot-5/images/tailwind/images/right-arrow-line-black.svg`}
