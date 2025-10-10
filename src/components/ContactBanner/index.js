@@ -33,7 +33,7 @@ const contactBannerData = {
   starImage: `${cdnImage}main-boot-5/images/star-white.png`,
 };
 
-const ContactBanner = ({ className }) => {
+const ContactBanner = ({ formData, className }) => {
   const { title, ratings, iso, salesManager, starImage } = contactBannerData;
 
   const {
@@ -46,7 +46,10 @@ const ContactBanner = ({ className }) => {
     onSubmit,
     onClearError,
   } = useContactForm({
-    leadingPage: `${landingPage}landing/python-2`,
+    leadingPage: formData.leadingPageEndpoint,
+    onSuccess: () => {
+      window.location.href = formData.thankYouPageEndpoint;
+    },
   });
 
   return (

@@ -4,9 +4,10 @@ const cdnImage = process.env.NEXT_PUBLIC_IMG_URL;
 const landingPage = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 export const metaProperties = {
-  title: "Python",
-  description: "Python",
-  ogImage: `${cdnImage}landing/images/og-image.png`,
+  title: "Hire Python Developer on Hourly or Monthly Basis",
+  description:
+    "Hire Python developer having experience with advanced Python frameworks. Our Python programmer is skilled at Django, Flask, web2py, and machine learning.",
+  ogImage: `${cdnImage}main/img/og/python-development.png?v-7`,
   path: `${landingPage}python-2`,
 };
 
@@ -16,13 +17,13 @@ export const pythonBannerData = {
   badge: "USA #1 Python Development Company",
   title: {
     text: "Hire",
-    highlight: "FullStack Python",
+    highlight: " FullStack Python ",
     suffix: "Developers",
   },
   description:
     "Hire Python developers to build secure, scalable, and AI-powered enterprise-grade web apps with strong OOP expertise. Get 80+ full-stack Python developers proficient in Django, Flask, FastAPI, ML frameworks, Tornado, and more.",
   ctaButton: {
-    text: "Contact Us",
+    text: "Schedule a Quick Call",
     href: "https://calendly.com/americas-3/30min",
     target: "_blank",
     icon: "landing/images/icons/calendar.svg",
@@ -58,7 +59,11 @@ export const bannerTypes = {
 
 // export python experts data
 export const pythonExpertsData = {
-  title: "Our Top Talent, Available for Hire",
+  title: {
+    text: "Hire",
+    highlight: " Dedicated Python Developers ",
+    suffix: "in 48 Hours",
+  },
   subtitle: "180+ Python projects done. Get the best Tech support",
   experts: [
     {
@@ -750,4 +755,9 @@ export const developmentStrengthData = {
       title: "5/5 Pro User Rating",
     },
   ],
+};
+
+export const formData = {
+  leadingPageEndpoint: `${landingPage}landing/python-2`,
+  thankYouPageEndpoint: `${landingPage}thank-you`,
 };

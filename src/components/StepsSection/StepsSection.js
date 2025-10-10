@@ -9,11 +9,12 @@ const cdnImage = process.env.NEXT_PUBLIC_IMG_URL;
 
 const stepsSectionData = {
   title: {
-    text: "Three steps to your",
-    highlight: "perfect Specialist",
-    suffix: "",
+    text: "Your Dedicated",
+    highlight: " Python Developer",
+    suffix: "is Just a Click Away",
   },
-  subtitle: "Get hand-picked talent in days—our 3-step process makes it simple",
+  subtitle:
+    "Access pre-vetted Python Developers ready to onboard fast. Try risk-free and scale your team with confidence.",
   backgroundImage: `${cdnImage}landing/images/common-img/step-section-bg.png`,
   steps: [
     {
@@ -111,7 +112,7 @@ const StepsSection = ({ className }) => {
         <div className="text-center mb-sm">
           <HeadingH2>
             {title.text}
-            <span className="text-primary"> {title.highlight}</span>
+            <span className="text-primary">{title.highlight}</span>
             {title.suffix && ` ${title.suffix}`}
           </HeadingH2>
           <ParagraphElement color="secondary" noMargin>

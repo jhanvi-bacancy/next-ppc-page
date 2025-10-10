@@ -4,7 +4,7 @@ import CalendlyScript from "./CalendlyScript";
 import { cn } from "@/lib/utils";
 import { HeadingH2 } from "../ui";
 
-const ContactSection = ({ data, className }) => {
+const ContactSection = ({ data, formData, className }) => {
   const { backgroundImage, ctaButton } = data;
 
   const cdnImage = process.env.NEXT_PUBLIC_IMG_URL;
@@ -33,7 +33,7 @@ const ContactSection = ({ data, className }) => {
               <HeadingH2 color="white" className="text-center font-bold">
                 Start a Conversation
               </HeadingH2>
-              <ContactForm data={ctaButton} />
+              <ContactForm data={ctaButton} formData={formData} />
             </div>
 
             {/* Center - OR divider (visible only on desktop) */}

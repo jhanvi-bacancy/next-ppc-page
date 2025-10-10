@@ -127,8 +127,14 @@ const ExpertCarousel = ({ title, subtitle, experts, className }) => {
       <div className="container">
         {/* Heading Section */}
         <div className="text-center mb-sm">
-          <HeadingH2>{title}</HeadingH2>
-          <ParagraphElement color="secondary">{subtitle}</ParagraphElement>
+          <HeadingH2>
+            {title.text}
+            <span className="text-primary">{title.highlight}</span>
+            {title.suffix}
+          </HeadingH2>
+          <ParagraphElement color="secondary" className="font-semibold">
+            {subtitle}
+          </ParagraphElement>
         </div>
 
         {/* Experts Carousel */}
@@ -165,7 +171,7 @@ const ExpertCarousel = ({ title, subtitle, experts, className }) => {
               {/* Stats Grid */}
               <div className="flex flex-wrap gap-sm mb-sm">
                 <div className="text-left flex flex-col justify-center">
-                  <ParagraphElement className="font-bold !mb-1" noMargin>
+                  <ParagraphElement className="font-medium !mb-1" noMargin>
                     {expert.experience}
                   </ParagraphElement>
                   <ParagraphElement color="secondary" noMargin>
@@ -173,7 +179,7 @@ const ExpertCarousel = ({ title, subtitle, experts, className }) => {
                   </ParagraphElement>
                 </div>
                 <div className="text-left flex flex-col justify-center">
-                  <ParagraphElement className="font-bold !mb-1" noMargin>
+                  <ParagraphElement className="font-medium !mb-1" noMargin>
                     {expert.availability}
                   </ParagraphElement>
                   <ParagraphElement color="secondary" noMargin>
@@ -181,7 +187,7 @@ const ExpertCarousel = ({ title, subtitle, experts, className }) => {
                   </ParagraphElement>
                 </div>
                 <div className="text-left flex flex-col justify-center">
-                  <ParagraphElement className="font-bold !mb-1" noMargin>
+                  <ParagraphElement className="font-medium !mb-1" noMargin>
                     {expert.projects}
                   </ParagraphElement>
                   <ParagraphElement color="secondary" noMargin>
@@ -278,10 +284,12 @@ const ExpertCarousel = ({ title, subtitle, experts, className }) => {
               <div className="!mt-sm">
                 <Button
                   className="transition-colors font-normal"
+                  href={"#form"}
+                  target="_self"
                   uppercase
                   fullWidth
                 >
-                  HIRE {expert.name}
+                  {`Hire ${expert.name}`}
                 </Button>
               </div>
             </div>

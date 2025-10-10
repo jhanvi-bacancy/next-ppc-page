@@ -30,7 +30,7 @@ const StepCard = ({
           className="font-semibold uppercase"
           noMargin
         >
-          STEP {stepNumber}
+          {`STEP ${stepNumber}`}
         </ParagraphElement>
       </div>
 

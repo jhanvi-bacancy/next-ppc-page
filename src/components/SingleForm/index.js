@@ -5,10 +5,9 @@ import { Input, TextArea, Button, ParagraphElement, HeadingH3 } from "../ui";
 import { api } from "../../api/apiManager";
 import { ENDPOINTS } from "../../api/endpoints";
 import { getClientIp, getLocationData } from "../../lib/helper";
-import { Dialog, DialogContent, DialogHeader, DialogClose } from "../ui/dialog";
+import { Dialog, DialogContent } from "../ui/dialog";
 
 const cdnImage = process.env.NEXT_PUBLIC_IMG_URL;
-const landingPage = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 export const useContactForm = ({ onSuccess, onError, leadingPage }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -48,10 +47,8 @@ export const useContactForm = ({ onSuccess, onError, leadingPage }) => {
         email: formData.email,
         number: formData.phone,
         description: formData.requirements,
-        leadingPage: leadingPage || `${landingPage}landing/python-2`,
-        userVisit:
-          sessionStorage.getItem("landingPage") ||
-          `${landingPage}landing/python-2`,
+        leadingPage: leadingPage || "-",
+        userVisit: sessionStorage.getItem("landingPage") || "-",
         type: "reactForm",
         ip: clientIp,
         city: locationData.city,

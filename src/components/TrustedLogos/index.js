@@ -42,11 +42,17 @@ const TrustedLogos = ({ className }) => {
       <div className="container">
         <div className="text-center mb-sm mx-auto">
           <HeadingH2>
-            Winning The Trust Of{" "}
-            <span className="text-primary">100+ NASDAQ & NYSE</span> Listed
+            Winning The Trust Of
+            <span className="text-primary"> 100+ NASDAQ & NYSE</span> Listed
             Companies And Fast-Growing Startups
           </HeadingH2>
-          <ParagraphElement color="primary">
+          <ParagraphElement
+            color="primary"
+            className="underline cursor-pointer"
+            onClick={() => {
+              window.location.href = "#form";
+            }}
+          >
             Join Us to Build Your Idea into Reality
           </ParagraphElement>
         </div>

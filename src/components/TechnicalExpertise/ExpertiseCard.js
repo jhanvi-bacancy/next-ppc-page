@@ -5,7 +5,7 @@ const ExpertiseCard = ({ title, items }) => {
   return (
     <div className="flex flex-col sm:flex-row bg-gray-light rounded-lg overflow-hidden shadow-sm">
       {/* Orange Header */}
-      <div className="w-full sm:w-80 bg-primary text-white p-4 sm:p-6 flex items-center justify-center sm:justify-start">
+      <div className="w-full sm:w-80 bg-primary text-white p-4 sm:p-6 flex items-center justify-start sm:justify-center">
         <ParagraphElement
           color="white"
           className="font-semibold text-center sm:text-left"
@@ -17,7 +17,7 @@ const ExpertiseCard = ({ title, items }) => {
 
       {/* White Content Area */}
       <div className="flex-1 bg-white p-4 sm:p-6 flex items-center">
-        <div className="flex items-center space-x-1 sm:space-x-2 flex-wrap justify-center sm:justify-start">
+        <div className="flex items-center space-x-1 sm:space-x-2 flex-wrap justify-start">
           {items.map((item, index) => (
             <React.Fragment key={index}>
               {index < items.length - 1 ? (

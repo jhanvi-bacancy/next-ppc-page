@@ -59,7 +59,12 @@ const FAQ = ({ data, className }) => {
           {/* Left Container - Sticky */}
           <div className="w-full md:w-1/4 md:sticky md:top-[10rem] md:h-fit">
             <HeadingH2 className="">Frequently Asked Questions</HeadingH2>
-            <div className="flex md:flex-col gap-x-1">
+            <div
+              className="hidden md:flex md:flex-col gap-x-1 cursor-pointer"
+              onClick={() => {
+                window.location.href = "#contact-form-id";
+              }}
+            >
               <ParagraphElement
                 color="primary"
                 className="text-h5 !mb-0"
@@ -67,32 +72,19 @@ const FAQ = ({ data, className }) => {
               >
                 Still have questions?
               </ParagraphElement>
-              <div
-                className="cursor-pointer"
-                onClick={() => {
-                  window.location.href = "#contact-form-id";
-                }}
-              >
-                <ParagraphElement
-                  color="primary"
-                  className="text-h5"
-                  onClick={() => {
-                    window.location.href = "#contact-form-id";
-                  }}
-                  noMargin
-                >
-                  Let&apos;s talk{" "}
-                  <span className="inline-block h-svg-icon-24 w-svg-icon-24">
-                    <Image
-                      src={`${cdnImage}main-boot-5/images/tailwind/images/right-arrow-line-black.svg`}
-                      alt="right-arrow"
-                      width={16}
-                      height={16}
-                      className="object-contain inline-block h-full w-full bg-no-repeat"
-                    />
-                  </span>
-                </ParagraphElement>
-              </div>
+
+              <ParagraphElement color="primary" className="text-h5" noMargin>
+                Let&apos;s talk&nbsp;
+                <span className="inline-block h-svg-icon-24 w-svg-icon-24">
+                  <Image
+                    src={`${cdnImage}main-boot-5/images/tailwind/images/right-arrow-line-black.svg`}
+                    alt="right-arrow"
+                    width={16}
+                    height={16}
+                    className="object-contain inline-block h-full w-full bg-no-repeat"
+                  />
+                </span>
+              </ParagraphElement>
             </div>
           </div>
 
@@ -119,6 +111,35 @@ const FAQ = ({ data, className }) => {
                 </AccordionItem>
               ))}
             </Accordion>
+          </div>
+
+          {/* Mobile View - Contact Button */}
+          <div
+            className="flex gap-x-1 cursor-pointer md:hidden"
+            onClick={() => {
+              window.location.href = "#contact-form-id";
+            }}
+          >
+            <ParagraphElement
+              color="primary"
+              className="text-h5 !mb-0"
+              noMargin
+            >
+              Still have questions?
+            </ParagraphElement>
+
+            <ParagraphElement color="primary" className="text-h5" noMargin>
+              Let&apos;s talk&nbsp;
+              <span className="inline-block h-svg-icon-24 w-svg-icon-24">
+                <Image
+                  src={`${cdnImage}main-boot-5/images/tailwind/images/right-arrow-line-black.svg`}
+                  alt="right-arrow"
+                  width={16}
+                  height={16}
+                  className="object-contain inline-block h-full w-full bg-no-repeat"
+                />
+              </span>
+            </ParagraphElement>
           </div>
         </div>
       </div>

@@ -187,8 +187,8 @@ const Footer = ({ data, className }) => {
         {/* Copyright */}
         <div className="text-center pt-md border-t border-gray-700">
           <HeadingH5 className="text-sm" color="white" noMargin>
-            <span className="text-primary">Copyright &copy; 2025 Bacancy.</span>{" "}
-            All Rights Reserved. An{" "}
+            <span className="text-primary">Copyright &copy; 2025 Bacancy.</span>
+            &nbsp; All Rights Reserved. An&nbsp;
             <span className="text-primary">ISO 27001:2013</span> Certifie
             Company
           </HeadingH5>

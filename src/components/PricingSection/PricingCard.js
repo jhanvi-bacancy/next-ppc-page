@@ -25,7 +25,7 @@ const PricingCard = ({
             {price}
           </HeadingH3>
           <ParagraphElement className="font-normal">
-            {title} ({currency})
+            {`${title} (${currency})`}
           </ParagraphElement>
         </div>
       </div>

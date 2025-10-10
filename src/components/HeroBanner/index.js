@@ -45,7 +45,8 @@ const BannerWithList = ({ data, className }) => {
           )}
 
           <HeadingH1 color="white">
-            {title.text} <span className="text-primary">{title.highlight}</span>{" "}
+            {title.text}
+            <span className="text-primary">{title.highlight}</span>
             {title.suffix}
           </HeadingH1>
 

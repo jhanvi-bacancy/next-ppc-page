@@ -33,9 +33,13 @@ export default function Document() {
         <meta name="twitter:site" content="@bacancytech" />
         <meta property="fb:admins" content="487007941335374" />
         <meta property="og:locale" content="en_US" />
-        <meta property="og:type" content="object" />
+        <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Bacancy" />
         <meta name="robots" content="noindex nofollow" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0"
+        ></meta>
         <script
           dangerouslySetInnerHTML={{
             __html: `

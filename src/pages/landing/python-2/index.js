@@ -29,6 +29,7 @@ import {
   footerData,
   faqData,
   developmentStrengthData,
+  formData,
 } from "../../../data/pages/python-2";
 
 export default function PythonPage() {
@@ -56,7 +57,11 @@ export default function PythonPage() {
       <PricingSection data={pythonPricingData} />
 
       {/* Contact Section */}
-      <ContactSection data={contactSectionData} className="pt-10" />
+      <ContactSection
+        data={contactSectionData}
+        formData={formData}
+        className="pt-10"
+      />
 
       {/* Success Banner */}
       <SuccessBanner />
@@ -89,7 +94,7 @@ export default function PythonPage() {
       <FAQ data={faqData} className="bg-gray-light" />
 
       {/* Contact Banner */}
-      <ContactBanner />
+      <ContactBanner formData={formData} />
 
       {/* Footer */}
       <Footer data={footerData} />

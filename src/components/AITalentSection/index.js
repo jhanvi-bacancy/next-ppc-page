@@ -6,7 +6,7 @@ import { cn } from "../../lib/utils";
 const cdnImage = process.env.NEXT_PUBLIC_IMG_URL;
 
 const aiTalentSectionData = {
-  title: "Get Your Work Done Faster with",
+  title: "Get Your Work Done Faster with ",
   highlight: "AI-Enhanced Talent",
   description: [
     "Our developers leverage powerful AI tools to automate tasks, enhance productivity, and optimize workflows.",
@@ -46,7 +46,7 @@ const AITalentSection = ({ className }) => {
           {/* Left Content */}
           <div className="grid gap-sm md:gap-0">
             <HeadingH2 noMargin>
-              {title} <span className="text-primary">{highlight}</span>{" "}
+              {title}<span className="text-primary">{highlight}</span>
               <div className="inline-block h-svg-icon-32 w-svg-icon-32">
                 <Image
                   src={headingIcon}
@@ -61,9 +61,15 @@ const AITalentSection = ({ className }) => {
             <div className="grid">
               {description.map((item, index) =>
                 index < description.length - 1 ? (
-                  <ParagraphElement color="secondary" key={index}>{item}</ParagraphElement>
+                  <ParagraphElement color="secondary" key={index}>
+                    {item}
+                  </ParagraphElement>
                 ) : (
-                  <ParagraphElement color="secondary" key={index} className="font-semibold">
+                  <ParagraphElement
+                    color="secondary"
+                    key={index}
+                    className="font-semibold"
+                  >
                     {item}
                   </ParagraphElement>
                 )
@@ -85,10 +91,10 @@ const AITalentSection = ({ className }) => {
           <div className="flex items-center justify-center">
             <div className="bg-white boxed w-full">
               {/* Horizontal Layout Container */}
-              <div className="flex items-center justify-evenly gap-4 sm:gap-6 md:gap-8">
+              <div className="flex items-center justify-evenly gap-sm">
                 {/* Bacancy Logo */}
                 <div className="flex-shrink-0">
-                  <div className="w-32 h-32 sm:w-28 sm:h-28 md:w-36 md:h-36">
+                  <div className="w-32 h-32 md:w-36 md:h-36">
                     <Image
                       src={bacancyLogo}
                       alt="Bacancy Logo"
@@ -106,7 +112,7 @@ const AITalentSection = ({ className }) => {
                 </div>
 
                 {/* AI Tools Stack */}
-                <div className="flex flex-col gap-3 sm:gap-4 md:gap-6 flex-shrink-0">
+                <div className="flex flex-col gap-sm">
                   {/* GitHub Copilot Card */}
                   {tools.map((tool, index) => (
                     <div
