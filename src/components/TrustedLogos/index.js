@@ -39,7 +39,7 @@ const TrustedLogos = ({ className }) => {
 
   return (
     <section className={cn("", className)}>
-      <div className="container">
+      <div className="container w-full">
         <div className="text-center mb-sm mx-auto">
           <HeadingH2>
             Winning The Trust Of
@@ -57,7 +57,7 @@ const TrustedLogos = ({ className }) => {
           </ParagraphElement>
         </div>
 
-        <div className="mx-auto border-2 border-gray-200/70 boxed">
+        <div className="mx-auto border-2 border-gray-200/70 boxed w-fit">
           <ul className="flex flex-wrap justify-center items-center gap-sm">
             {logos.map((logo, index) => (
               <li key={index} className="flex items-center justify-center">
