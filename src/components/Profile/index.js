@@ -7,7 +7,7 @@ import { useEqualHeight } from "../../lib/hooks/useEqualHeight";
 
 const cdnImage = process.env.NEXT_PUBLIC_IMG_URL;
 
-const ExpertCarousel = ({ title, subtitle, experts, className }) => {
+const ExpertCarousel = ({ title, subtitle, experts, className, formData }) => {
   // Initialize the equal height hook with all the elements we want to equalize
   const { adjustAllHeights } = useEqualHeight([
     ".expert-description",
@@ -284,7 +284,7 @@ const ExpertCarousel = ({ title, subtitle, experts, className }) => {
               <div className="!mt-sm">
                 <Button
                   className="transition-colors font-normal"
-                  href={"#form"}
+                  href={`${formData.leadingPageEndpoint}#form`}
                   target="_self"
                   uppercase
                   fullWidth

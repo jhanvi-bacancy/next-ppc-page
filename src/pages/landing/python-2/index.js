@@ -36,19 +36,20 @@ import {
 export default function PythonPage() {
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
+      <Navbar formData={formData} />
 
       {/* Banner */}
       <BannerWithList data={pythonBannerData} className="" />
 
       {/* Trusted Logos */}
-      <TrustedLogos className=" bg-gray-light" />
+      <TrustedLogos className=" bg-gray-light" formData={formData} />
 
       {/* Experts Carousel */}
       <ExpertCarousel
         title={pythonExpertsData.title}
         subtitle={pythonExpertsData.subtitle}
         experts={pythonExpertsData.experts}
+        formData={formData}
       />
 
       {/* Pricing Section */}
@@ -71,7 +72,7 @@ export default function PythonPage() {
       <TechnicalExpertise data={technicalExpertiseData} />
 
       {/* Requirement Section */}
-      <RequirementSelector className="bg-light-orange" />
+      <RequirementSelector className="bg-light-orange" formData={formData} />
 
       {/* Steps Section */}
       <StepsSection />
@@ -80,10 +81,11 @@ export default function PythonPage() {
       <SuccessStoriesSection
         data={successStoriesData}
         className="bg-gray-light"
+        formData={formData}
       />
 
       {/* AITalent Section */}
-      <AITalentSection className="bg-light-orange" />
+      <AITalentSection className="bg-light-orange" formData={formData} />
 
       {/* Customer Reviews Section */}
       <CustomerReviews className="bg-gray-light" />
@@ -92,13 +94,13 @@ export default function PythonPage() {
       <DevelopmentStrength data={developmentStrengthData} />
 
       {/* FAQ */}
-      <FAQ data={faqData} className="bg-gray-light" />
+      <FAQ data={faqData} className="bg-gray-light" formData={formData} />
 
       {/* Contact Banner */}
       <ContactBanner formData={formData} />
 
       {/* Footer */}
-      <Footer data={footerData} />
+      <Footer data={footerData} formData={formData} />
     </div>
   );
 }

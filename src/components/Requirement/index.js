@@ -16,7 +16,7 @@ const optionsData = {
   },
 };
 
-const RequirementSelector = ({ className }) => {
+const RequirementSelector = ({ className, formData }) => {
   const [selectedOption, setSelectedOption] = useState("");
   const { options } = optionsData;
 
@@ -63,7 +63,7 @@ const RequirementSelector = ({ className }) => {
               className="font-normal w-full sm:w-auto"
               onClick={() => {
                 if (selectedOption) {
-                  window.location.href = "#form";
+                  window.location.href = `${formData.leadingPageEndpoint}#form`;
                 }
               }}
               fullWidth

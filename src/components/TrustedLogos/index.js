@@ -34,7 +34,7 @@ const trustedLogosData = {
   ],
 };
 
-const TrustedLogos = ({ className }) => {
+const TrustedLogos = ({ className, formData }) => {
   const { logos } = trustedLogosData;
 
   return (
@@ -50,7 +50,7 @@ const TrustedLogos = ({ className }) => {
             color="primary"
             className="underline cursor-pointer"
             onClick={() => {
-              window.location.href = "#form";
+              window.location.href = `${formData.leadingPageEndpoint}#form`;
             }}
           >
             Join Us to Build Your Idea into Reality

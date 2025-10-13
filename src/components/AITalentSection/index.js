@@ -5,31 +5,7 @@ import { cn } from "../../lib/utils";
 
 const cdnImage = process.env.NEXT_PUBLIC_IMG_URL;
 
-const aiTalentSectionData = {
-  title: "Get Your Work Done Faster with ",
-  highlight: "AI-Enhanced Talent",
-  description: [
-    "Our developers leverage powerful AI tools to automate tasks, enhance productivity, and optimize workflows.",
-    "Get 3X faster Product delivery than ordinary development process.",
-    "Launch your First Module/Product in 15 Days!",
-  ],
-  tools: [
-    {
-      name: "GitHub Copilot",
-      icon: `${cdnImage}landing/images/icons/copilot.svg`,
-    },
-    { name: "Cursor AI", icon: `${cdnImage}landing/images/icons/cursor.svg` },
-  ],
-  headingIcon: `${cdnImage}landing/images/icons/heading-icon.svg`,
-  bacancyLogo: `${cdnImage}landing/images/icons/bacancy-icon.svg`,
-  ctaButton: {
-    text: "Talk to Our Expert",
-    href: "#form",
-    target: "_blank",
-  },
-};
-
-const AITalentSection = ({ className }) => {
+const AITalentSection = ({ className, formData }) => {
   const {
     title,
     highlight,
@@ -38,7 +14,30 @@ const AITalentSection = ({ className }) => {
     bacancyLogo,
     tools,
     ctaButton,
-  } = aiTalentSectionData;
+  } = {
+    title: "Get Your Work Done Faster with ",
+    highlight: "AI-Enhanced Talent",
+    description: [
+      "Our developers leverage powerful AI tools to automate tasks, enhance productivity, and optimize workflows.",
+      "Get 3X faster Product delivery than ordinary development process.",
+      "Launch your First Module/Product in 15 Days!",
+    ],
+    tools: [
+      {
+        name: "GitHub Copilot",
+        icon: `${cdnImage}landing/images/icons/copilot.svg`,
+      },
+      { name: "Cursor AI", icon: `${cdnImage}landing/images/icons/cursor.svg` },
+    ],
+    headingIcon: `${cdnImage}landing/images/icons/heading-icon.svg`,
+    bacancyLogo: `${cdnImage}landing/images/icons/bacancy-icon.svg`,
+    ctaButton: {
+      text: "Talk to Our Expert",
+      href: `${formData.leadingPageEndpoint}#form`,
+      target: "_self",
+    },
+  };
+
   return (
     <section className={cn("", className)}>
       <div className="container">
@@ -46,7 +45,8 @@ const AITalentSection = ({ className }) => {
           {/* Left Content */}
           <div className="grid gap-sm md:gap-0">
             <HeadingH2 noMargin>
-              {title}<span className="text-primary">{highlight}</span>
+              {title}
+              <span className="text-primary">{highlight}</span>
               <div className="inline-block h-svg-icon-32 w-svg-icon-32">
                 <Image
                   src={headingIcon}
@@ -79,7 +79,7 @@ const AITalentSection = ({ className }) => {
             <div>
               <Button
                 className="font-normal"
-                href="#form"
+                href={ctaButton.href}
                 target={ctaButton.target || "_self"}
               >
                 {ctaButton.text}

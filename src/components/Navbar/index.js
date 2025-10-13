@@ -5,7 +5,7 @@ import { Button } from "../ui/button";
 
 const cdnImage = process.env.NEXT_PUBLIC_IMG_URL;
 
-const Navbar = () => {
+const Navbar = ({ formData }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -13,10 +13,13 @@ const Navbar = () => {
   };
 
   const navigationLinks = [
-    { name: "Services", href: "#services" },
-    { name: "Case Study", href: "#case-study" },
-    { name: "Technical Stack", href: "#technical-stack" },
-    { name: "Pricing", href: "#pricing" },
+    { name: "Services", href: `${formData.leadingPageEndpoint}#services` },
+    { name: "Case Study", href: `${formData.leadingPageEndpoint}#case-study` },
+    {
+      name: "Technical Stack",
+      href: `${formData.leadingPageEndpoint}#technical-stack`,
+    },
+    { name: "Pricing", href: `${formData.leadingPageEndpoint}#pricing` },
   ];
 
   return (
@@ -62,7 +65,12 @@ const Navbar = () => {
             >
               Schedule a Call
             </Button>
-            <Button className="font-normal" href="#form" uppercase>
+            <Button
+              className="font-normal"
+              href={`${formData.leadingPageEndpoint}#form`}
+              target="_self"
+              uppercase
+            >
               Start My Free Trial
             </Button>
           </div>
@@ -132,7 +140,8 @@ const Navbar = () => {
                   variant="filled"
                   className="w-full font-normal"
                   onClick={() => setIsMenuOpen(false)}
-                  href="#form"
+                  href={`${formData.leadingPageEndpoint}#form`}
+                  target="_self"
                   uppercase
                 >
                   Start My Free Trial

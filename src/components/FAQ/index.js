@@ -51,7 +51,7 @@ const renderAnswerContent = (answer) => {
   return <p>{answer}</p>;
 };
 
-const FAQ = ({ data, className }) => {
+const FAQ = ({ data, formData, className }) => {
   return (
     <section className={cn("", className)}>
       <div className="container">
@@ -62,7 +62,7 @@ const FAQ = ({ data, className }) => {
             <div
               className="hidden md:flex md:flex-col gap-x-1 cursor-pointer"
               onClick={() => {
-                window.location.href = "#contact-form-id";
+                window.location.href = `${formData.leadingPageEndpoint}#contact-form-id`;
               }}
             >
               <ParagraphElement
@@ -117,7 +117,7 @@ const FAQ = ({ data, className }) => {
           <div
             className="flex gap-x-1 cursor-pointer md:hidden"
             onClick={() => {
-              window.location.href = "#contact-form-id";
+              window.location.href = `${formData.leadingPageEndpoint}#contact-form-id`;
             }}
           >
             <ParagraphElement

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Button, ParagraphElement, HeadingH5 } from "../ui";
 import { cn } from "../../lib/utils";
 
-const Footer = ({ data, className }) => {
+const Footer = ({ data, className, formData }) => {
   const {
     backgroundImage,
     addresses,
@@ -81,7 +81,8 @@ const Footer = ({ data, className }) => {
             />
             <Button
               variant="text"
-              href={"#form"}
+              href={`${formData.leadingPageEndpoint}#form`}
+              target="_self"
               className="text-h3 font-medium white hover:text-primary transition-colors"
             >
               Get in Touch

@@ -280,7 +280,7 @@ export const pythonPricingData = {
       ],
       ctaButton: {
         text: "Get Started on Hourly Basis",
-        href: "#form",
+        href: `${landingPage}landing/python-2#form`,
         target: "_blank",
       },
     },
@@ -297,7 +297,7 @@ export const pythonPricingData = {
       ],
       ctaButton: {
         text: "Get Started on Monthly Basis",
-        href: "#form",
+        href: `${landingPage}landing/python-2#form`,
         target: "_blank",
       },
       highlighted: true,
@@ -313,14 +313,14 @@ export const pythonPricingData = {
       ],
       ctaButton: {
         text: "Get a Free Estimate",
-        href: "#form",
+        href: `${landingPage}landing/python-2#form`,
         target: "_blank",
       },
     },
   ],
   ctaButton: {
     text: "Talk to Our Expert",
-    href: "#form",
+    href: `${landingPage}landing/python-2#form`,
     target: "_blank",
     icon: "landing/images/icons/calendar.svg",
   },

@@ -4,7 +4,7 @@ import SuccessStory from "./SuccessStory";
 import { cn } from "../../lib/utils";
 import { ArrowIcon } from "../../icons";
 
-const SuccessStoriesSection = ({ data, className }) => {
+const SuccessStoriesSection = ({ data, className, formData }) => {
   const { title, description, successStories } = data;
 
   const CustomArrow = ({ className, style, onClick, direction }) => {
@@ -100,7 +100,12 @@ const SuccessStoriesSection = ({ data, className }) => {
         </div>
 
         <div className="relative z-20 text-center">
-          <Button className="font-normal" href="#form" uppercase>
+          <Button
+            className="font-normal"
+            href={`${formData.leadingPageEndpoint}#form`}
+            target="_self"
+            uppercase
+          >
             Share Your Requirements
           </Button>
         </div>
