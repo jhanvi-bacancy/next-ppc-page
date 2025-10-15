@@ -56,11 +56,7 @@ export default function PythonPage() {
       <PricingSection data={pythonPricingData} className="bg-gray-light" />
 
       {/* Contact Section */}
-      <ContactSection
-        data={contactSectionData}
-        formData={formData}
-        className="pt-10"
-      />
+      <ContactSection data={contactSectionData} formData={formData} />
 
       {/* Success Banner */}
       <SuccessBanner />

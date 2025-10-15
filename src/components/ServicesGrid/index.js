@@ -2,10 +2,14 @@ import React from "react";
 import Image from "next/image";
 import { HeadingH2, Button, ParagraphElement } from "../ui";
 import { cn } from "../../lib/utils";
+import { useEqualHeight } from "../../lib/hooks/useEqualHeight";
 
 const cdnImage = process.env.NEXT_PUBLIC_IMG_URL;
 
 const ServicesGrid = ({ className, data }) => {
+  // Use equal height hook for service cards
+  useEqualHeight(".service-card");
+
   return (
     <section className={cn("", className)} id="services">
       <div className="container">
@@ -17,7 +21,7 @@ const ServicesGrid = ({ className, data }) => {
             {data.services.map((service, index) => (
               <div
                 key={index}
-                className="bg-white boxed text-center flex flex-col items-center hover:shadow-sm transition-shadow"
+                className="service-card bg-white boxed text-center flex flex-col items-center hover:shadow-sm transition-shadow"
               >
                 <div className="relative svg-icon w-full mb-3 md:mb-4">
                   <Image

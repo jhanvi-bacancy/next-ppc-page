@@ -17,7 +17,7 @@ const StepCard = ({
   return (
     <div className={cn("flex flex-col items-center", className)}>
       {/* Step Icon and Number Box */}
-      <div className="flex items-center gap-2 bg-white rounded-lg px-6 py-3 -mb-4 z-10 relative shadow-md">
+      <div className="flex items-center gap-2 bg-white rounded-lg px-sm py-3 -mb-4 z-10 relative shadow-md">
         <Image
           src={stepIcon}
           alt={`Step ${stepNumber} icon`}
@@ -42,7 +42,7 @@ const StepCard = ({
         </HeadingH3>
 
         {/* Content Image */}
-        <div className="px-6 flex-1 flex flex-col">
+        <div className="px-sm flex-1 flex flex-col">
           <div
             className={cn(
               "bg-gray-50 boxed overflow-hidden p-4 flex items-center justify-center mb-6",

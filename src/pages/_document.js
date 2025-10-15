@@ -34,7 +34,7 @@ export default function Document() {
         <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Bacancy" />
-        <meta name="robots" content="noindex nofollow" />
+        <meta name="robots" content="noindex,nofollow" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0"

@@ -16,7 +16,10 @@ const SuccessBanner = ({ className }) => {
     <section className={cn("w-full relative", className)}>
       <div className="container -mt-32 md:-mt-44">
         <div className="bg-primary text-center boxed">
-          <ParagraphElement color="white" className="font-normal text-h2">
+          <ParagraphElement
+            color="white"
+            className="font-bold text-h2 underline"
+          >
             {title}
           </ParagraphElement>
 
