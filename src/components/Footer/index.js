@@ -1,9 +1,13 @@
 import React from "react";
 import Image from "next/image";
-import { Button, ParagraphElement, HeadingH5 } from "../ui";
+import { Button, ParagraphElement } from "../ui";
 import { cn } from "../../lib/utils";
+import { useEqualHeight } from "../../lib/hooks/useEqualHeight";
 
 const Footer = ({ data, className, formData }) => {
+  // Use equal height hook for address cards and rating cards
+  useEqualHeight([".footer-address-card"]);
+
   const {
     backgroundImage,
     addresses,
@@ -17,7 +21,7 @@ const Footer = ({ data, className, formData }) => {
   } = data;
   return (
     <section
-      className={cn("", className)}
+      className={cn("pb-md", className)}
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundColor: "#000",
@@ -31,23 +35,23 @@ const Footer = ({ data, className, formData }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-sm pb-md">
           {addresses.map((item, index) => (
             <div key={index} className="space-y-sm">
-              <div className="flex items-center gap-6">
-                <Image
-                  src={item.flag}
-                  alt={item.country}
-                  width={24}
-                  height={24}
-                  className="object-contain !h-10 !w-10"
-                />
-                <ParagraphElement
-                  className="text-h4 font-medium"
-                  color="white"
-                  noMargin
-                >
-                  {item.country}
-                </ParagraphElement>
-              </div>
-              <div>
+              <div className="footer-address-card">
+                <div className="flex items-center gap-6">
+                  <Image
+                    src={item.flag}
+                    alt={item.country}
+                    width={24}
+                    height={24}
+                    className="object-contain !h-10 !w-10"
+                  />
+                  <ParagraphElement
+                    className="text-h4 font-medium"
+                    color="white"
+                    noMargin
+                  >
+                    {item.country}
+                  </ParagraphElement>
+                </div>
                 {item.title && (
                   <ParagraphElement
                     className="font-medium !mb-0"
@@ -57,6 +61,8 @@ const Footer = ({ data, className, formData }) => {
                     {item.title}
                   </ParagraphElement>
                 )}
+              </div>
+              <div>
                 <ParagraphElement
                   className="text-sm"
                   color="secondary"
@@ -185,12 +191,12 @@ const Footer = ({ data, className, formData }) => {
 
         {/* Copyright */}
         <div className="text-center pt-md border-t border-gray-700">
-          <HeadingH5 className="text-sm" color="white" noMargin>
+          <ParagraphElement className="text-sm" color="white" noMargin>
             <span className="text-primary">Copyright &copy; 2025 Bacancy.</span>
             &nbsp; All Rights Reserved. An&nbsp;
             <span className="text-primary">ISO 27001:2013</span> Certified
             Company
-          </HeadingH5>
+          </ParagraphElement>
         </div>
       </div>
     </section>

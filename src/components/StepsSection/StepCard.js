@@ -42,7 +42,7 @@ const StepCard = ({
         </HeadingH3>
 
         {/* Content Image */}
-        <div className="px-sm flex-1 flex flex-col">
+        <div className="flex-1 flex flex-col">
           <div
             className={cn(
               "bg-gray-50 boxed overflow-hidden p-4 flex items-center justify-center mb-6",

@@ -9,6 +9,7 @@ export const metaProperties = {
     "Hire Python developer having experience with advanced Python frameworks. Our Python programmer is skilled at Django, Flask, web2py, and machine learning.",
   ogImage: `${cdnImage}main/img/og/python-development.png?v-7`,
   path: `${landingPage}python-2`,
+  faviconIcon: `${cdnImage}img/favicon.png`,
 };
 
 // Data for the Python Development page
@@ -281,7 +282,7 @@ export const pythonPricingData = {
       ctaButton: {
         text: "Get Started on Hourly Basis",
         href: `${landingPage}landing/python-2#form`,
-        target: "_blank",
+        target: "_self",
       },
     },
     {
@@ -298,7 +299,7 @@ export const pythonPricingData = {
       ctaButton: {
         text: "Get Started on Monthly Basis",
         href: `${landingPage}landing/python-2#form`,
-        target: "_blank",
+        target: "_self",
       },
       highlighted: true,
     },
@@ -314,14 +315,14 @@ export const pythonPricingData = {
       ctaButton: {
         text: "Get a Free Estimate",
         href: `${landingPage}landing/python-2#form`,
-        target: "_blank",
+        target: "_self",
       },
     },
   ],
   ctaButton: {
     text: "Talk to Our Expert",
     href: `${landingPage}landing/python-2#form`,
-    target: "_blank",
+    target: "_self",
     icon: "landing/images/icons/calendar.svg",
   },
 };

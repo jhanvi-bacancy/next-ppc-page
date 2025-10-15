@@ -7,7 +7,6 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <title>{metaProperties.title}</title>
         <link rel="profile" href="http://gmpg.org/xfn/11" />
         <meta name="description" content={metaProperties.description} />
         <meta property="og:title" content={metaProperties.title} />
@@ -15,6 +14,7 @@ export default function Document() {
         <meta property="og:image" content={metaProperties.ogImage} />
         <meta property="og:url" content={metaProperties.path} />
         <link rel="canonical" href={metaProperties.path} />
+        <link rel="icon" href={metaProperties.faviconIcon} />
         <meta
           name="google-site-verification"
           content="Yo1jWJ-VQcq47gcnByCq029qo1Fjbsr_HpAcmCR_lm0"
