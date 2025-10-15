@@ -1,0 +1,10 @@
+# Allow all search engines
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.bacancytechnology.com/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+

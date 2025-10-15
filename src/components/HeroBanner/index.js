@@ -22,7 +22,7 @@ const BannerWithList = ({ data, className }) => {
       {/* Background Image */}
       <Image
         src={`${cdnImage}${backgroundImage}`}
-        alt="Banner background"
+        alt={`${badge} - ${title.text}${title.highlight}${title.suffix}`}
         width={1900}
         height={900}
         className="absolute inset-0 object-cover z-1 h-full w-full"

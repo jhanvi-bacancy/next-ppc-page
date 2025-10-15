@@ -8,13 +8,16 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <link rel="profile" href="http://gmpg.org/xfn/11" />
-        <meta name="description" content={metaProperties.description} />
-        <meta property="og:title" content={metaProperties.title} />
-        <meta property="og:description" content={metaProperties.description} />
-        <meta property="og:image" content={metaProperties.ogImage} />
-        <meta property="og:url" content={metaProperties.path} />
-        <link rel="canonical" href={metaProperties.path} />
         <link rel="icon" href={metaProperties.faviconIcon} />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="theme-color" content="#ffffff" />
+
+        {/* Preconnect to external domains for faster loading */}
+        <link rel="preconnect" href="https://assets.bacancytechnology.com" />
+        <link rel="dns-prefetch" href="https://assets.bacancytechnology.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://static.hotjar.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <meta
           name="google-site-verification"
           content="Yo1jWJ-VQcq47gcnByCq029qo1Fjbsr_HpAcmCR_lm0"
@@ -26,13 +29,14 @@ export default function Document() {
         <meta name="Owner" content="bacancytechnology.com" />
         <meta property="twitter:account_id" content="1217499134" />
         <meta property="fb:page_id" content="487007941335374" />
-        <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@bacancytech" />
+        <meta name="twitter:creator" content="@bacancytech" />
         <meta property="fb:admins" content="487007941335374" />
         <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Bacancy" />
-        <meta name="robots" content="noindex,nofollow" />
+        <meta name="robots" content="index,follow" />
+        <meta name="googlebot" content="index,follow" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0"

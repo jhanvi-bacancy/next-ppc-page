@@ -7,9 +7,19 @@ export const metaProperties = {
   title: "Hire Python Developer on Hourly or Monthly Basis",
   description:
     "Hire Python developer having experience with advanced Python frameworks. Our Python programmer is skilled at Django, Flask, web2py, and machine learning.",
+  keywords:
+    "hire python developer, python development company, python programmers, django developers, flask developers, python web development, machine learning python, AI python developers, fullstack python developers, dedicated python developers",
   ogImage: `${cdnImage}main/img/og/python-development.png?v-7`,
+  ogImageAlt: "Hire Python Developer - Bacancy Technology",
+  ogImageWidth: "1200",
+  ogImageHeight: "630",
   path: `${landingPage}python-2`,
   faviconIcon: `${cdnImage}img/favicon.png`,
+  twitterCard: "summary_large_image",
+  twitterTitle: "Hire Expert Python Developers - Django, Flask, ML & AI",
+  twitterDescription:
+    "Get 80+ full-stack Python developers proficient in Django, Flask, FastAPI, ML frameworks. 40% cost savings, 15 days free trial. Hire in 48 hours.",
+  twitterImage: `${cdnImage}main/img/og/python-development.png?v-7`,
 };
 
 // Data for the Python Development page

@@ -1,5 +1,9 @@
 import React from "react";
-import Head from "next/head";
+import SEO, {
+  createOrganizationSchema,
+  createServiceSchema,
+  createFAQSchema,
+} from "../../../components/SEO";
 import {
   Navbar,
   BannerWithList,
@@ -36,11 +40,39 @@ import {
 } from "../../../data/pages/python-2";
 
 export default function PythonPage() {
+  // Create structured data schemas
+  const structuredData = [
+    createOrganizationSchema(),
+    createServiceSchema({
+      serviceType: "Python Development Services",
+      description:
+        "Hire dedicated Python developers proficient in Django, Flask, FastAPI, ML frameworks, and more. 40% cost savings with 15 days free trial.",
+      price: "22",
+      priceCurrency: "USD",
+      priceUnit: "per hour",
+    }),
+    createFAQSchema(faqData.slice(0, 5)),
+  ];
+
   return (
     <>
-      <Head>
-        <title>{metaProperties.title}</title>
-      </Head>
+      {/* Reusable SEO Component */}
+      <SEO
+        title={metaProperties.title}
+        description={metaProperties.description}
+        keywords={metaProperties.keywords}
+        ogImage={metaProperties.ogImage}
+        ogImageAlt={metaProperties.ogImageAlt}
+        ogImageWidth={metaProperties.ogImageWidth}
+        ogImageHeight={metaProperties.ogImageHeight}
+        canonical={metaProperties.path}
+        twitterCard={metaProperties.twitterCard}
+        twitterTitle={metaProperties.twitterTitle}
+        twitterDescription={metaProperties.twitterDescription}
+        twitterImage={metaProperties.twitterImage}
+        structuredData={structuredData}
+      />
+
       <div className="min-h-screen bg-white">
         <Navbar formData={formData} />
 

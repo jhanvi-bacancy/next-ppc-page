@@ -17,6 +17,9 @@ import FAQ from "./FAQ";
 import PricingSection from "./PricingSection";
 import RequirementSelector from "./Requirement";
 
+// SEO Component - Import separately with named exports
+// import SEO, { createOrganizationSchema, createServiceSchema, createFAQSchema } from "./SEO";
+
 export {
   Navbar,
   BannerWithList,
