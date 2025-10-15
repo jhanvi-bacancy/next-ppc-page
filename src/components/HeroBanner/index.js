@@ -30,7 +30,7 @@ const BannerWithList = ({ data, className }) => {
       />
 
       {/* Content */}
-      <div className="grid gap-6 grid-cols-1 lg:grid-cols-5 relative z-10 container white items-center lg:max-w-fit !mx-md">
+      <div className="grid gap-6 grid-cols-1 lg:grid-cols-5 relative z-10 container white items-center">
         {/* Left Content */}
         <div className="lg:col-span-3">
           {badge && (

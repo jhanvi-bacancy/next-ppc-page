@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import {
   Navbar,
   BannerWithList,
@@ -31,72 +32,81 @@ import {
   faqData,
   developmentStrengthData,
   formData,
+  metaProperties,
 } from "../../../data/pages/python-2";
 
 export default function PythonPage() {
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar formData={formData} />
+    <>
+      <Head>
+        <title>{metaProperties.title}</title>
+      </Head>
+      <div className="min-h-screen bg-white">
+        <Navbar formData={formData} />
 
-      {/* Banner */}
-      <BannerWithList data={pythonBannerData} className="" />
+        {/* Banner */}
+        <BannerWithList data={pythonBannerData} className="" />
 
-      {/* Trusted Logos */}
-      <TrustedLogos className=" bg-gray-light" formData={formData} />
+        {/* Trusted Logos */}
+        <TrustedLogos className=" bg-gray-light" formData={formData} />
 
-      {/* Experts Carousel */}
-      <ExpertCarousel
-        title={pythonExpertsData.title}
-        subtitle={pythonExpertsData.subtitle}
-        experts={pythonExpertsData.experts}
-        formData={formData}
-      />
+        {/* Experts Carousel */}
+        <ExpertCarousel
+          title={pythonExpertsData.title}
+          subtitle={pythonExpertsData.subtitle}
+          experts={pythonExpertsData.experts}
+          formData={formData}
+        />
 
-      {/* Pricing Section */}
-      <PricingSection data={pythonPricingData} className="bg-gray-light" />
+        {/* Pricing Section */}
+        <PricingSection data={pythonPricingData} className="bg-gray-light" />
 
-      {/* Contact Section */}
-      <ContactSection data={contactSectionData} formData={formData} />
+        {/* Contact Section */}
+        <ContactSection data={contactSectionData} formData={formData} />
 
-      {/* Success Banner */}
-      <SuccessBanner />
+        {/* Success Banner */}
+        <SuccessBanner />
 
-      {/* Services Grid */}
-      <ServicesGrid className=" bg-gray-light" data={pythonServicesGridData} />
+        {/* Services Grid */}
+        <ServicesGrid
+          className=" bg-gray-light"
+          data={pythonServicesGridData}
+        />
 
-      {/* Technical Expertise */}
-      <TechnicalExpertise data={technicalExpertiseData} />
+        {/* Technical Expertise */}
+        <TechnicalExpertise data={technicalExpertiseData} />
 
-      {/* Requirement Section */}
-      <RequirementSelector className="bg-light-orange" formData={formData} />
+        {/* Requirement Section */}
+        <RequirementSelector className="bg-light-orange" formData={formData} />
 
-      {/* Steps Section */}
-      <StepsSection />
+        {/* Steps Section */}
+        <StepsSection />
 
-      {/* Success Stories Section */}
-      <SuccessStoriesSection
-        data={successStoriesData}
-        className="bg-gray-light"
-        formData={formData}
-      />
+        {/* Success Stories Section */}
+        <SuccessStoriesSection
+          data={successStoriesData}
+          className="bg-gray-light"
+          formData={formData}
+        />
 
-      {/* AITalent Section */}
-      <AITalentSection className="bg-light-orange" formData={formData} />
+        {/* AITalent Section */}
+        <AITalentSection className="bg-light-orange" formData={formData} />
 
-      {/* Customer Reviews Section */}
-      <CustomerReviews className="bg-gray-light" />
+        {/* Customer Reviews Section */}
+        <CustomerReviews className="bg-gray-light" />
 
-      {/* Development Strength */}
-      <DevelopmentStrength data={developmentStrengthData} />
+        {/* Development Strength */}
+        <DevelopmentStrength data={developmentStrengthData} />
 
-      {/* FAQ */}
-      <FAQ data={faqData} className="bg-gray-light" formData={formData} />
+        {/* FAQ */}
+        <FAQ data={faqData} className="bg-gray-light" formData={formData} />
 
-      {/* Contact Banner */}
-      <ContactBanner formData={formData} />
+        {/* Contact Banner */}
+        <ContactBanner formData={formData} />
 
-      {/* Footer */}
-      <Footer data={footerData} formData={formData} />
-    </div>
+        {/* Footer */}
+        <Footer data={footerData} formData={formData} />
+      </div>
+    </>
   );
 }

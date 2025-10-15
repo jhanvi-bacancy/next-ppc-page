@@ -3,8 +3,6 @@
 import { metaProperties } from "@/data/pages/python-2";
 import { Html, Head, Main, NextScript } from "next/document";
 
-const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-
 export default function Document() {
   return (
     <Html lang="en">
